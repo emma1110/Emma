@@ -1,0 +1,50 @@
+/**
+ * Design tokens — lấy trực tiếp từ Figma file variables
+ * (Figma:get_variable_defs trên node Hero, 121:243)
+ *
+ * Map 1-1 theo tên biến gốc, đổi "/" thành "-" cho hợp lệ CSS custom property.
+ */
+:root {
+  /* Semantic colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #525252;
+  --color-text-inverse: #000000;
+  --color-surface-elevated: #111111;
+
+  /* Spacing */
+  --spacing-5: 16px;
+  --spacing-8: 32px;
+  --spacing-stack-lg: 32px;
+  --spacing-component-input-pad-y: 12px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-full: 9999px;
+
+  /* Typography (Inter) */
+  --font-heading-h4-size: 20px;
+  --font-heading-h4-weight: 600;
+  --font-heading-h4-line: 28px;
+
+  --font-heading-h5-size: 18px;
+  --font-heading-h5-weight: 600;
+  --font-heading-h5-line: 26px;
+
+  --font-display-xl-size: 60px;
+  --font-display-xl-weight: 700;
+  --font-display-xl-line: 72px;
+  --font-display-xl-tracking: -1.2px;
+
+  --font-body-md-medium-size: 16px;
+  --font-body-md-medium-weight: 500;
+  --font-body-md-medium-line: 24px;
+
+  --font-body-xl-medium-size: 20px;
+  --font-body-xl-medium-weight: 500;
+  --font-body-xl-medium-line: 30px;
+
+  --font-body-sm-medium-size: 14px;
+  --font-body-sm-medium-weight: 500;
+  --font-body-sm-medium-line: 20px;
+}
