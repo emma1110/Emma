@@ -90,7 +90,7 @@ export default function TrustCorePage() {
     <main className="w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
       <Navbar />
       
-      <div className="w-full max-w-[1440px] px-4 sm:px-8 md:px-[80px] py-24 flex flex-col md:flex-row gap-12 md:gap-24 items-start">
+      <div className="w-full max-w-[1440px] px-4 sm:px-8 md:px-[80px] py-16 md:py-24 flex flex-col md:flex-row gap-12 md:gap-24 items-start">
         
         {/* Sticky Sidebar */}
         <aside className="w-full md:w-[180px] shrink-0 sticky top-28 hidden md:flex flex-col gap-8 pt-4">
@@ -191,7 +191,7 @@ export default function TrustCorePage() {
             </div>
 
             {/* Metadata Row */}
-            <div className="grid grid-cols-3 gap-8 border-b border-[var(--footer-border)] pb-10 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 border-b border-[var(--footer-border)] pb-10 pt-2">
               <div className="flex flex-col gap-1">
                 <span className="text-[14px] font-semibold tracking-wide text-[var(--text-muted)] uppercase">Role</span>
                 <span className="text-[16px] font-medium text-[var(--color-text-inverse)]">Product Designer</span>
@@ -292,7 +292,7 @@ export default function TrustCorePage() {
             
             {/* Feature 1 - Guided Account Creation */}
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-              <div className="w-full md:w-[480px] h-[360px] md:h-[480px] shrink-0 bg-[var(--card-bg)] rounded-[32px] overflow-hidden flex items-center justify-center p-8">
+              <div className="w-full md:w-[480px] h-[280px] md:h-[480px] shrink-0 bg-[var(--card-bg)] rounded-[32px] overflow-hidden flex items-center justify-center p-8">
                 {isMounted && <Lottie animationData={guidedData} loop={true} style={{ width: "100%", height: "100%" }} />}
               </div>
               <div className="flex flex-col gap-4">
@@ -306,7 +306,7 @@ export default function TrustCorePage() {
 
             {/* Feature 2 - Multisig Made Understandable */}
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-              <div className="w-full md:w-[480px] h-[360px] md:h-[480px] shrink-0 bg-[var(--card-bg)] rounded-[32px] overflow-hidden flex items-center justify-center p-8">
+              <div className="w-full md:w-[480px] h-[280px] md:h-[480px] shrink-0 bg-[var(--card-bg)] rounded-[32px] overflow-hidden flex items-center justify-center p-8">
                 {isMounted && <Lottie animationData={multisigData} loop={true} style={{ width: "100%", height: "100%" }} />}
               </div>
               <div className="flex flex-col gap-4">

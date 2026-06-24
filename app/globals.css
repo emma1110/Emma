@@ -5,56 +5,15 @@
 @tailwind utilities;
 
 :root {
-  /* Default Theme: Dark Mode */
-  --bg-color: #0a0a0a;
-  --text-main: #ffffff;
-  --text-muted: #a3a3a3;
-  --text-dark: #ffffff;
-  --card-bg: #111111;
-  --accent: #2563eb;
-  --border-radius: 24px;
-  --border-radius-sm: 12px;
-
-  /* Theme toggle variables */
-  --track-bg-toggle: #1c1c1e;
-  --knob-bg-toggle: #3a3a3d;
-  --icon-color-toggle: #ffffff;
-
-  /* Semantic layout variables overriding tokens.css */
-  --color-text-inverse: #ffffff;
-  --color-text-primary: #000000;
-  --color-text-secondary: #a3a3a3;
-  --color-surface-elevated: #111111;
-  --Semantic-Text-Inverse: #ffffff;
-
-  --navbar-bg-scrolled: rgba(17, 17, 17, 0.8);
-  --navbar-border-scrolled: rgba(255, 255, 255, 0.08);
-  --navbar-bg-unscrolled: var(--color-surface-elevated);
-  --navbar-glass-bg: rgba(10, 10, 10, 0.75);
-
-  --logo-filter: brightness(0) invert(1); /* White logo */
-
-  /* Nav Format Variables */
-  --nav-pill-bg: #1c1c1e;
-  --nav-pill-text-active: #000000;
-  --nav-pill-text-inactive: #e5e5e7;
-  --nav-pill-indicator: #ffffff;
-
-  --nav-btn-bg: #ffffff;
-  --nav-btn-text: #000000;
-  --nav-btn-border: transparent;
-
-  --footer-border: rgba(255, 255, 255, 0.08);
-  --headline-accent: #ffffff;
-}
-
-/* Light Theme Overrides */
-html[data-theme="light"] {
+  /* Default Theme: Light Mode */
   --bg-color: #ffffff;
   --text-main: #111111;
   --text-muted: #767676;
   --text-dark: #111111;
   --card-bg: #f4f4f5;
+  --accent: #2563eb;
+  --border-radius: 24px;
+  --border-radius-sm: 12px;
 
   /* Theme toggle variables */
   --track-bg-toggle: #e5e5e7;
@@ -87,6 +46,47 @@ html[data-theme="light"] {
 
   --footer-border: rgba(0, 0, 0, 0.08);
   --headline-accent: #0020FF;
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] {
+  --bg-color: #0a0a0a;
+  --text-main: #ffffff;
+  --text-muted: #a3a3a3;
+  --text-dark: #ffffff;
+  --card-bg: #111111;
+
+  /* Theme toggle variables */
+  --track-bg-toggle: #1c1c1e;
+  --knob-bg-toggle: #3a3a3d;
+  --icon-color-toggle: #ffffff;
+
+  /* Semantic layout variables overriding tokens.css */
+  --color-text-inverse: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #a3a3a3;
+  --color-surface-elevated: #111111;
+  --Semantic-Text-Inverse: #ffffff;
+
+  --navbar-bg-scrolled: rgba(17, 17, 17, 0.8);
+  --navbar-border-scrolled: rgba(255, 255, 255, 0.08);
+  --navbar-bg-unscrolled: var(--color-surface-elevated);
+  --navbar-glass-bg: rgba(10, 10, 10, 0.75);
+
+  --logo-filter: brightness(0) invert(1); /* White logo */
+
+  /* Nav Format Variables */
+  --nav-pill-bg: #1c1c1e;
+  --nav-pill-text-active: #000000;
+  --nav-pill-text-inactive: #e5e5e7;
+  --nav-pill-indicator: #ffffff;
+
+  --nav-btn-bg: #ffffff;
+  --nav-btn-text: #000000;
+  --nav-btn-border: transparent;
+
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --headline-accent: #ffffff;
 }
 
 * {

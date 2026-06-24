@@ -8,7 +8,8 @@ import Link from "next/link";
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navLinksRef = useRef(null);
   const pillRef = useRef(null);
 
@@ -21,7 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMounted(true);
-    const activeTheme = document.documentElement.getAttribute("data-theme") || "dark";
+    const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
     setTheme(activeTheme);
     
     const handleScroll = () => {
@@ -30,6 +31,18 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent page scroll when mobile menu is active
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     const navLinks = navLinksRef.current;
@@ -147,8 +160,8 @@ export default function Navbar() {
             <Link href="/#contact" className="nav-link-item">Contact</Link>
           </div>
 
-          {/* Right: Theme Toggle only */}
-          <div className="flex-shrink-0">
+          {/* Right: Theme Toggle & Mobile Menu Toggle */}
+          <div className="flex items-center gap-4 flex-shrink-0 z-50">
             <button 
               className="toggle" 
               onClick={toggleTheme}
@@ -176,8 +189,37 @@ export default function Navbar() {
                 </span>
               </span>
             </button>
+
+            {/* Burger Menu Button on Mobile */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex md:hidden flex-col gap-[5px] justify-center items-center w-9 h-9 rounded-full border border-[var(--footer-border)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
+              aria-label="Toggle navigation menu"
+              aria-expanded={menuOpen}
+            >
+              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+            </button>
           </div>
         </nav>
+      </div>
+
+      {/* Mobile Menu Drawer */}
+      <div 
+        className={`fixed inset-0 top-0 h-screen bg-[var(--bg-color)] z-40 flex flex-col pt-24 px-6 gap-6 transition-all duration-300 md:hidden ${
+          menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}
+        style={{
+          transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)"
+        }}
+      >
+        <div className="flex flex-col gap-6 text-xl font-medium pt-8">
+          <Link href="/" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Home</Link>
+          <Link href="/#project" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Project</Link>
+          <Link href="/#about" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">About</Link>
+          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Contact</Link>
+        </div>
       </div>
     </div>
   );
