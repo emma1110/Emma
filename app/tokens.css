@@ -34,7 +34,7 @@
   --font-display-xl-size: 60px;
   --font-display-xl-weight: 700;
   --font-display-xl-line: 72px;
-  --font-display-xl-tracking: -1.2px;
+  --font-display-xl-tracking: 0px;
 
   --font-body-md-medium-size: 16px;
   --font-body-md-medium-weight: 500;
@@ -47,4 +47,20 @@
   --font-body-sm-medium-size: 14px;
   --font-body-sm-medium-weight: 500;
   --font-body-sm-medium-line: 20px;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --font-display-xl-size: 48px;
+    --font-display-xl-line: 58px;
+    --font-display-xl-tracking: 0px;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --font-display-xl-size: 38px;
+    --font-display-xl-line: 46px;
+    --font-display-xl-tracking: 0px;
+  }
 }

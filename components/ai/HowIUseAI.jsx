@@ -33,13 +33,14 @@ export default function HowIUseAI() {
 
   return (
     <section 
+      id="about"
       className="w-full flex flex-col items-center bg-[var(--bg-color)] transition-colors duration-450"
       style={{ 
-        paddingBlock: "128px", 
-        paddingInline: "var(--spacing-8, 32px)" 
+        paddingBlock: "clamp(64px, 10vw, 128px)", 
+        paddingInline: "clamp(16px, 4vw, 32px)" 
       }}
     >
-      <div className="flex w-full max-w-[1440px] flex-col items-center gap-[64px] px-4 sm:px-8">
+      <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
         
         {/* Title and Subtitle */}
         <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center">
@@ -56,7 +57,7 @@ export default function HowIUseAI() {
             How I Use AI
           </h2>
           <p 
-            className="font-medium text-lg sm:text-[20px] whitespace-normal md:whitespace-nowrap"
+            className="font-medium text-base sm:text-[20px] whitespace-normal"
             style={{ 
               color: "var(--color-text-secondary, #525252)", 
               lineHeight: "var(--font-body-xl-medium-line, 30px)",
@@ -76,7 +77,7 @@ export default function HowIUseAI() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="flex flex-col gap-6 items-start p-6 rounded-[24px] transition-all duration-450 w-full"
+              className="flex flex-col gap-5 sm:gap-6 items-start p-5 sm:p-6 rounded-[20px] sm:rounded-[24px] transition-all duration-450 w-full"
               style={{ backgroundColor: "var(--color-surface-elevated)" }}
             >
               {/* Icon Container */}
@@ -90,13 +91,15 @@ export default function HowIUseAI() {
                     filter: card.invert ? "invert(1)" : "none"
                   }}
                   src={card.src} 
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
               {/* Text Block */}
               <div className="flex flex-col gap-3 items-start w-full text-left">
                 <h3 
-                  className="font-semibold text-[var(--color-text-inverse)] text-[22px] tracking-[-0.2px]"
+                  className="font-semibold text-[var(--color-text-inverse)] text-[20px] sm:text-[22px] tracking-normal"
                   style={{ lineHeight: "30px" }}
                 >
                   {card.title}

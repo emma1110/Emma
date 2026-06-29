@@ -65,16 +65,16 @@ export default function FavoriteBooks() {
     <section 
       className="w-full flex flex-col items-center justify-center bg-[var(--bg-color)] transition-colors duration-450 overflow-hidden"
       style={{ 
-        paddingBlock: "128px", 
-        paddingInline: "var(--spacing-8, 32px)" 
+        paddingBlock: "clamp(64px, 10vw, 128px)", 
+        paddingInline: "clamp(16px, 4vw, 32px)" 
       }}
     >
-      <div className="flex w-full max-w-[1440px] flex-col items-center gap-[64px] px-4 sm:px-8">
+      <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
         
         {/* Title and Subtitle */}
         <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center">
           <h2 
-            className="w-full font-bold text-[40px] md:text-[60px] text-[color:var(--color-text-inverse,#000000)] tracking-[-1.2px] leading-[1.2] md:leading-[72px]"
+            className="w-full font-bold text-[38px] sm:text-[48px] lg:text-[60px] text-[color:var(--color-text-inverse,#000000)] tracking-normal leading-[46px] sm:leading-[58px] lg:leading-[72px]"
           >
             My Favorite Books
           </h2>
@@ -89,8 +89,8 @@ export default function FavoriteBooks() {
         </div>
 
         {/* Books Accordion Container */}
-        <div className="w-full overflow-x-auto no-scrollbar py-4 px-2 select-none flex justify-start lg:justify-center">
-          <div className="flex gap-[25px] items-center min-w-max mx-auto lg:mx-0 px-4 lg:px-0">
+        <div className="w-full overflow-x-auto no-scrollbar py-4 px-0 sm:px-2 select-none flex justify-start lg:justify-center">
+          <div className="flex gap-4 sm:gap-[25px] items-center min-w-max mx-auto lg:mx-0 px-0 sm:px-4 lg:px-0">
             {books.map((book, idx) => {
               const isExpanded = hoveredIndex === idx;
 
@@ -102,7 +102,7 @@ export default function FavoriteBooks() {
                   transition={springTransition}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onClick={() => setHoveredIndex(idx)}
-                  className="h-[390px] rounded-[16px] overflow-hidden relative shrink-0 cursor-pointer"
+                  className="h-[340px] sm:h-[390px] rounded-[16px] overflow-hidden relative shrink-0 cursor-pointer"
                   style={{
                     backgroundColor: book.spineBg,
                     width: isExpanded ? 260 : 90 // Instantly sets width during SSR and first render
@@ -125,7 +125,7 @@ export default function FavoriteBooks() {
                         className="absolute inset-0 flex flex-col items-center justify-center"
                         style={{ backgroundColor: book.spineInnerBg }}
                       >
-                        <div className="absolute flex h-[345px] items-center justify-center w-[24px]">
+                        <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                           <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                             <span 
                               className="font-semibold text-[20px] leading-[28px] uppercase tracking-wide"
@@ -138,7 +138,7 @@ export default function FavoriteBooks() {
                       </div>
                     ) : (
                       /* Standard spine vertical text */
-                      <div className="absolute flex h-[345px] items-center justify-center w-[24px]">
+                      <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                         <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                           <span 
                             className="font-semibold text-[20px] leading-[28px] uppercase tracking-wide"
@@ -165,6 +165,8 @@ export default function FavoriteBooks() {
                       src={book.cover} 
                       alt={book.title} 
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </motion.div>
                 </motion.div>

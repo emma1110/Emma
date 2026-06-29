@@ -1,9 +1,54 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import logoData from "../hero/logo.json";
 import Link from "next/link";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+function MoonIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354Z" />
+    </svg>
+  );
+}
+
+function SunIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none" />
+      <line x1="12" y1="1.5" x2="12" y2="4" />
+      <line x1="12" y1="20" x2="12" y2="22.5" />
+      <line x1="4.2" y1="4.2" x2="5.9" y2="5.9" />
+      <line x1="18.1" y1="18.1" x2="19.8" y2="19.8" />
+      <line x1="1.5" y1="12" x2="4" y2="12" />
+      <line x1="20" y1="12" x2="22.5" y2="12" />
+      <line x1="4.2" y1="19.8" x2="5.9" y2="18.1" />
+      <line x1="18.1" y1="5.9" x2="19.8" y2="4.2" />
+    </svg>
+  );
+}
+
+function MenuIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 6h16" />
+      <path d="M4 12h16" />
+      <path d="M4 18h16" />
+    </svg>
+  );
+}
+
+function XIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  );
+}
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
@@ -128,13 +173,13 @@ export default function Navbar() {
         borderBottom: scrolled ? "1px solid var(--navbar-border-scrolled)" : "1px solid transparent",
       }}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-[80px] py-3">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[80px] py-3">
         <nav className="flex w-full shrink-0 items-center justify-between">
           {/* Logo */}
           <Link href="/">
             <div 
               className="flex items-center shrink-0 select-none relative w-[80px] h-[40px] cursor-pointer"
-              style={{ filter: "var(--logo-filter)", transition: "filter 0.45s ease" }}
+              style={{ filter: "var(--logo-filter)", transition: "filter 0.16s ease" }}
             >
               <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 w-[120px] h-[120px] flex items-center justify-center pointer-events-none">
                 {isMounted && (
@@ -151,7 +196,7 @@ export default function Navbar() {
           {/* Links — center black pill */}
           <div
             ref={navLinksRef}
-            className="navbar-links-container hidden md:flex shrink-0 font-medium"
+            className="navbar-links-container hidden lg:flex shrink-0 font-medium"
           >
             <span ref={pillRef} className="nav-pill" />
             <Link href="/" className="nav-link-item">Home</Link>
@@ -164,68 +209,38 @@ export default function Navbar() {
           <div className="flex items-center gap-4 flex-shrink-0 z-50">
             {/* Sliding Toggle Capsule for Desktop */}
             <button 
-              className="toggle hidden md:flex" 
+              className="toggle hidden lg:flex" 
               onClick={toggleTheme}
               aria-label="Toggle theme" 
               aria-pressed={theme === "light"}
             >
               <span className="knob">
                 <span className="icon moon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354Z"/>
-                  </svg>
+                  <MoonIcon className="w-full h-full" />
                 </span>
                 <span className="icon sun">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                    <circle cx="12" cy="12" r="4.2" fill="currentColor" stroke="none"/>
-                    <line x1="12" y1="1.5" x2="12" y2="4"/>
-                    <line x1="12" y1="20" x2="12" y2="22.5"/>
-                    <line x1="4.2" y1="4.2" x2="5.9" y2="5.9"/>
-                    <line x1="18.1" y1="18.1" x2="19.8" y2="19.8"/>
-                    <line x1="1.5" y1="12" x2="4" y2="12"/>
-                    <line x1="20" y1="12" x2="22.5" y2="12"/>
-                    <line x1="4.2" y1="19.8" x2="5.9" y2="18.1"/>
-                    <line x1="18.1" y1="5.9" x2="19.8" y2="4.2"/>
-                  </svg>
+                  <SunIcon className="w-full h-full" />
                 </span>
               </span>
             </button>
 
-            {/* Simple Theme Toggle Icon for Mobile */}
+            {/* Theme Toggle Icon for Phone and Tablet */}
             <button 
-              className="flex md:hidden items-center justify-center w-9 h-9 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
+              className="flex lg:hidden items-center justify-center w-10 h-10 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
               onClick={toggleTheme}
               aria-label="Toggle theme"
             >
-              {theme === "light" ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.354 15.354A9 9 0 0 1 8.646 3.646 9.003 9.003 0 1 0 20.354 15.354Z"/>
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              )}
+              {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
 
-            {/* Burger Menu Button on Mobile */}
+            {/* Burger Menu Button on Phone and Tablet */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex md:hidden flex-col gap-[5px] justify-center items-center w-9 h-9 rounded-full border border-[var(--footer-border)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
+              className="flex lg:hidden justify-center items-center w-10 h-10 rounded-full border border-[var(--footer-border)] text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
             >
-              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-              <span className={`w-4 h-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+              {menuOpen ? <XIcon /> : <MenuIcon />}
             </button>
           </div>
         </nav>
@@ -233,7 +248,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div 
-        className={`fixed inset-0 top-0 h-screen bg-[var(--bg-color)] z-40 flex flex-col pt-24 px-6 gap-6 transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 top-0 h-screen bg-[var(--bg-color)] z-40 flex flex-col pt-24 px-6 sm:px-8 gap-6 transition-all duration-300 lg:hidden ${
           menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
         }`}
         style={{
