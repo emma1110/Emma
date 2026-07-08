@@ -236,6 +236,38 @@ export default function TrustCoreWebPage() {
               <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)] mt-1">
                 Every section was designed to reduce hesitation before wallet creation.
               </p>
+              
+              {/* Strategy Mockups from Figma */}
+              <div className="w-full flex flex-row gap-4 sm:gap-6 items-start mt-6">
+                <div 
+                  className="overflow-hidden rounded-[12px] border flex-1"
+                  style={{ borderColor: "var(--color-border-default)", aspectRatio: "2880/8946" }}
+                >
+                  <img
+                    src="/images/Mini Apps.avif"
+                    alt="Mini Apps Mockup"
+                    className="w-full h-auto block"
+                    width="2880"
+                    height="8946"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div 
+                  className="overflow-hidden rounded-[12px] border flex-1"
+                  style={{ borderColor: "var(--color-border-default)", aspectRatio: "2880/8406" }}
+                >
+                  <img
+                    src="/images/Buy Crypto.avif"
+                    alt="Buy Crypto Mockup"
+                    className="w-full h-auto block"
+                    width="2880"
+                    height="8406"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Secondary Video Block */}
