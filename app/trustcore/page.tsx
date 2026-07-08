@@ -336,7 +336,6 @@ export default function TrustCorePage() {
                 className="w-full h-full object-cover"
                 src="/images/video1.webm"
                 poster="/images/trustcore banner.avif"
-                loop
                 muted={isMuted}
                 playsInline
                 autoPlay

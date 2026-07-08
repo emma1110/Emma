@@ -221,7 +221,6 @@ export default function TrustCoreWebPage() {
                 className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
                 src="/images/tclanding.webm"
                 poster="/images/cover.avif"
-                loop
                 muted
                 playsInline
                 preload="metadata"

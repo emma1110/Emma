@@ -220,7 +220,6 @@ export default function BitCorePage() {
                 className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
                 src="/images/bitcore2.webm"
                 poster="/images/bitcore.avif"
-                loop
                 muted
                 playsInline
                 preload="metadata"
