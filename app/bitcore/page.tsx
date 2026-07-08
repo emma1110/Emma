@@ -231,27 +231,6 @@ export default function BitCorePage() {
 
             <hr className="border-[var(--footer-border)] w-full" />
 
-            {/* Roadmap Phases Block */}
-            <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">ROADMAP PHASES</span>
-              <div 
-                className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden border mt-2"
-                style={{ borderColor: "var(--color-border-default)" }}
-              >
-                <img
-                  src="/images/phases.png"
-                  alt="Built in phases, designed to scale"
-                  className="w-full h-auto block"
-                  width="2480"
-                  height="1804"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-
-            <hr className="border-[var(--footer-border)] w-full" />
-
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
