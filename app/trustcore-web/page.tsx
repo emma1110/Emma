@@ -247,7 +247,6 @@ export default function TrustCoreWebPage() {
               <video
                 ref={videoRef}
                 className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
-                style={{ aspectRatio: "1600/920" }}
                 src="/images/tclanding.webm"
                 poster="/images/cover.avif"
                 loop
@@ -255,8 +254,6 @@ export default function TrustCoreWebPage() {
                 playsInline
                 autoPlay
                 preload="auto"
-                width={1600}
-                height={920}
               />
             </div>
             
