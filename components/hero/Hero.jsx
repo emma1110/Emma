@@ -41,8 +41,9 @@ export default function Hero() {
           <div className="flex flex-col items-start gap-[12px] w-full">
             {/* Tag pill */}
             <div
+              data-entrance
               className="flex items-center justify-center rounded-[var(--radius-full)] px-[var(--spacing-5)] py-1 transition-colors duration-450"
-              style={{ backgroundColor: "var(--color-surface-elevated)" }}
+              style={{ backgroundColor: "var(--color-surface-elevated)", "--entrance-delay": "80ms" }}
             >
               <p
                 className="font-medium text-sm leading-[20px]"
@@ -59,24 +60,32 @@ export default function Hero() {
 
             {/* Headline */}
             <h1
+              data-entrance
               className="w-full max-w-[12ch] sm:max-w-none"
               style={{
                 color: "var(--color-text-inverse)",
                 fontSize: "var(--font-display-xl-size)",
                 fontWeight: "var(--font-display-xl-weight)",
                 lineHeight: "var(--font-display-xl-line)",
-                letterSpacing: "var(--font-display-xl-tracking)"
+                letterSpacing: "var(--font-display-xl-tracking)",
+                "--entrance-delay": "150ms"
               }}
             >
-              I design <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>products</span> that <br className="hidden sm:inline" />
-              turn complexity into <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>clarity.</span>
+              <span className="line-reveal" style={{ "--entrance-delay": "150ms" }}>
+                <span>I design <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>products</span> that</span>
+              </span>
+              <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
+                <span>turn complexity into <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>clarity.</span></span>
+              </span>
             </h1>
 
             {/* Description */}
             <p
+              data-entrance
               className="w-full font-medium text-lg lg:text-[20px] leading-relaxed lg:leading-[30px]"
               style={{
                 color: "var(--color-text-secondary)",
+                "--entrance-delay": "300ms"
               }}
             >
               Senior Product Designer with 8+ years of experience
@@ -89,7 +98,9 @@ export default function Hero() {
           <button
             onClick={handleCopyEmail}
             className="copy-email-button"
-            style={{ fontSize: "16px", gap: "8px" }}
+            data-entrance
+            data-magnetic
+            style={{ fontSize: "16px", gap: "8px", "--entrance-delay": "410ms" }}
           >
             {/* Copy icon */}
             <svg
@@ -110,7 +121,7 @@ export default function Hero() {
         </div>
 
         {/* ---------- Hero Visual (ảnh người + 2 polaroid tách riêng) ---------- */}
-        <div className="w-full lg:w-[428px] flex justify-center lg:justify-end scale-[0.68] sm:scale-90 lg:scale-100 origin-center lg:origin-right my-[-92px] sm:my-[-36px] lg:my-0 shrink-0">
+        <div data-entrance className="w-full lg:w-[428px] flex justify-center lg:justify-end scale-[0.68] sm:scale-90 lg:scale-100 origin-center lg:origin-right my-[-92px] sm:my-[-36px] lg:my-0 shrink-0" style={{ "--entrance-delay": "260ms" }}>
           <HeroVisual />
         </div>
       </div>

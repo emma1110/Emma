@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 export default function FavoriteBooks() {
   const [hoveredIndex, setHoveredIndex] = useState(0);
@@ -55,12 +54,6 @@ export default function FavoriteBooks() {
     }
   ];
 
-  const springTransition = {
-    type: "spring",
-    stiffness: 300,
-    damping: 25
-  };
-
   return (
     <section 
       className="w-full flex flex-col items-center justify-center bg-[var(--bg-color)] transition-colors duration-450 overflow-hidden"
@@ -95,28 +88,23 @@ export default function FavoriteBooks() {
               const isExpanded = hoveredIndex === idx;
 
               return (
-                <motion.div
+                <div
                   key={idx}
-                  initial={false}
-                  animate={{ width: isExpanded ? 260 : 90 }}
-                  transition={springTransition}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onClick={() => setHoveredIndex(idx)}
-                  className="h-[340px] sm:h-[390px] rounded-[16px] overflow-hidden relative shrink-0 cursor-pointer"
+                  className="h-[340px] sm:h-[390px] rounded-[16px] overflow-hidden relative shrink-0 cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
                   style={{
                     backgroundColor: book.spineBg,
-                    width: isExpanded ? 260 : 90 // Instantly sets width during SSR and first render
+                    width: isExpanded ? "260px" : "90px"
                   }}
                 >
                   {/* Spine Layout (Visible when collapsed) */}
-                  <motion.div
-                    initial={false}
-                    animate={{ opacity: isExpanded ? 0 : 1 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute inset-0 w-[90px] h-full flex flex-col items-center justify-center"
+                  <div
+                    className={`absolute inset-0 w-[90px] h-full flex flex-col items-center justify-center transition-opacity duration-200 ${
+                      isExpanded ? "opacity-0 pointer-events-none" : "opacity-100"
+                    }`}
                     style={{
-                      backgroundColor: book.style === "steal" ? "transparent" : book.spineBg,
-                      opacity: isExpanded ? 0 : 1 // Instantly sets opacity during SSR
+                      backgroundColor: book.style === "steal" ? "transparent" : book.spineBg
                     }}
                   >
                     {book.style === "steal" ? (
@@ -149,27 +137,25 @@ export default function FavoriteBooks() {
                         </div>
                       </div>
                     )}
-                  </motion.div>
+                  </div>
 
                   {/* Cover Image Layout (Visible when expanded) */}
-                  <motion.div
-                    initial={false}
-                    animate={{ opacity: isExpanded ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0 w-[260px] h-full pointer-events-none"
-                    style={{
-                      opacity: isExpanded ? 1 : 0 // Instantly sets opacity during SSR
-                    }}
+                  <div
+                    className={`absolute inset-0 w-[260px] h-full pointer-events-none transition-opacity duration-300 ${
+                      isExpanded ? "opacity-100" : "opacity-0"
+                    }`}
                   >
                     <img 
                       src={book.cover} 
                       alt={book.title} 
                       className="w-full h-full object-cover"
+                      width="260"
+                      height="390"
                       loading="lazy"
                       decoding="async"
                     />
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
               );
             })}
           </div>

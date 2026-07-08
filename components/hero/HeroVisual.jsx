@@ -18,7 +18,7 @@ export default function HeroVisual() {
 
       {/* 2. Polaroid 1: "Be Yourself" — nằm dưới-trái, đè lên card */}
       <PolaroidSticker
-        src="/images/yourself.png"
+        src="/images/yourself.avif"
         alt="Sticker minh hoạ chữ 'Be Yourself'"
         className="left-[26px] top-[52px]"
         baseRotation={-6}
@@ -27,7 +27,7 @@ export default function HeroVisual() {
 
       {/* 3. Polaroid 2: "You are the Artist of your own Life" — nằm trên-phải, đè lên card */}
       <PolaroidSticker
-        src="/images/artist.png"
+        src="/images/artist.avif"
         alt="Sticker minh hoạ chữ 'You are the Artist of your own Life'"
         className="left-[235px] top-0"
         baseRotation={6}
@@ -37,9 +37,14 @@ export default function HeroVisual() {
       {/* 4. Ảnh chính: người + laptop (đứng trước cùng, đè lên cả hai sticker) */}
       <div className="absolute left-0 top-[128px] h-[573px] w-[403px]">
         <img
-          src="/images/emma.png"
+          src="/images/emma.avif"
           alt="Emma làm việc với laptop, ngồi trên ghế"
           className="size-full object-cover pointer-events-none"
+          width="403"
+          height="573"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           draggable={false}
         />
       </div>

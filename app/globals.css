@@ -45,6 +45,7 @@
   --nav-btn-border: transparent;
 
   --footer-border: rgba(0, 0, 0, 0.08);
+  --color-border-default: #e5e5e5;
   --headline-accent: #0020FF;
 }
 
@@ -86,6 +87,7 @@ html[data-theme="dark"] {
   --nav-btn-border: transparent;
 
   --footer-border: rgba(255, 255, 255, 0.08);
+  --color-border-default: #262626;
   --headline-accent: #ffffff;
 }
 
@@ -118,6 +120,118 @@ button {
   border: none;
   background: none;
   font: inherit;
+}
+
+[data-entrance] {
+  animation: entrance-rise 640ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--entrance-delay, 0ms);
+  transform: translate3d(0, 12px, 0);
+  opacity: 0.001;
+  will-change: transform, opacity;
+}
+
+[data-reveal] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.line-reveal {
+  display: block;
+  overflow: hidden;
+}
+
+.line-reveal > span {
+  display: block;
+  animation: line-rise 680ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--entrance-delay, 0ms);
+}
+
+[data-magnetic] {
+  --magnet-x: 0px;
+  --magnet-y: 0px;
+  transform: translate3d(var(--magnet-x), var(--magnet-y), 0);
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+  will-change: transform;
+}
+
+[data-magnetic]:hover {
+  transform: translate3d(var(--magnet-x), var(--magnet-y), 0) scale(1.02);
+}
+
+.motion-card {
+  --tilt-rx: 0deg;
+  --tilt-ry: 0deg;
+  transform: perspective(1200px) rotateX(var(--tilt-rx)) rotateY(var(--tilt-ry)) translate3d(0, 0, 0);
+  transition:
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 280ms ease,
+    border-color 220ms ease,
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.motion-card:hover {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+}
+
+.soft-link {
+  position: relative;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.soft-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.soft-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes entrance-rise {
+  0% {
+    opacity: 0.001;
+    transform: translate3d(0, 14px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes line-rise {
+  0% {
+    opacity: 0.001;
+    transform: translate3d(0, 105%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /* --- Magnetic Pill Nav hover effect styles --- */
@@ -182,11 +296,12 @@ button {
   text-decoration: none;
   border: 1px solid var(--nav-btn-border);
   cursor: pointer;
-  transition: transform 0.18s ease, opacity 0.18s ease, background-color 0.16s ease, color 0.16s ease;
+  transition: transform 0.18s ease, opacity 0.18s ease, background-color 0.16s ease, color 0.16s ease, box-shadow 0.18s ease;
 }
 
 .cta-button:hover {
   opacity: 0.85;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .cta-button:active {
@@ -205,12 +320,13 @@ button {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.18s ease, background-color 0.16s ease;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease, background-color 0.16s ease, box-shadow 0.18s ease;
 }
 
 .copy-email-button:hover {
   opacity: 0.9;
   background-color: #222222;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
 }
 
 .copy-email-button:active {
@@ -218,6 +334,22 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-entrance],
+  [data-reveal],
+  .line-reveal > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .nav-pill {
     transition: opacity 0.15s ease;
   }
@@ -317,11 +449,8 @@ html:not([data-theme="light"]) .icon.moon { opacity: 1; transform: rotate(0deg) 
 html[data-theme="light"] .icon.sun  { opacity: 1; transform: rotate(0deg) scale(1); }
 html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
 
-/* Optimize Lottie animations with base64 images by forcing GPU acceleration */
-.lottie-container svg image,
-.lottie-container svg g,
-.lottie-container svg path {
+/* Optimize Lottie animations by promoting only the root SVG node to GPU composition */
+.lottie-container svg {
   transform: translate3d(0, 0, 0);
-  will-change: transform;
   backface-visibility: hidden;
 }

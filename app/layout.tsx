@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Caslon_Text } from "next/font/google";
+import MotionRuntime from "../components/motion/MotionRuntime";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,6 +35,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} ${libreCaslonText.variable}`}>
+        <MotionRuntime />
         {children}
       </body>
     </html>

@@ -14,6 +14,7 @@ export default function Projects() {
     >
       {/* Section Header */}
       <h2
+        data-reveal
         className="w-full text-left"
         style={{
           color: "var(--color-text-inverse, black)",

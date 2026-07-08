@@ -2,11 +2,11 @@ import React from "react";
 
 export default function CryptoHeroCard() {
   return (
-    <div className="relative w-full overflow-hidden rounded-[24px] bg-[#171717] transition-all duration-500 ease-out hover:scale-[1.005] cursor-pointer flex flex-col justify-between pt-[96px] sm:pt-[110px] min-h-[500px] sm:min-h-[540px] lg:h-[568px]">
+    <div className="motion-card relative w-full overflow-hidden rounded-[24px] bg-[#171717] cursor-pointer flex flex-col justify-between pt-[96px] sm:pt-[110px] min-h-[500px] sm:min-h-[540px] lg:h-[568px]" data-reveal data-tilt style={{ "--reveal-delay": "140ms" }}>
       {/* Logo · CASE STUDY */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-[20px] py-5 sm:py-[24px] z-10">
         <div className="bg-[rgba(255,255,255,0.9)] flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.25)] w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
-          <img src="/images/cryptohero.svg" alt="CryptoHero" className="w-full h-full object-contain" />
+          <img src="/images/cryptohero.svg" alt="CryptoHero" className="w-full h-full object-contain" width="62" height="62" />
         </div>
         <p className="font-semibold text-[14px] sm:text-[18px] leading-[22px] sm:leading-[26px] text-white">
           CASE STUDY
@@ -37,6 +37,8 @@ export default function CryptoHeroCard() {
             src="/images/cryptohero.avif"
             alt="CryptoHero"
             className="w-full h-full object-cover object-top"
+            width="490"
+            height="300"
             loading="lazy"
             decoding="async"
           />

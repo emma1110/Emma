@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function HowIUseAI() {
   const cards = [
@@ -43,7 +42,7 @@ export default function HowIUseAI() {
       <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
         
         {/* Title and Subtitle */}
-        <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center">
+        <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center" data-reveal>
           <h2 
             className="w-full font-bold"
             style={{ 
@@ -69,16 +68,19 @@ export default function HowIUseAI() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1280px]">
+        <div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[1280px]"
+        >
           {cards.map((card, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="flex flex-col gap-5 sm:gap-6 items-start p-5 sm:p-6 rounded-[20px] sm:rounded-[24px] transition-all duration-450 w-full"
-              style={{ backgroundColor: "var(--color-surface-elevated)" }}
+              data-reveal
+              data-tilt
+              className="motion-card flex flex-col gap-5 sm:gap-6 items-start p-5 sm:p-6 rounded-[20px] sm:rounded-[24px] w-full"
+              style={{ 
+                backgroundColor: "var(--color-surface-elevated)",
+                "--reveal-delay": `${idx * 80}ms`
+              }}
             >
               {/* Icon Container */}
               <div 
@@ -114,7 +116,7 @@ export default function HowIUseAI() {
                   {card.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

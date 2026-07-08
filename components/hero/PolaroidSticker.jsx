@@ -19,6 +19,8 @@
  *  - hoverRotation: độ nghiêng khi hover (mặc định giảm góc nghiêng, tạo cảm giác "đứng thẳng lại")
  *  - className: cho phép truyền thêm vị trí (absolute, left/top...) từ component cha
  */
+import { useState } from "react";
+
 export default function PolaroidSticker({
   src,
   alt,
@@ -26,24 +28,29 @@ export default function PolaroidSticker({
   hoverRotation = 0,
   className = "",
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
-      className={`group absolute size-[168px] rounded-[var(--radius-md)] bg-white p-[6.5px] shadow-[0px_4px_4px_0px_rgba(176,176,176,0.25)] transition-all duration-300 ease-out will-change-transform hover:-translate-y-1.5 hover:scale-[1.04] hover:shadow-[0px_10px_18px_0px_rgba(176,176,176,0.35)] ${className}`}
+      className={`absolute size-[168px] rounded-[var(--radius-md)] bg-white p-[6.5px] transition-all duration-300 ease-out will-change-transform ${className}`}
       style={{
-        transform: `rotate(${baseRotation}deg)`,
+        transform: `rotate(${isHovered ? hoverRotation : baseRotation}deg) ${isHovered ? "translateY(-6px) scale(1.04)" : "translateY(0) scale(1)"}`,
+        boxShadow: isHovered
+          ? "0px 10px 18px 0px rgba(176,176,176,0.35)"
+          : "0px 4px 4px 0px rgba(176,176,176,0.25)",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = `rotate(${hoverRotation}deg)`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = `rotate(${baseRotation}deg)`;
-      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="size-full overflow-hidden rounded-[var(--radius-sm)]">
         <img
           src={src}
           alt={alt}
           className="size-full object-cover pointer-events-none"
+          width="155"
+          height="155"
+          loading="eager"
+          decoding="async"
           draggable={false}
         />
       </div>

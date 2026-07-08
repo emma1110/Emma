@@ -53,6 +53,7 @@ function XIcon({ className = "w-5 h-5" }) {
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinksRef = useRef(null);
@@ -70,12 +71,25 @@ export default function Navbar() {
     const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
     setTheme(activeTheme);
     
+    let scrollTimeout = null;
+    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      if (!scrollTimeout) {
+        scrollTimeout = requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          setScrolled(currentScrollY > 10);
+          setHidden(currentScrollY > lastScrollY && currentScrollY > 96 && !menuOpen);
+          lastScrollY = currentScrollY;
+          scrollTimeout = null;
+        });
+      }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+    };
+  }, [menuOpen]);
 
   // Prevent page scroll when mobile menu is active
   useEffect(() => {
@@ -149,10 +163,16 @@ export default function Navbar() {
 
     navLinks.addEventListener("mouseleave", handleMouseLeave);
 
+    let resizeTimeout = null;
     const handleResize = () => {
-      movePillTo(activeLink, true);
+      if (!resizeTimeout) {
+        resizeTimeout = setTimeout(() => {
+          movePillTo(activeLink, true);
+          resizeTimeout = null;
+        }, 100);
+      }
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
 
     return () => {
       links.forEach((link) => {
@@ -160,17 +180,20 @@ export default function Navbar() {
       });
       navLinks.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", handleResize);
+      if (resizeTimeout) clearTimeout(resizeTimeout);
     };
   }, [isMounted]);
 
   return (
     <div
-      className="sticky top-0 z-50 w-full transition-all duration-300"
+      className="sticky top-0 z-50 w-full transition-all duration-300 will-change-transform"
       style={{
         backgroundColor: scrolled ? "var(--navbar-glass-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         borderBottom: scrolled ? "1px solid var(--navbar-border-scrolled)" : "1px solid transparent",
+        transform: hidden ? "translate3d(0, -100%, 0)" : "translate3d(0, 0, 0)",
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[80px] py-3">
@@ -213,6 +236,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               aria-label="Toggle theme" 
               aria-pressed={theme === "light"}
+              data-magnetic
             >
               <span className="knob">
                 <span className="icon moon">
@@ -229,6 +253,7 @@ export default function Navbar() {
               className="flex lg:hidden items-center justify-center w-10 h-10 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
               onClick={toggleTheme}
               aria-label="Toggle theme"
+              data-magnetic
             >
               {theme === "light" ? <MoonIcon /> : <SunIcon />}
             </button>
@@ -239,6 +264,7 @@ export default function Navbar() {
               className="flex lg:hidden justify-center items-center w-10 h-10 rounded-full border border-[var(--footer-border)] text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
+              data-magnetic
             >
               {menuOpen ? <XIcon /> : <MenuIcon />}
             </button>
@@ -256,10 +282,10 @@ export default function Navbar() {
         }}
       >
         <div className="flex flex-col gap-6 text-xl font-medium pt-8">
-          <Link href="/" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Home</Link>
-          <Link href="/#project" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Project</Link>
-          <Link href="/#about" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">About</Link>
-          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Contact</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Home</Link>
+          <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Project</Link>
+          <Link href="/#about" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">About</Link>
+          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Contact</Link>
         </div>
       </div>
     </div>

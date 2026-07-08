@@ -152,6 +152,18 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
   );
 }
 
+const SECTIONS = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'problem', label: 'The Challenge' },
+  { id: 'discovery', label: 'Research' },
+  { id: 'strategy', label: 'Key Insight' },
+  { id: 'opportunity', label: 'Design Opportunity' },
+  { id: 'design-principles', label: 'Design Principles' },
+  { id: 'design-execution', label: 'Design Execution' },
+  { id: 'final-outcome', label: 'Final Outcome' },
+  { id: 'learn-more', label: 'Learn More' }
+];
+
 export default function TrustCorePage() {
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -161,24 +173,12 @@ export default function TrustCorePage() {
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [indicatorHeight, setIndicatorHeight] = useState(0);
 
-  const sections = [
-    { id: 'overview', label: 'Overview' },
-    { id: 'problem', label: 'The Challenge' },
-    { id: 'discovery', label: 'Research' },
-    { id: 'strategy', label: 'Key Insight' },
-    { id: 'opportunity', label: 'Design Opportunity' },
-    { id: 'design-principles', label: 'Design Principles' },
-    { id: 'design-execution', label: 'Design Execution' },
-    { id: 'final-outcome', label: 'Final Outcome' },
-    { id: 'learn-more', label: 'Learn More' }
-  ];
-
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play();
+        videoRef.current.play().catch(() => {});
       }
       setIsPlaying(!isPlaying);
     }
@@ -197,26 +197,35 @@ export default function TrustCorePage() {
   };
 
   useEffect(() => {
-    const sectionIds = sections.map(s => s.id);
+    let scrollTimeout: any = null;
+    const sectionIds = SECTIONS.map(s => s.id);
     
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 160;
+      if (!scrollTimeout) {
+        scrollTimeout = requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY + 160;
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el) {
-          if (scrollPosition >= el.offsetTop) {
-            setActiveSection(sectionIds[i]);
-            break;
+          for (let i = sectionIds.length - 1; i >= 0; i--) {
+            const el = document.getElementById(sectionIds[i]);
+            if (el) {
+              if (scrollPosition >= el.offsetTop) {
+                setActiveSection(sectionIds[i]);
+                break;
+              }
+            }
           }
-        }
+          scrollTimeout = null;
+        });
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+    };
   }, []);
 
   useEffect(() => {
@@ -228,6 +237,24 @@ export default function TrustCorePage() {
       setIndicatorHeight(markerHeight);
     }
   }, [activeSection]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (isPlaying) video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [isPlaying]);
 
   return (
     <main className="w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
@@ -249,7 +276,7 @@ export default function TrustCorePage() {
               />
             </div>
              <ul className="flex flex-col gap-[6px] relative w-full">
-               {sections.map((sec) => (
+               {SECTIONS.map((sec) => (
                  <li key={sec.id}>
                    <a
                      id={`nav-link-${sec.id}`}
@@ -266,16 +293,16 @@ export default function TrustCorePage() {
                  </li>
                ))}
                
-               {/* Back to Home Link */}
+               {/* Next Project Link */}
                <li className="mt-[12px]">
                  <a
-                   href="/"
+                   href="/trustcore-web"
                    className="text-[12px] font-medium flex items-center gap-[6px] py-[3px] leading-[18px] tracking-[0.1px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
                  >
+                   <span>Next Project</span>
                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                    </svg>
-                   <span>Back to home</span>
                  </a>
                </li>
              </ul>
@@ -287,7 +314,7 @@ export default function TrustCorePage() {
           
           {/* Hero: Label + Heading + Video + Metadata */}
           <section id="overview" className="flex flex-col gap-[24px] scroll-mt-28">
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
               <div className="flex items-center gap-2 text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">
                 <span>TRUSTCORE</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
@@ -303,11 +330,12 @@ export default function TrustCorePage() {
             </div>
 
             {/* Video Player */}
-            <div className="w-full aspect-video sm:aspect-[21/9] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-neutral-900 relative group">
+            <div className="w-full aspect-video sm:aspect-[21/9] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-neutral-900 relative group" data-entrance style={{ "--entrance-delay": "220ms" } as React.CSSProperties}>
               <video 
                 ref={videoRef}
                 className="w-full h-full object-cover"
                 src="/images/video1.webm"
+                poster="/images/trustcore banner.avif"
                 loop
                 muted={isMuted}
                 playsInline
@@ -320,6 +348,7 @@ export default function TrustCorePage() {
                   onClick={togglePlay}
                   className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all"
                   aria-label={isPlaying ? "Pause video" : "Play video"}
+                  data-magnetic
                 >
                   {isPlaying ? (
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -335,6 +364,7 @@ export default function TrustCorePage() {
                   onClick={() => setIsMuted(!isMuted)}
                   className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all"
                   aria-label={isMuted ? "Unmute video" : "Mute video"}
+                  data-magnetic
                 >
                   {isMuted ? (
                     <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
@@ -350,7 +380,7 @@ export default function TrustCorePage() {
             </div>
 
             {/* Metadata Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-4 sm:pt-[32px] font-medium text-[16px] text-black">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-4 sm:pt-[32px] font-medium text-[16px] text-black" data-reveal>
               <div className="flex flex-col gap-1">
                 <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">ROLE</span>
                 <span className="text-[var(--color-text-inverse)]">Product Designer</span>
@@ -369,7 +399,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Overview columns (The Challenge / What I Did) */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-[56px] w-full">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-[56px] w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
               <div className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-[12px]">
@@ -388,7 +418,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Problem Statement Section */}
-          <section id="problem" className="flex flex-col gap-[8px] scroll-mt-28 w-full">
+          <section id="problem" className="flex flex-col gap-[8px] scroll-mt-28 w-full" data-reveal>
             <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">THE CHALLENGE</span>
             <div className="flex flex-col gap-[8px] w-full">
               <div className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-1">
@@ -404,7 +434,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Research & Discovery Section */}
-          <section id="discovery" className="flex flex-col gap-[32px] scroll-mt-28 w-full">
+          <section id="discovery" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">RESEARCH</span>
               <h2 className="text-[22px] sm:text-[24px] font-semibold leading-[30px] sm:leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
@@ -477,7 +507,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* New Strategy Section */}
-          <section id="strategy" className="flex flex-col gap-[32px] scroll-mt-28 w-full">
+          <section id="strategy" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">KEY INSIGHT</span>
               <h2 className="text-[24px] font-semibold leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
@@ -546,6 +576,8 @@ export default function TrustCorePage() {
                         src="/images/1home.avif" 
                         alt="Step 1 Account Home" 
                         className="w-full h-full object-contain pointer-events-none" 
+                        width="180"
+                        height="103"
                         loading="lazy"
                         decoding="async"
                         draggable={false}
@@ -562,6 +594,8 @@ export default function TrustCorePage() {
                         src="/images/2.manage.avif" 
                         alt="Step 2 Manage Wallet" 
                         className="w-full h-full object-contain pointer-events-none" 
+                        width="180"
+                        height="103"
                         loading="lazy"
                         decoding="async"
                         draggable={false}
@@ -578,6 +612,8 @@ export default function TrustCorePage() {
                         src="/images/3wallet.avif" 
                         alt="Step 3 Wallet & Account" 
                         className="w-full h-full object-contain pointer-events-none" 
+                        width="180"
+                        height="103"
                         loading="lazy"
                         decoding="async"
                         draggable={false}
@@ -594,6 +630,8 @@ export default function TrustCorePage() {
                         src="/images/4wallettype.avif" 
                         alt="Step 4 Wallet Type" 
                         className="w-full h-full object-contain pointer-events-none" 
+                        width="180"
+                        height="103"
                         loading="lazy"
                         decoding="async"
                         draggable={false}
@@ -610,6 +648,8 @@ export default function TrustCorePage() {
                         src="/images/5create.avif" 
                         alt="Step 5 Create or Import" 
                         className="w-full h-full object-contain pointer-events-none" 
+                        width="180"
+                        height="103"
                         loading="lazy"
                         decoding="async"
                         draggable={false}
@@ -637,7 +677,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Design Execution / Principles Section */}
-          <section id="design-principles" className="flex flex-col gap-[56px] w-full scroll-mt-28">
+          <section id="design-principles" className="flex flex-col gap-[56px] w-full scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[16px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">DESIGN PRINCIPLES</span>
               
@@ -686,7 +726,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Design Execution Section */}
-          <section id="design-execution" className="flex flex-col gap-[40px] w-full scroll-mt-28">
+          <section id="design-execution" className="flex flex-col gap-[40px] w-full scroll-mt-28" data-reveal>
             {/* Spacing rows of illustrations */}
             <div className="flex flex-col gap-[40px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase mb-[-16px]">DESIGN EXECUTION</span>
@@ -735,7 +775,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Takeaways Section */}
-          <section id="final-outcome" className="flex flex-col gap-[48px] w-full scroll-mt-28">
+          <section id="final-outcome" className="flex flex-col gap-[48px] w-full scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
               <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
@@ -753,12 +793,14 @@ export default function TrustCorePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] w-full mt-2">
                 {/* Card 1 */}
-                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-all duration-300">
+                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-shadow duration-300">
                   <div className="w-full rounded-[16px] overflow-hidden bg-[var(--card-bg)] flex items-center justify-center">
                     <img
                       src="/images/cognitive.avif"
                       alt="Cognitive effort is"
                       className="w-full h-auto"
+                      width="500"
+                      height="296"
                       loading="lazy"
                       decoding="async"
                     />
@@ -774,12 +816,14 @@ export default function TrustCorePage() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-all duration-300">
+                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-shadow duration-300">
                   <div className="w-full rounded-[16px] overflow-hidden bg-[var(--card-bg)] flex items-center justify-center">
                     <img
                       src="/images/tech.avif"
                       alt="Technology isn't what overwhelms users"
                       className="w-full h-auto"
+                      width="500"
+                      height="296"
                       loading="lazy"
                       decoding="async"
                     />
@@ -795,12 +839,14 @@ export default function TrustCorePage() {
                 </div>
 
                 {/* Card 3 */}
-                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-all duration-300">
+                <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[24px] p-[24px] flex flex-col gap-[20px] hover:shadow-md transition-shadow duration-300">
                   <div className="w-full rounded-[16px] overflow-hidden bg-[var(--card-bg)] flex items-center justify-center">
                     <img
                       src="/images/goodux.avif"
                       alt="Good UX teaches before it asks"
                       className="w-full h-auto"
+                      width="500"
+                      height="296"
                       loading="lazy"
                       decoding="async"
                     />
@@ -821,7 +867,7 @@ export default function TrustCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Learn More / Other Screens */}
-          <section id="learn-more" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28">
+          <section id="learn-more" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">LEARN MORE</span>
               <h3 className="text-[24px] font-semibold leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
@@ -831,15 +877,15 @@ export default function TrustCorePage() {
             <div className="w-full bg-[var(--card-bg)] rounded-[32px] p-4 md:p-8 flex flex-col items-center justify-center gap-10">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
                 {/* Row 1 */}
-                <img src="/images/Home.avif" alt="Account Home" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/buy.avif" alt="Select Token" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/chart.avif" alt="Ethereum Graph" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/setting.avif" alt="Settings" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
+                <img src="/images/Home.avif" alt="Account Home" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/buy.avif" alt="Select Token" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/chart.avif" alt="Ethereum Graph" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/setting.avif" alt="Settings" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
                 {/* Row 2 */}
-                <img src="/images/MiniApps.avif" alt="Mini Apps" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/DApps.avif" alt="DApps Search" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/Invest.avif" alt="Events" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
-                <img src="/images/Multisig wallet.avif" alt="Event Details" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" loading="lazy" decoding="async" />
+                <img src="/images/MiniApps.avif" alt="Mini Apps" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/DApps.avif" alt="DApps Search" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/Invest.avif" alt="Events" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
+                <img src="/images/Multisig wallet.avif" alt="Event Details" className="w-full h-auto rounded-[16px] shadow-sm hover:scale-[1.04] transition-transform duration-300" width="348" height="754" loading="lazy" decoding="async" />
               </div>
             </div>
           </section>
