@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/nav/Navbar';
@@ -9,7 +8,7 @@ const SECTIONS = [
   { id: 'final-outcome', label: 'Final Outcome' }
 ];
 
-export default function TrustCoreWebPage() {
+export default function BitCorePage() {
   const [activeSection, setActiveSection] = useState('overview');
   const [indicatorOffset, setIndicatorOffset] = useState(0);
   const [indicatorHeight, setIndicatorHeight] = useState(0);
@@ -131,7 +130,7 @@ export default function TrustCoreWebPage() {
               {/* Next Project Link */}
               <li className="mt-[12px]">
                 <a
-                  href="/bitcore"
+                  href="/trustcore"
                   className="text-[12px] font-medium flex items-center gap-[6px] py-[3px] leading-[18px] tracking-[0.1px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
                 >
                   <span>Next Project</span>
@@ -153,26 +152,26 @@ export default function TrustCoreWebPage() {
             {/* Header / Titles */}
             <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
               <div className="flex items-center gap-2 text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">
-                <span>TRUSTCORE</span>
+                <span>BITCORE</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
                 <span>2026</span>
               </div>
               
               <h1 style={{ fontFamily: 'var(--font-libre-caslon)' }} className="text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.2] font-bold text-[var(--color-text-inverse)] tracking-normal w-full">
-                TrustCore Wallet - Landing Page Design
+                Bitcore - Landing Page Design
               </h1>
               
               <p className="text-[16px] leading-[24px] text-[var(--color-text-secondary)]">
-                Designing a high-converting landing page for a Web3 wallet built around trust, clarity, and ownership.
+                Designing a landing page for a Layer 1 blockchain built around trust, clarity, and real user adoption.
               </p>
             </div>
 
-            {/* Primary Cover Image */}
+            {/* Primary Cover Image Banner */}
             <div className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden" data-entrance style={{ "--entrance-delay": "220ms" } as React.CSSProperties}>
               <img
                 className="w-full h-auto block"
-                src="/images/cover.avif"
-                alt="TrustCore Web Case Study Cover"
+                src="/images/bannerbc.avif"
+                alt="BitCore Case Study Hero Banner"
                 width="1600"
                 height="920"
                 fetchPriority="high"
@@ -193,7 +192,7 @@ export default function TrustCoreWebPage() {
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">TOOLS</span>
-                <span className="text-[var(--color-text-inverse)]">Figma, Jitter, Illustrator, Photoshop</span>
+                <span className="text-[var(--color-text-inverse)]">Figma</span>
               </div>
             </div>
 
@@ -203,15 +202,15 @@ export default function TrustCoreWebPage() {
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
-                <li>Most crypto wallet landing pages fail before onboarding begins.</li>
-                <li>They overwhelm users with technical language, weak trust signals, and unclear product value. Users leave before understanding what the product does or whether it feels safe enough to trust.</li>
-                <li>TrustCore Wallet needed a landing page that could simplify complex ownership models while positioning the product as secure, premium, and beginner-friendly.</li>
+                <li>Most blockchain landing pages fail to communicate value beyond technology.</li>
+                <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand what the product actually solves. This creates friction for both new users and investors, especially when trust and product clarity are missing.</li>
+                <li>Bitcore needed a landing page that could position its Layer 1 ecosystem as accessible, credible, and built for real-world usage, not just speculation.</li>
                 <li>The goal was simple:</li>
-                <li>Build trust before asking for conversion.</li>
+                <li>Make blockchain feel understandable before asking users to participate.</li>
               </ul>
             </div>
 
-            {/* Secondary Video Block */}
+            {/* Overview Video Showcase */}
             <div 
               className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden mt-4 border"
               style={{ borderColor: "var(--color-border-default)" }}
@@ -220,8 +219,8 @@ export default function TrustCoreWebPage() {
               <video
                 ref={videoRef}
                 className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
-                src="/images/tclanding.webm"
-                poster="/images/cover.avif"
+                src="/images/bitcore.webm"
+                poster="/images/bitcore.avif"
                 loop
                 muted
                 playsInline
@@ -232,63 +231,57 @@ export default function TrustCoreWebPage() {
 
             <hr className="border-[var(--footer-border)] w-full" />
 
+            {/* Roadmap Phases Block */}
+            <div className="flex flex-col gap-[12px] w-full" data-reveal>
+              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">ROADMAP PHASES</span>
+              <div 
+                className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden border mt-2"
+                style={{ borderColor: "var(--color-border-default)" }}
+              >
+                <img
+                  src="/images/phases.png"
+                  alt="Built in phases, designed to scale"
+                  className="w-full h-auto block"
+                  width="2480"
+                  height="1804"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <hr className="border-[var(--footer-border)] w-full" />
+
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
               <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
                 The experience was designed around one principle:<br />
-                <strong className="text-[var(--color-text-inverse)]">Users convert when they feel safe.</strong>
+                <strong className="text-[var(--color-text-inverse)]">Users trust products they can clearly understand.</strong>
               </p>
               <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
-                Instead of leading with features, the landing page focused on progressive confidence-building through clear messaging, product understanding, security validation, and strong conversion flow.
+                Instead of leading with technical complexity, the landing page focused on product utility, onboarding simplicity, and visible trust signals.
               </p>
               <div className="flex flex-col gap-[8px]">
                 <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
                 <div className="flex flex-wrap items-center gap-2 text-[15px] font-medium text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
                   <span>Value Proposition</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
-                  <span>Trust</span>
+                  <span>Product Utility</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
-                  <span>Security</span>
+                  <span>Trust Signals</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
-                  <span>Action</span>
+                  <span>Ecosystem Understanding</span>
+                  <span className="text-[var(--color-text-secondary)]">→</span>
+                  <span>Conversion</span>
                 </div>
               </div>
               <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)] mt-1">
-                Every section was designed to reduce hesitation before wallet creation.
+                Each section was designed to help users understand not only what Bitcore is, but why it matters and how they can participate.
               </p>
-              
-              {/* Strategy Mockups from Figma */}
-              <div className="w-full flex flex-row gap-4 sm:gap-6 items-stretch mt-6">
-                <div 
-                  className="overflow-hidden rounded-[12px] border flex-1 flex flex-col"
-                  style={{ borderColor: "var(--color-border-default)" }}
-                >
-                  <img
-                    src="/images/Mini Apps.avif"
-                    alt="Mini Apps Mockup"
-                    className="w-full h-auto block flex-1 object-cover object-top"
-                    width="2880"
-                    height="8946"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div 
-                  className="overflow-hidden rounded-[12px] border flex-1 flex flex-col"
-                  style={{ borderColor: "var(--color-border-default)" }}
-                >
-                  <img
-                    src="/images/Buy Crypto.avif"
-                    alt="Buy Crypto Mockup"
-                    className="w-full h-auto block flex-1 object-cover object-top"
-                    width="2880"
-                    height="8406"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
+              <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+                The landing page needed to support both crypto-native users and first-time Web3 users without overwhelming either group.
+              </p>
             </div>
 
           </section>
@@ -299,9 +292,12 @@ export default function TrustCoreWebPage() {
           <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
-                Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
-              </p>
+              <ul className="list-disc pl-5 text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
+                <li>The final landing page improved product clarity, ecosystem understanding, and onboarding readiness.</li>
+                <li>More importantly, it positioned Bitcore as a usable blockchain ecosystem rather than just another Layer 1 project.</li>
+                <li>Because users do not join Web3 products when they understand every technical detail.</li>
+                <li>They join when the product feels trustworthy enough to start.</li>
+              </ul>
             </div>
           </section>
 

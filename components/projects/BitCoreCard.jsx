@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
 
 export default function BitCoreCard() {
   return (
-    <div className="motion-card relative w-full overflow-hidden rounded-[24px] bg-gradient-to-b from-[#ff5731] to-[#fea213] cursor-pointer flex flex-col lg:block min-h-[560px] lg:h-[576px]" data-reveal data-tilt>
+    <Link href="/bitcore" className="w-full block">
+      <div className="motion-card relative w-full overflow-hidden rounded-[24px] bg-gradient-to-b from-[#ff5731] to-[#fea213] cursor-pointer flex flex-col lg:block min-h-[560px] lg:h-[576px]" data-reveal data-tilt>
       {/* Logo · CASE STUDY */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-[20px] py-5 sm:py-[24px] z-10">
         <div className="bg-[rgba(255,255,255,0.9)] flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.25)] w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
@@ -43,5 +45,6 @@ export default function BitCoreCard() {
         />
       </div>
     </div>
+    </Link>
   );
 }
