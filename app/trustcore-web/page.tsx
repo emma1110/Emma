@@ -211,6 +211,27 @@ export default function TrustCoreWebPage() {
               </ul>
             </div>
 
+            {/* Secondary Video Block */}
+            <div 
+              className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden mt-4 border"
+              style={{ borderColor: "var(--color-border-default)" }}
+              data-reveal
+            >
+              <video
+                ref={videoRef}
+                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
+                src="/images/tclanding.webm"
+                poster="/images/cover.avif"
+                loop
+                muted
+                playsInline
+                autoPlay
+                preload="auto"
+              />
+            </div>
+
+            <hr className="border-[var(--footer-border)] w-full" />
+
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
@@ -270,25 +291,6 @@ export default function TrustCoreWebPage() {
               </div>
             </div>
 
-            {/* Secondary Video Block */}
-            <div 
-              className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden mt-4 border"
-              style={{ borderColor: "var(--color-border-default)" }}
-              data-reveal
-            >
-              <video
-                ref={videoRef}
-                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
-                src="/images/tclanding.webm"
-                poster="/images/cover.avif"
-                loop
-                muted
-                playsInline
-                autoPlay
-                preload="auto"
-              />
-            </div>
-            
           </section>
 
           <hr className="border-[var(--footer-border)] w-full" />
