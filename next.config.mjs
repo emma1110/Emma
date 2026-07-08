@@ -4,6 +4,17 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Videos: short cache so updates are picked up quickly
+        source: '/images/:path*.webm',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+      {
+        // Static images: long-term immutable cache for speed
         source: '/images/:path*',
         headers: [
           {

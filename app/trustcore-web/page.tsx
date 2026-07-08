@@ -73,16 +73,15 @@ export default function TrustCoreWebPage() {
     const video = videoRef.current;
     if (!video) return;
 
+    // Force the browser to load the latest video source
+    video.load();
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          if (video.paused) {
-            video.play().catch(() => {});
-          }
+          video.play().catch(() => {});
         } else {
-          if (!video.paused) {
-            video.pause();
-          }
+          video.pause();
         }
       },
       { threshold: 0.1 }
@@ -225,8 +224,7 @@ export default function TrustCoreWebPage() {
                 loop
                 muted
                 playsInline
-                autoPlay
-                preload="auto"
+                preload="metadata"
               />
             </div>
 

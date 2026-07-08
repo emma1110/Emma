@@ -340,6 +340,7 @@ export default function TrustCorePage() {
                 muted={isMuted}
                 playsInline
                 autoPlay
+                preload="metadata"
               />
               
               {/* Custom controls overlay */}
