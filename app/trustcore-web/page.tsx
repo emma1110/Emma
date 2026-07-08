@@ -259,15 +259,15 @@ export default function TrustCoreWebPage() {
               </p>
               
               {/* Strategy Mockups from Figma */}
-              <div className="w-full flex flex-row gap-4 sm:gap-6 items-start mt-6">
+              <div className="w-full flex flex-row gap-4 sm:gap-6 items-stretch mt-6">
                 <div 
-                  className="overflow-hidden rounded-[12px] border flex-1"
-                  style={{ borderColor: "var(--color-border-default)", aspectRatio: "2880/8946" }}
+                  className="overflow-hidden rounded-[12px] border flex-1 flex flex-col"
+                  style={{ borderColor: "var(--color-border-default)" }}
                 >
                   <img
                     src="/images/Mini Apps.avif"
                     alt="Mini Apps Mockup"
-                    className="w-full h-auto block"
+                    className="w-full h-auto block flex-1 object-cover object-top"
                     width="2880"
                     height="8946"
                     loading="lazy"
@@ -275,13 +275,13 @@ export default function TrustCoreWebPage() {
                   />
                 </div>
                 <div 
-                  className="overflow-hidden rounded-[12px] border flex-1"
-                  style={{ borderColor: "var(--color-border-default)", aspectRatio: "2880/8406" }}
+                  className="overflow-hidden rounded-[12px] border flex-1 flex flex-col"
+                  style={{ borderColor: "var(--color-border-default)" }}
                 >
                   <img
                     src="/images/Buy Crypto.avif"
                     alt="Buy Crypto Mockup"
-                    className="w-full h-auto block"
+                    className="w-full h-auto block flex-1 object-cover object-top"
                     width="2880"
                     height="8406"
                     loading="lazy"
