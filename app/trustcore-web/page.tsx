@@ -170,7 +170,7 @@ export default function TrustCoreWebPage() {
             <div className="w-full rounded-[20px] sm:rounded-[24px] overflow-hidden" data-entrance style={{ "--entrance-delay": "220ms" } as React.CSSProperties}>
               <img
                 className="w-full h-auto block"
-                src="/images/cover.avif"
+                src="/images/tchero.avif"
                 alt="TrustCore Web Case Study Cover"
                 width="1600"
                 height="920"
