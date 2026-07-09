@@ -8,13 +8,15 @@ import Footer from '../components/footer/Footer';
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450">
+    <main className="w-full min-h-screen transition-colors duration-450">
       <Navbar />
       <Hero />
-      <Projects />
-      <HowIUseAI />
-      <FavoriteBooks />
-      <Footer />
+      <div className="bg-[var(--bg-color)]">
+        <Projects />
+        <HowIUseAI />
+        <FavoriteBooks />
+        <Footer />
+      </div>
     </main>
   );
 }
