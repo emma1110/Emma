@@ -50,7 +50,7 @@ export default function Hero() {
 
         {/* ── Full-bleed background image ── */}
         <img
-          src="/images/cover-hero.avif"
+          src="/images/cover-hero2.avif"
           alt=""
           aria-hidden
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
