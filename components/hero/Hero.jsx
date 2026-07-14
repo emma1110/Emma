@@ -50,9 +50,11 @@ export default function Hero() {
           setDisplayText(currentWord.substring(0, displayText.length - 1));
         }, 50);
       } else {
-        // Fully deleted: transition to next word
-        setIsDeleting(false);
-        setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        // Fully deleted: pause for 400ms to clear ghost characters, then swap to the next word
+        timer = setTimeout(() => {
+          setIsDeleting(false);
+          setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+        }, 400);
       }
     }
 
@@ -148,9 +150,13 @@ export default function Hero() {
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap inline-block">
-                <span>that&nbsp;</span>
-                {/* Notion-style Typewriter Pill Container */}
-                <span className="typewriter-pill">
+                that{" "}
+                {/* Notion-style Typewriter Pill Container (Hugs content, animated dynamically) */}
+                <motion.span 
+                  layout
+                  className="typewriter-pill"
+                  transition={{ type: "spring", stiffness: 180, damping: 19 }}
+                >
                   <span
                     className="inline-block whitespace-nowrap"
                     style={{
@@ -164,8 +170,8 @@ export default function Hero() {
                     {/* Blinking typewriter cursor */}
                     <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
                   </span>
-                </span>
-                <span>&nbsp;technology.</span>
+                </motion.span>{" "}
+                technology.
               </span>
             </span>
           </h1>
