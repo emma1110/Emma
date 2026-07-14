@@ -31,32 +31,36 @@ export default function Hero() {
     let timer;
     const currentWord = words[wordIndex];
 
-    if (!isDeleting) {
-      // Typing: add one character after short delay
-      if (displayText !== currentWord) {
-        timer = setTimeout(() => {
+    const tick = () => {
+      if (!isDeleting) {
+        // Typing: add one character
+        if (displayText !== currentWord) {
           setDisplayText(currentWord.substring(0, displayText.length + 1));
-        }, 100);
+        } else {
+          // Word complete: pause for 2 seconds, then delete
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+          }, 2000);
+          return;
+        }
       } else {
-        // Fully typed: pause for 2 seconds, then transition to delete mode
-        timer = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2000);
-      }
-    } else {
-      // Deleting: remove one character after short delay
-      if (displayText !== "") {
-        timer = setTimeout(() => {
+        // Deleting: remove one character
+        if (displayText !== "") {
           setDisplayText(currentWord.substring(0, displayText.length - 1));
-        }, 50);
-      } else {
-        // Fully deleted: pause for 400ms to clear ghost characters, then swap to the next word
-        timer = setTimeout(() => {
-          setIsDeleting(false);
-          setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-        }, 400);
+        } else {
+          // Fully deleted: pause for 400ms, then swap to the next word
+          timer = setTimeout(() => {
+            setIsDeleting(false);
+            setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+          }, 400);
+          return;
+        }
       }
-    }
+    };
+
+    // Determine speed based on typing vs deleting state
+    const delay = isDeleting ? 50 : 100;
+    timer = setTimeout(tick, delay);
 
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, wordIndex]);
@@ -149,8 +153,8 @@ export default function Hero() {
               <span className="whitespace-nowrap">I design products</span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
-              <span className="whitespace-nowrap inline-block">
-                that{" "}
+              <span className="whitespace-nowrap inline-flex items-center justify-center gap-x-2 sm:gap-x-3">
+                <span>that</span>
                 {/* Notion-style Typewriter Pill Container (Hugs content, animated dynamically) */}
                 <motion.span 
                   layout
@@ -188,8 +192,8 @@ export default function Hero() {
                       <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
                     </span>
                   </span>
-                </motion.span>{" "}
-                technology.
+                </motion.span>
+                <span>technology.</span>
               </span>
             </span>
           </h1>
