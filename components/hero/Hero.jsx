@@ -23,47 +23,43 @@ export default function Hero() {
     "Refine",
     "Reimagine",
   ];
-  const [wordIndex, setWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let timer;
-    const currentWord = words[wordIndex];
+    let timerId;
+    let currentWordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    const tick = () => {
+    const loop = () => {
+      const word = words[currentWordIndex];
+
       if (!isDeleting) {
-        // Typing: add one character
-        if (displayText !== currentWord) {
-          setDisplayText(currentWord.substring(0, displayText.length + 1));
+        if (charIndex <= word.length) {
+          setDisplayText(word.slice(0, charIndex));
+          charIndex++;
+          timerId = setTimeout(loop, 90); // TYPE_SPEED = 90
         } else {
-          // Word complete: pause for 2 seconds, then delete
-          timer = setTimeout(() => {
-            setIsDeleting(true);
-          }, 2000);
-          return;
+          isDeleting = true;
+          timerId = setTimeout(loop, 1200); // HOLD_TIME = 1200
         }
       } else {
-        // Deleting: remove one character
-        if (displayText !== "") {
-          setDisplayText(currentWord.substring(0, displayText.length - 1));
+        if (charIndex > 0) {
+          charIndex--;
+          setDisplayText(word.slice(0, charIndex));
+          timerId = setTimeout(loop, 45); // DELETE_SPEED = 45
         } else {
-          // Fully deleted: pause for 400ms, then swap to the next word
-          timer = setTimeout(() => {
-            setIsDeleting(false);
-            setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-          }, 400);
-          return;
+          isDeleting = false;
+          currentWordIndex = (currentWordIndex + 1) % words.length;
+          timerId = setTimeout(loop, 300); // GAP_TIME = 300
         }
       }
     };
 
-    // Determine speed based on typing vs deleting state
-    const delay = isDeleting ? 50 : 100;
-    timer = setTimeout(tick, delay);
+    timerId = setTimeout(loop, 100);
 
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, wordIndex]);
+    return () => clearTimeout(timerId);
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("lananhnguyen.arena@gmail.com").then(() => {
@@ -155,15 +151,10 @@ export default function Hero() {
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap inline-flex items-center justify-center gap-x-2 sm:gap-x-3">
                 <span>that</span>
-                {/* Notion-style Typewriter Pill Container (Hugs content, animated dynamically) */}
-                <motion.span 
-                  layout
-                  className="typewriter-pill relative"
-                  transition={{ type: "spring", stiffness: 180, damping: 20 }}
-                >
-                  {/* Invisible placeholder of the FULL active word to drive container layout width */}
+                <span className="typewriter-pill">
+                  <span className="typewriter-dot"></span>
                   <span
-                    className="opacity-0 pointer-events-none select-none invisible whitespace-nowrap"
+                    className="typewriter-text"
                     style={{
                       fontFamily: "var(--font-libre-caslon)",
                       fontStyle: "italic",
@@ -171,28 +162,10 @@ export default function Hero() {
                       lineHeight: 1,
                     }}
                   >
-                    {words[wordIndex]}
-                    {/* Add extra space for the cursor */}
-                    <span className="inline-block w-[2px] ml-[2px]" />
+                    {displayText}
                   </span>
-
-                  {/* Absolute positioned typing text centered on top */}
-                  <span className="absolute inset-0 flex items-center justify-center">
-                    <span
-                      className="inline-block whitespace-nowrap"
-                      style={{
-                        fontFamily: "var(--font-libre-caslon)",
-                        fontStyle: "italic",
-                        fontWeight: 600,
-                        lineHeight: 1,
-                      }}
-                    >
-                      {displayText}
-                      {/* Blinking typewriter cursor */}
-                      <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
-                    </span>
-                  </span>
-                </motion.span>
+                  <span className="typewriter-cursor">&nbsp;</span>
+                </span>
                 <span>technology.</span>
               </span>
             </span>

@@ -488,28 +488,50 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   z-index: 20;
 }
 
-/* Typewriter dynamic text pill styling based on Figma specifications */
+/* Typewriter dynamic text pill styling based on user HTML demo */
 .typewriter-pill {
   display: inline-flex;
-  padding: var(--spacing-3, 8px) var(--spacing-8, 32px);
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: fit-content;
-  white-space: nowrap;
-  background-color: #0175E6;
-  border-radius: 9999px; /* rounded-full */
-  color: #ffffff;
+  gap: 0.14em;
   vertical-align: middle;
-  margin: 0 0.15em;
+  background: #0175E6; /* Figma design blue background */
+  border-radius: 999px;
+  padding: 0 0.5em 0 0.42em;
+  margin: 0 0.05em;
+  height: 1.38em;
+  transition: width 0.06s linear;
   overflow: hidden;
   user-select: none;
 }
 
-@media (max-width: 639px) {
-  .typewriter-pill {
-    padding: 4px 16px; /* reduce padding on mobile to prevent overflow */
-  }
+.typewriter-dot {
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 50%;
+  background: #ffffff; /* White dot */
+  flex-shrink: 0;
+}
+
+.typewriter-text {
+  display: inline-block;
+  color: #ffffff; /* White text */
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  align-self: center;
+  width: 0.05em;
+  height: 0.86em;
+  margin-left: 0.03em;
+  background: #ffffff; /* White cursor */
+  animation: typewriter-blink 0.9s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 
