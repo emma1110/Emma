@@ -154,11 +154,12 @@ export default function Hero() {
                 {/* Notion-style Typewriter Pill Container (Hugs content, animated dynamically) */}
                 <motion.span 
                   layout
-                  className="typewriter-pill"
-                  transition={{ type: "spring", stiffness: 180, damping: 19 }}
+                  className="typewriter-pill relative"
+                  transition={{ type: "spring", stiffness: 180, damping: 20 }}
                 >
+                  {/* Invisible placeholder of the FULL active word to drive container layout width */}
                   <span
-                    className="inline-block whitespace-nowrap"
+                    className="opacity-0 pointer-events-none select-none invisible whitespace-nowrap"
                     style={{
                       fontFamily: "var(--font-libre-caslon)",
                       fontStyle: "italic",
@@ -166,9 +167,26 @@ export default function Hero() {
                       lineHeight: 1,
                     }}
                   >
-                    {displayText}
-                    {/* Blinking typewriter cursor */}
-                    <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
+                    {words[wordIndex]}
+                    {/* Add extra space for the cursor */}
+                    <span className="inline-block w-[2px] ml-[2px]" />
+                  </span>
+
+                  {/* Absolute positioned typing text centered on top */}
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span
+                      className="inline-block whitespace-nowrap"
+                      style={{
+                        fontFamily: "var(--font-libre-caslon)",
+                        fontStyle: "italic",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      {displayText}
+                      {/* Blinking typewriter cursor */}
+                      <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
+                    </span>
                   </span>
                 </motion.span>{" "}
                 technology.

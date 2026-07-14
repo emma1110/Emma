@@ -504,7 +504,6 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   margin: 0 0.15em;
   overflow: hidden;
   user-select: none;
-  transition: width 300ms ease, padding 300ms ease;
 }
 
 @media (max-width: 639px) {
