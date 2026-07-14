@@ -489,47 +489,50 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
 }
 
 /* Typewriter dynamic text pill styling based on user HTML demo */
-.typewriter-pill {
+.pill {
   display: inline-flex;
   align-items: center;
   gap: 0.14em;
   vertical-align: middle;
-  background: #0175E6; /* Figma design blue background */
+  background: #e9f1fe;
   border-radius: 999px;
   padding: 0 0.5em 0 0.42em;
   margin: 0 0.05em;
+  /* Chiều cao cố định theo em, không phụ thuộc nội dung bên trong
+     (kể cả khi chữ bị xoá hết chỉ còn con trỏ) */
   height: 1.38em;
+  /* pill vẫn giãn mượt theo chiều rộng nội dung khi gõ chữ */
   transition: width 0.06s linear;
   overflow: hidden;
   user-select: none;
 }
 
-.typewriter-dot {
+.dot {
   width: 0.34em;
   height: 0.34em;
   border-radius: 50%;
-  background: #ffffff; /* White dot */
+  background: #2f80ed;
   flex-shrink: 0;
 }
 
-.typewriter-text {
+.type-text {
   display: inline-block;
-  color: #ffffff; /* White text */
+  color: #2f80ed;
   white-space: nowrap;
   line-height: 1;
 }
 
-.typewriter-cursor {
+.cursor {
   display: inline-block;
   align-self: center;
   width: 0.05em;
   height: 0.86em;
   margin-left: 0.03em;
-  background: #ffffff; /* White cursor */
-  animation: typewriter-blink 0.9s step-end infinite;
+  background: #2f80ed;
+  animation: blink 0.9s step-end infinite;
 }
 
-@keyframes typewriter-blink {
+@keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }

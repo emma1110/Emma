@@ -149,12 +149,12 @@ export default function Hero() {
               <span className="whitespace-nowrap">I design products</span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
-              <span className="whitespace-nowrap inline-flex items-center justify-center gap-x-2 sm:gap-x-3">
-                <span>that</span>
-                <span className="typewriter-pill">
-                  <span className="typewriter-dot"></span>
+              <span className="whitespace-nowrap">
+                that{" "}
+                <span className="pill">
+                  <span className="dot"></span>
                   <span
-                    className="typewriter-text"
+                    className="type-text"
                     style={{
                       fontFamily: "var(--font-libre-caslon)",
                       fontStyle: "italic",
@@ -164,9 +164,9 @@ export default function Hero() {
                   >
                     {displayText}
                   </span>
-                  <span className="typewriter-cursor">&nbsp;</span>
-                </span>
-                <span>technology.</span>
+                  <span className="cursor">&nbsp;</span>
+                </span>{" "}
+                technology.
               </span>
             </span>
           </h1>
