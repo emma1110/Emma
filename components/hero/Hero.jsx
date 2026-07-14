@@ -24,13 +24,40 @@ export default function Hero() {
     "Reimagine",
   ];
   const [wordIndex, setWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2500);
-    return () => clearInterval(timer);
-  }, []);
+    const handleType = () => {
+      const currentWord = words[wordIndex];
+      if (!isDeleting) {
+        // Typing: add one character
+        setDisplayText(currentWord.substring(0, displayText.length + 1));
+        setTypingSpeed(100); // stable typing pace
+
+        if (displayText === currentWord) {
+          // Pause when word fully typed
+          setIsDeleting(true);
+          setTypingSpeed(2000); // 2 seconds hold
+        }
+      } else {
+        // Deleting: remove one character
+        setDisplayText(currentWord.substring(0, displayText.length - 1));
+        setTypingSpeed(50); // faster delete speed
+
+        if (displayText === "") {
+          // Finished deleting, load next word
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+          setTypingSpeed(400); // short pause before typing next word
+        }
+      }
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, wordIndex, typingSpeed]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("lananhnguyen.arena@gmail.com").then(() => {
@@ -123,25 +150,21 @@ export default function Hero() {
               <span className="inline-flex flex-wrap items-center justify-center gap-y-2">
                 <span className="whitespace-nowrap">that&nbsp;</span>
                 {/* Notion-style Cycling Pill Container */}
-                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-4 sm:px-6 py-1 text-white relative overflow-hidden align-middle select-none mx-1 sm:mx-2 min-w-[3ch] h-[1.3em]">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={words[wordIndex]}
-                      initial={{ y: "85%", opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: "-85%", opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 180, damping: 17 }}
-                      className="inline-block"
-                      style={{
-                        fontFamily: "var(--font-libre-caslon)",
-                        fontStyle: "italic",
-                        fontWeight: 600,
-                        lineHeight: 1,
-                      }}
-                    >
-                      {words[wordIndex]}
-                    </motion.span>
-                  </AnimatePresence>
+                {/* Notion-style Typewriter Pill Container */}
+                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-4 sm:px-6 py-1 text-white relative overflow-hidden align-middle select-none mx-1 sm:mx-2 min-w-[150px] sm:min-w-[220px] h-[1.3em]">
+                  <span
+                    className="inline-block"
+                    style={{
+                      fontFamily: "var(--font-libre-caslon)",
+                      fontStyle: "italic",
+                      fontWeight: 600,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {displayText}
+                    {/* Blinking typewriter cursor */}
+                    <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
+                  </span>
                 </span>
                 <span className="whitespace-nowrap">&nbsp;technology.</span>
               </span>
