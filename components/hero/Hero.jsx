@@ -136,7 +136,7 @@ export default function Hero() {
             className="w-full text-center"
             style={{
               color: "var(--color-text-inverse)",
-              fontSize: "var(--font-display-xl-size)",
+              fontSize: "clamp(26px, 6.5vw, var(--font-display-xl-size))",
               fontWeight: "var(--font-display-xl-weight)",
               lineHeight: "var(--font-display-xl-line)",
               letterSpacing: "var(--font-display-xl-tracking)",
@@ -144,14 +144,13 @@ export default function Hero() {
             }}
           >
             <span className="line-reveal" style={{ "--entrance-delay": "150ms" }}>
-              <span>I design products</span>
+              <span className="whitespace-nowrap">I design products</span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
-              <span className="inline-flex flex-wrap items-center justify-center gap-y-2">
-                <span className="whitespace-nowrap">that&nbsp;</span>
-                {/* Notion-style Cycling Pill Container */}
-                {/* Notion-style Typewriter Pill Container */}
-                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-4 sm:px-6 py-1 text-white relative overflow-hidden align-middle select-none mx-1 sm:mx-2 min-w-[150px] sm:min-w-[220px] h-[1.3em]">
+              <span className="whitespace-nowrap inline-flex items-center justify-center">
+                <span>that&nbsp;</span>
+                {/* Notion-style Typewriter Pill Container with fluid em scaling */}
+                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-[0.45em] py-[0.1em] text-white relative overflow-hidden align-middle select-none mx-[0.15em] min-w-[3.8em] h-[1.3em]">
                   <span
                     className="inline-block"
                     style={{
@@ -166,7 +165,7 @@ export default function Hero() {
                     <span className="animate-pulse bg-white inline-block w-[2px] h-[0.85em] ml-[2px] align-middle" />
                   </span>
                 </span>
-                <span className="whitespace-nowrap">&nbsp;technology.</span>
+                <span>&nbsp;technology.</span>
               </span>
             </span>
           </h1>
