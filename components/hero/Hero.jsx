@@ -26,38 +26,38 @@ export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
 
   useEffect(() => {
-    const handleType = () => {
-      const currentWord = words[wordIndex];
-      if (!isDeleting) {
-        // Typing: add one character
-        setDisplayText(currentWord.substring(0, displayText.length + 1));
-        setTypingSpeed(100); // stable typing pace
+    let timer;
+    const currentWord = words[wordIndex];
 
-        if (displayText === currentWord) {
-          // Pause when word fully typed
-          setIsDeleting(true);
-          setTypingSpeed(2000); // 2 seconds hold
-        }
+    if (!isDeleting) {
+      // Typing: add one character after short delay
+      if (displayText !== currentWord) {
+        timer = setTimeout(() => {
+          setDisplayText(currentWord.substring(0, displayText.length + 1));
+        }, 100);
       } else {
-        // Deleting: remove one character
-        setDisplayText(currentWord.substring(0, displayText.length - 1));
-        setTypingSpeed(50); // faster delete speed
-
-        if (displayText === "") {
-          // Finished deleting, load next word
-          setIsDeleting(false);
-          setWordIndex((prev) => (prev + 1) % words.length);
-          setTypingSpeed(400); // short pause before typing next word
-        }
+        // Fully typed: pause for 2 seconds, then transition to delete mode
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
       }
-    };
+    } else {
+      // Deleting: remove one character after short delay
+      if (displayText !== "") {
+        timer = setTimeout(() => {
+          setDisplayText(currentWord.substring(0, displayText.length - 1));
+        }, 50);
+      } else {
+        // Fully deleted: transition to next word
+        setIsDeleting(false);
+        setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }
+    }
 
-    const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, wordIndex, typingSpeed]);
+  }, [displayText, isDeleting, wordIndex]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("lananhnguyen.arena@gmail.com").then(() => {
@@ -149,11 +149,8 @@ export default function Hero() {
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap inline-block">
                 <span>that&nbsp;</span>
-                {/* Notion-style Typewriter Pill Container with fixed em width to prevent layout shifts */}
-                <span 
-                  className="inline-flex items-center justify-center bg-[#0175E6] rounded-full py-[0.1em] text-white relative overflow-hidden align-middle select-none mx-[0.15em] h-[1.3em]"
-                  style={{ width: "5.2em" }}
-                >
+                {/* Notion-style Typewriter Pill Container */}
+                <span className="typewriter-pill">
                   <span
                     className="inline-block whitespace-nowrap"
                     style={{
