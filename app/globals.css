@@ -326,7 +326,6 @@ button {
 .copy-email-button:hover {
   opacity: 0.9;
   background-color: #222222;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
 }
 
 .copy-email-button:active {
@@ -454,3 +453,38 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
+
+/* Notion-like SVG sticker wobble hover animation */
+@keyframes notion-wobble {
+  0% {
+    transform: rotate(var(--base-rot)) scale(1);
+  }
+  20% {
+    transform: rotate(calc(var(--base-rot) - 10deg)) scale(1.12);
+  }
+  40% {
+    transform: rotate(calc(var(--base-rot) + 8deg)) scale(1.12);
+  }
+  60% {
+    transform: rotate(calc(var(--base-rot) - 4deg)) scale(1.12);
+  }
+  80% {
+    transform: rotate(calc(var(--base-rot) + 2deg)) scale(1.12);
+  }
+  100% {
+    transform: rotate(var(--base-rot)) scale(1.12);
+  }
+}
+
+.sticker-hover-wobble {
+  --base-rot: 0deg;
+  transform: rotate(var(--base-rot)) scale(1);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.sticker-hover-wobble:hover {
+  animation: notion-wobble 0.65s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  z-index: 20;
+}
+
