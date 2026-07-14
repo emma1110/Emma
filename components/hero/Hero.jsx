@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 /**
@@ -11,6 +12,25 @@ import { useState, useEffect } from "react";
  */
 export default function Hero() {
   const [toast, setToast] = useState({ visible: false, message: "" });
+
+  const words = [
+    "Humanize",
+    "Simplify",
+    "Clarify",
+    "Transform",
+    "Elevate",
+    "Shape",
+    "Refine",
+    "Reimagine",
+  ];
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("lananhnguyen.arena@gmail.com").then(() => {
@@ -97,10 +117,34 @@ export default function Hero() {
             }}
           >
             <span className="line-reveal" style={{ "--entrance-delay": "150ms" }}>
-              <span>I design <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>products</span> that</span>
+              <span>I design products</span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
-              <span className="inline-block md:whitespace-nowrap">turn complexity <span className="inline-block whitespace-nowrap">into <span style={{ fontFamily: "var(--font-libre-caslon)", fontStyle: "italic", color: "var(--headline-accent)", fontWeight: 600 }}>clarity.</span></span></span>
+              <span className="inline-flex flex-wrap items-center justify-center gap-y-2">
+                <span className="whitespace-nowrap">that&nbsp;</span>
+                {/* Notion-style Cycling Pill Container */}
+                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-4 sm:px-6 py-1 text-white relative overflow-hidden align-middle select-none mx-1 sm:mx-2 min-w-[3ch] h-[1.3em]">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={words[wordIndex]}
+                      initial={{ y: "85%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: "-85%", opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 180, damping: 17 }}
+                      className="inline-block"
+                      style={{
+                        fontFamily: "var(--font-libre-caslon)",
+                        fontStyle: "italic",
+                        fontWeight: 600,
+                        lineHeight: 1,
+                      }}
+                    >
+                      {words[wordIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
+                <span className="whitespace-nowrap">&nbsp;technology.</span>
+              </span>
             </span>
           </h1>
 
