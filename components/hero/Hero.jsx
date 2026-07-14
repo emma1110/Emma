@@ -136,7 +136,7 @@ export default function Hero() {
             className="w-full text-center"
             style={{
               color: "var(--color-text-inverse)",
-              fontSize: "clamp(26px, 6.5vw, var(--font-display-xl-size))",
+              fontSize: "clamp(18px, 6.5vw, var(--font-display-xl-size))",
               fontWeight: "var(--font-display-xl-weight)",
               lineHeight: "var(--font-display-xl-line)",
               letterSpacing: "var(--font-display-xl-tracking)",
@@ -147,7 +147,7 @@ export default function Hero() {
               <span className="whitespace-nowrap">I design products</span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
-              <span className="whitespace-nowrap inline-flex items-center justify-center">
+              <span className="whitespace-nowrap inline-block">
                 <span>that&nbsp;</span>
                 {/* Notion-style Typewriter Pill Container with fluid em scaling */}
                 <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-[0.45em] py-[0.1em] text-white relative overflow-hidden align-middle select-none mx-[0.15em] min-w-[3.8em] h-[1.3em]">
