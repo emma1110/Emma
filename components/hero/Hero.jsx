@@ -47,7 +47,7 @@ export default function Hero() {
             style={{ "--base-rot": "-12deg" }}
           >
             <img
-              src="/images/star.svg"
+              src="/images/star.svg?v=1"
               alt="Star Sticker"
               className="w-full h-full object-contain pointer-events-none"
               draggable={false}
@@ -60,7 +60,7 @@ export default function Hero() {
             style={{ "--base-rot": "0deg" }}
           >
             <img
-              src="/images/Layer_1.svg"
+              src="/images/Layer_1.svg?v=1"
               alt="Avatar Sticker"
               className="w-full h-full object-contain pointer-events-none"
               draggable={false}
@@ -73,7 +73,7 @@ export default function Hero() {
             style={{ "--base-rot": "12deg" }}
           >
             <img
-              src="/images/Graphic_Element.svg"
+              src="/images/Graphic_Element.svg?v=1"
               alt="Smiley Sticker"
               className="w-full h-full object-contain pointer-events-none"
               draggable={false}
