@@ -149,10 +149,13 @@ export default function Hero() {
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap inline-block">
                 <span>that&nbsp;</span>
-                {/* Notion-style Typewriter Pill Container with fluid em scaling */}
-                <span className="inline-flex items-center justify-center bg-[#0175E6] rounded-full px-[0.45em] py-[0.1em] text-white relative overflow-hidden align-middle select-none mx-[0.15em] min-w-[3.8em] h-[1.3em]">
+                {/* Notion-style Typewriter Pill Container with fixed em width to prevent layout shifts */}
+                <span 
+                  className="inline-flex items-center justify-center bg-[#0175E6] rounded-full py-[0.1em] text-white relative overflow-hidden align-middle select-none mx-[0.15em] h-[1.3em]"
+                  style={{ width: "5.2em" }}
+                >
                   <span
-                    className="inline-block"
+                    className="inline-block whitespace-nowrap"
                     style={{
                       fontFamily: "var(--font-libre-caslon)",
                       fontStyle: "italic",
