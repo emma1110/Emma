@@ -80,7 +80,8 @@ export default function Hero() {
 
   return (
     <div
-      className="relative flex w-full max-w-[1920px] mx-auto flex-col items-center bg-[var(--bg-color)] gap-[40px] lg:gap-[48px] px-4 sm:px-8 lg:px-[80px] py-16 sm:py-24 lg:py-[74px] transition-colors duration-450"
+      className="relative flex w-full max-w-[1920px] mx-auto flex-col items-center bg-[var(--bg-color)] gap-[40px] lg:gap-[48px] px-4 sm:px-8 lg:px-[80px] transition-colors duration-450"
+      style={{ paddingBlock: "var(--spacing-20)" }}
     >
       {/* ---------- Centered Hero Layout ---------- */}
       <div className="flex w-full max-w-[1760px] flex-col items-center text-center gap-[32px]">
