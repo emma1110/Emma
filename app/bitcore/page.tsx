@@ -72,9 +72,6 @@ export default function BitCorePage() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force the browser to load the latest video source
-    video.load();
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -222,7 +219,7 @@ export default function BitCorePage() {
                 poster="/images/bitcore.avif"
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               />
             </div>
 

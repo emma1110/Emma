@@ -69,7 +69,7 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
         }
       },
       {
-        rootMargin: "420px 0px",
+        rootMargin: "160px 0px",
         threshold: 0.01,
       }
     );

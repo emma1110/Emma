@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function FavoriteBooks() {
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const books = [
     {
@@ -56,7 +51,7 @@ export default function FavoriteBooks() {
 
   return (
     <section 
-      className="w-full flex flex-col items-center justify-center bg-[var(--bg-color)] transition-colors duration-450 overflow-hidden"
+      className="defer-render w-full flex flex-col items-center justify-center bg-[var(--bg-color)] transition-colors duration-450 overflow-hidden"
       style={{ 
         paddingBlock: "clamp(64px, 10vw, 128px)", 
         paddingInline: "clamp(16px, 4vw, 32px)" 

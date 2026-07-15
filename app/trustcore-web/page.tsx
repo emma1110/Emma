@@ -73,9 +73,6 @@ export default function TrustCoreWebPage() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force the browser to load the latest video source
-    video.load();
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -223,7 +220,7 @@ export default function TrustCoreWebPage() {
                 poster="/images/cover.avif"
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               />
             </div>
 

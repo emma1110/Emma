@@ -1,9 +1,6 @@
-"use client";
-
-import React from "react";
 export default function Footer() {
   return (
-    <footer id="contact" className="w-full bg-[var(--bg-color)] transition-colors duration-450">
+    <footer id="contact" className="defer-render w-full bg-[var(--bg-color)] transition-colors duration-450">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[96px] py-10 sm:py-[80px] flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left" data-reveal>
         {/* Left: built with text */}
         <p

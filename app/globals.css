@@ -198,6 +198,12 @@ button {
   animation-delay: var(--entrance-delay, 0ms);
 }
 
+/* Skip layout and paint work for below-the-fold sections until they approach the viewport. */
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
 [data-magnetic] {
   --magnet-x: 0px;
   --magnet-y: 0px;

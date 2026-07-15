@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-
 export default function HowIUseAI() {
   const cards = [
     {
@@ -33,7 +29,7 @@ export default function HowIUseAI() {
   return (
     <section 
       id="about"
-      className="w-full flex flex-col items-center bg-[var(--bg-color)] transition-colors duration-450"
+      className="defer-render w-full flex flex-col items-center bg-[var(--bg-color)] transition-colors duration-450"
       style={{ 
         paddingBlock: "clamp(64px, 10vw, 128px)", 
         paddingInline: "clamp(16px, 4vw, 32px)" 

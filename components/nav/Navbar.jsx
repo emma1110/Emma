@@ -52,6 +52,7 @@ function XIcon({ className = "w-5 h-5" }) {
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
+  const [logoReady, setLogoReady] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,6 +68,9 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMounted(true);
+    const scheduleLogo = window.requestIdleCallback
+      ? window.requestIdleCallback(() => setLogoReady(true), { timeout: 800 })
+      : window.setTimeout(() => setLogoReady(true), 250);
     const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
     setTheme(activeTheme);
     
@@ -84,6 +88,11 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+      if (window.cancelIdleCallback && typeof scheduleLogo === "number") {
+        window.cancelIdleCallback(scheduleLogo);
+      } else {
+        window.clearTimeout(scheduleLogo);
+      }
     };
   }, []);
 
@@ -200,7 +209,7 @@ export default function Navbar() {
               style={{ filter: "var(--logo-filter)", transition: "filter 0.16s ease" }}
             >
               <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 w-[120px] h-[120px] flex items-center justify-center pointer-events-none">
-                {isMounted && (
+                {logoReady && (
                   <Lottie
                     animationData={logoData}
                     loop={true}

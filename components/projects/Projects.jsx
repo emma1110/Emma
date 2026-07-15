@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import TrustCoreCard from "./TrustCoreCard";
 import TrustCoreWebCard from "./TrustCoreWebCard";
 import CryptoHeroCard from "./CryptoHeroCard";
