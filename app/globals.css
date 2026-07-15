@@ -100,10 +100,46 @@ html[data-theme="dark"] {
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-body-line);
+  letter-spacing: var(--font-body-tracking);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.16s ease, color 0.16s ease;
 }
+
+/* Semantic type roles from the Figma Foundations page. Component utilities may
+   still choose a different role, while every unstyled element gets a safe default. */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700 !important; text-wrap: balance; }
+h1 { font-size: var(--font-heading-h1-size); line-height: var(--font-heading-h1-line); font-weight: var(--font-heading-h1-weight); letter-spacing: var(--font-heading-h1-tracking); }
+h2 { font-size: var(--font-heading-h2-size); line-height: var(--font-heading-h2-line); font-weight: var(--font-heading-h2-weight); letter-spacing: var(--font-heading-h2-tracking); }
+h3 { font-size: var(--font-heading-h3-size); line-height: var(--font-heading-h3-line); font-weight: var(--font-heading-h3-weight); letter-spacing: var(--font-heading-h3-tracking); }
+h4 { font-size: var(--font-heading-h4-size); line-height: var(--font-heading-h4-line); font-weight: var(--font-heading-h4-weight); letter-spacing: var(--font-heading-h4-tracking); }
+h5 { font-size: var(--font-heading-h5-size); line-height: var(--font-heading-h5-line); font-weight: var(--font-heading-h5-weight); letter-spacing: var(--font-heading-h5-tracking); }
+h6 { font-size: var(--font-heading-h6-size); line-height: var(--font-heading-h6-line); font-weight: var(--font-heading-h6-weight); letter-spacing: var(--font-heading-h6-tracking); }
+p, li { text-wrap: pretty; }
+
+.type-display-xl { font-size: var(--font-display-xl-size) !important; line-height: var(--font-display-xl-line) !important; font-weight: var(--font-display-xl-weight) !important; letter-spacing: var(--font-display-xl-tracking) !important; }
+.type-display-lg { font-size: var(--font-display-lg-size) !important; line-height: var(--font-display-lg-line) !important; font-weight: var(--font-display-lg-weight) !important; letter-spacing: var(--font-display-lg-tracking) !important; }
+.type-display-md { font-size: var(--font-display-md-size) !important; line-height: var(--font-display-md-line) !important; font-weight: var(--font-display-md-weight) !important; letter-spacing: var(--font-display-md-tracking) !important; }
+.type-heading-h1 { font-size: var(--font-heading-h1-size) !important; line-height: var(--font-heading-h1-line) !important; font-weight: var(--font-heading-h1-weight) !important; letter-spacing: var(--font-heading-h1-tracking) !important; }
+.type-heading-h2 { font-size: var(--font-heading-h2-size) !important; line-height: var(--font-heading-h2-line) !important; font-weight: var(--font-heading-h2-weight) !important; letter-spacing: var(--font-heading-h2-tracking) !important; }
+.type-heading-h3 { font-size: var(--font-heading-h3-size) !important; line-height: var(--font-heading-h3-line) !important; font-weight: var(--font-heading-h3-weight) !important; letter-spacing: var(--font-heading-h3-tracking) !important; }
+.type-heading-h4 { font-size: var(--font-heading-h4-size) !important; line-height: var(--font-heading-h4-line) !important; font-weight: var(--font-heading-h4-weight) !important; letter-spacing: var(--font-heading-h4-tracking) !important; }
+.type-heading-h5 { font-size: var(--font-heading-h5-size) !important; line-height: var(--font-heading-h5-line) !important; font-weight: var(--font-heading-h5-weight) !important; letter-spacing: var(--font-heading-h5-tracking) !important; }
+.type-heading-h6 { font-size: var(--font-heading-h6-size) !important; line-height: var(--font-heading-h6-line) !important; font-weight: var(--font-heading-h6-weight) !important; letter-spacing: var(--font-heading-h6-tracking) !important; }
+.type-body-lg { font-size: var(--font-body-lg-size); line-height: var(--font-body-lg-line); font-weight: var(--font-body-lg-weight); letter-spacing: 0; }
+.type-body-lg-medium { font-size: var(--font-body-lg-medium-size); line-height: var(--font-body-lg-medium-line); font-weight: var(--font-body-lg-medium-weight); letter-spacing: var(--font-body-lg-medium-tracking); }
+.type-body { font-size: var(--font-body-size); line-height: var(--font-body-line); font-weight: var(--font-body-weight); letter-spacing: 0; }
+.type-body-medium { font-size: var(--font-body-medium-size); line-height: var(--font-body-medium-line); font-weight: var(--font-body-medium-weight); letter-spacing: var(--font-body-medium-tracking); }
+.type-body-sm { font-size: var(--font-body-sm-size); line-height: var(--font-body-sm-line); font-weight: var(--font-body-sm-weight); letter-spacing: 0; }
+.type-body-sm-medium { font-size: var(--font-body-sm-medium-size); line-height: var(--font-body-sm-medium-line); font-weight: var(--font-body-sm-medium-weight); letter-spacing: var(--font-body-sm-medium-tracking); }
+.type-label-lg { font-size: var(--font-label-lg-size); line-height: var(--font-label-lg-line); font-weight: var(--font-label-lg-weight); letter-spacing: var(--font-label-lg-tracking); }
+.type-label { font-size: var(--font-label-size); line-height: var(--font-label-line); font-weight: var(--font-label-weight); letter-spacing: var(--font-label-tracking); }
+.type-caption { font-size: var(--font-caption-size); line-height: var(--font-caption-line); font-weight: var(--font-caption-weight); letter-spacing: var(--font-caption-tracking); }
+.type-micro { font-size: var(--font-micro-size); line-height: var(--font-micro-line); font-weight: var(--font-micro-weight); letter-spacing: var(--font-micro-tracking); }
 
 a {
   color: inherit;
@@ -113,6 +149,10 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+.project-card-link:hover {
+  opacity: 1;
 }
 
 button {
@@ -179,14 +219,24 @@ button {
   transform: perspective(1200px) rotateX(var(--tilt-rx)) rotateY(var(--tilt-ry)) translate3d(0, 0, 0);
   transition:
     transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 280ms ease,
+    box-shadow 180ms ease,
     border-color 220ms ease,
     opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
 .motion-card:hover {
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.10),
+    0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="dark"] .motion-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.28),
+    0 8px 20px rgba(0, 0, 0, 0.20);
 }
 
 .soft-link {
@@ -269,8 +319,10 @@ button {
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--font-label-lg-size);
+  line-height: var(--font-label-lg-line);
+  font-weight: var(--font-label-lg-weight);
+  letter-spacing: var(--font-label-lg-tracking);
   color: var(--nav-pill-text-inactive);
   text-decoration: none;
   border-radius: 999px;
@@ -289,8 +341,10 @@ button {
   align-items: center;
   background: var(--nav-btn-bg);
   color: var(--nav-btn-text);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: var(--font-label-lg-size);
+  line-height: var(--font-label-lg-line);
+  font-weight: var(--font-label-lg-weight);
+  letter-spacing: var(--font-label-lg-tracking);
   padding: 10px 20px;
   border-radius: 12px;
   text-decoration: none;
@@ -315,7 +369,10 @@ button {
   justify-content: center;
   background: var(--color-text-inverse); /* Black */
   color: var(--color-text-primary); /* White */
-  font-weight: 600;
+  font-size: var(--font-heading-h6-size);
+  line-height: var(--font-heading-h6-line);
+  font-weight: var(--font-heading-h6-weight);
+  letter-spacing: var(--font-heading-h6-tracking);
   padding: 12px 32px;
   border-radius: 999px;
   border: none;
@@ -505,6 +562,23 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   transition: width 0.06s linear;
   overflow: hidden;
   user-select: none;
+  font-size: var(--font-hero-pill-size);
+  line-height: var(--font-hero-pill-line);
+  font-weight: var(--font-hero-pill-weight);
+  letter-spacing: var(--font-hero-pill-tracking);
+}
+
+@media (max-width: 1023px) {
+  .pill {
+    margin-block: 0.08em;
+  }
+}
+
+@media (max-width: 639px) {
+  .pill {
+    max-width: 100%;
+    padding-inline: 0.34em 0.4em;
+  }
 }
 
 .dot {
@@ -536,5 +610,3 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-
-

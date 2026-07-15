@@ -53,7 +53,6 @@ function XIcon({ className = "w-5 h-5" }) {
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinksRef = useRef(null);
@@ -72,14 +71,11 @@ export default function Navbar() {
     setTheme(activeTheme);
     
     let scrollTimeout = null;
-    let lastScrollY = window.scrollY;
     const handleScroll = () => {
       if (!scrollTimeout) {
         scrollTimeout = requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
           setScrolled(currentScrollY > 10);
-          setHidden(currentScrollY > lastScrollY && currentScrollY > 96 && !menuOpen);
-          lastScrollY = currentScrollY;
           scrollTimeout = null;
         });
       }
@@ -89,7 +85,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
     };
-  }, [menuOpen]);
+  }, []);
 
   // Prevent page scroll when mobile menu is active
   useEffect(() => {
@@ -192,7 +188,6 @@ export default function Navbar() {
         backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
         borderBottom: scrolled ? "1px solid var(--navbar-border-scrolled)" : "1px solid transparent",
-        transform: hidden ? "translate3d(0, -100%, 0)" : "translate3d(0, 0, 0)",
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
@@ -219,7 +214,7 @@ export default function Navbar() {
           {/* Links — center black pill */}
           <div
             ref={navLinksRef}
-            className="navbar-links-container hidden lg:flex shrink-0 font-medium"
+            className="navbar-links-container hidden lg:flex shrink-0"
           >
             <span ref={pillRef} className="nav-pill" />
             <Link href="/" className="nav-link-item">Home</Link>
@@ -281,7 +276,7 @@ export default function Navbar() {
           transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)"
         }}
       >
-        <div className="flex flex-col gap-6 text-xl font-medium pt-8">
+        <div className="type-heading-h6 flex flex-col gap-6 pt-8">
           <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Home</Link>
           <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Project</Link>
           <Link href="/#about" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">About</Link>

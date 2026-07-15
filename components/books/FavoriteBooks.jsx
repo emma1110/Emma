@@ -67,15 +67,12 @@ export default function FavoriteBooks() {
         {/* Title and Subtitle */}
         <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center">
           <h2 
-            className="w-full font-bold text-[38px] sm:text-[48px] lg:text-[60px] text-[color:var(--color-text-inverse,#000000)] tracking-normal leading-[46px] sm:leading-[58px] lg:leading-[72px]"
+            className="type-display-md w-full text-[color:var(--color-text-inverse,#000000)]"
           >
             My Favorite Books
           </h2>
           <p 
-            className="font-medium text-[16px] sm:text-[20px] text-[color:var(--color-text-secondary,#525252)]"
-            style={{ 
-              lineHeight: "var(--font-body-xl-medium-line, 30px)"
-            }}
+            className="type-body-lg-medium text-[color:var(--color-text-secondary,#525252)]"
           >
             A collection of books that continue to influence my work and decision-making.
           </p>
@@ -116,7 +113,7 @@ export default function FavoriteBooks() {
                         <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                           <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                             <span 
-                              className="font-semibold text-[20px] leading-[28px] uppercase tracking-wide"
+                              className="type-heading-h6 uppercase"
                               style={{ color: book.spineTextColor }}
                             >
                               {book.spineTitle}
@@ -129,7 +126,7 @@ export default function FavoriteBooks() {
                       <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                         <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                           <span 
-                            className="font-semibold text-[20px] leading-[28px] uppercase tracking-wide"
+                            className="type-heading-h6 uppercase"
                             style={{ color: book.spineTextColor }}
                           >
                             {book.spineTitle}

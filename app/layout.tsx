@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Libre_Caslon_Text } from "next/font/google";
+import { Inter } from "next/font/google";
 import MotionRuntime from "../components/motion/MotionRuntime";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const libreCaslonText = Libre_Caslon_Text({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-libre-caslon",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Emma | Product Designer",
   description: "Emma crafts intuitive, human-centered products that move the needle.",
@@ -34,7 +28,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} ${libreCaslonText.variable}`}>
+      <body className={`${inter.className} ${inter.variable}`}>
         <MotionRuntime />
         {children}
       </body>

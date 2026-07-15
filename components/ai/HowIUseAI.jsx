@@ -42,24 +42,19 @@ export default function HowIUseAI() {
       <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
         
         {/* Title and Subtitle */}
-        <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center" data-reveal>
+        <div className="flex flex-col items-center gap-[12px] max-w-[1200px] text-center" data-reveal>
           <h2 
-            className="w-full font-bold"
+            className="type-display-md w-full"
             style={{ 
-              color: "var(--color-text-inverse, black)",
-              fontSize: "var(--font-display-xl-size)",
-              fontWeight: "var(--font-display-xl-weight)",
-              lineHeight: "var(--font-display-xl-line)",
-              letterSpacing: "var(--font-display-xl-tracking)"
+              color: "var(--color-text-inverse, black)"
             }}
           >
             How I Use AI
           </h2>
           <p 
-            className="font-medium text-base sm:text-[20px] whitespace-normal"
+            className="type-body-lg-medium whitespace-normal lg:whitespace-nowrap"
             style={{ 
               color: "var(--color-text-secondary, #525252)", 
-              lineHeight: "var(--font-body-xl-medium-line, 30px)",
               maxWidth: "100%"
             }}
           >
@@ -75,8 +70,7 @@ export default function HowIUseAI() {
             <div
               key={idx}
               data-reveal
-              data-tilt
-              className="motion-card flex flex-col gap-5 sm:gap-6 items-start p-5 sm:p-6 rounded-[20px] sm:rounded-[24px] w-full"
+              className="flex flex-col gap-5 sm:gap-6 items-start p-5 sm:p-6 rounded-[20px] sm:rounded-[24px] w-full"
               style={{ 
                 backgroundColor: "var(--color-surface-elevated)",
                 "--reveal-delay": `${idx * 80}ms`
@@ -101,16 +95,14 @@ export default function HowIUseAI() {
               {/* Text Block */}
               <div className="flex flex-col gap-3 items-start w-full text-left">
                 <h3 
-                  className="font-semibold text-[var(--color-text-inverse)] text-[20px] sm:text-[22px] tracking-normal"
-                  style={{ lineHeight: "30px" }}
+                  className="text-[var(--color-text-inverse)] type-heading-h6"
                 >
                   {card.title}
                 </h3>
                 <p 
-                  className="font-medium text-[15px]"
+                  className="type-body-sm-medium"
                   style={{ 
-                    color: "var(--color-text-secondary, #525252)",
-                    lineHeight: "22px" 
+                    color: "var(--color-text-secondary, #525252)"
                   }}
                 >
                   {card.desc}

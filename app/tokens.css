@@ -1,66 +1,129 @@
-/**
- * Design tokens — lấy trực tiếp từ Figma file variables
- * (Figma:get_variable_defs trên node Hero, 121:243)
- *
- * Map 1-1 theo tên biến gốc, đổi "/" thành "-" cho hợp lệ CSS custom property.
- */
+/** Typography tokens synced from Figma: Foundations — Typography (node 2:2). */
 :root {
-  /* Semantic colors */
   --color-text-primary: #ffffff;
   --color-text-secondary: #525252;
   --color-text-inverse: #000000;
   --color-surface-elevated: #111111;
-
-  /* Spacing */
   --spacing-5: 16px;
   --spacing-8: 32px;
   --spacing-stack-lg: 32px;
   --spacing-component-input-pad-y: 12px;
-
-  /* Radius */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-full: 9999px;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Typography (Inter) */
-  --font-heading-h4-size: 20px;
-  --font-heading-h4-weight: 600;
-  --font-heading-h4-line: 28px;
+  /* Desktop — Figma source scale. */
+  --font-display-xl-size: 96px; --font-display-xl-line: 104px; --font-display-xl-weight: 700; --font-display-xl-tracking: -3.84px;
+  --font-display-lg-size: 72px; --font-display-lg-line: 80px; --font-display-lg-weight: 700; --font-display-lg-tracking: -2.16px;
+  --font-display-md-size: 56px; --font-display-md-line: 64px; --font-display-md-weight: 700; --font-display-md-tracking: -1.12px;
+  --font-heading-h1-size: 48px; --font-heading-h1-line: 56px; --font-heading-h1-weight: 700; --font-heading-h1-tracking: -0.96px;
+  --font-heading-h2-size: 40px; --font-heading-h2-line: 48px; --font-heading-h2-weight: 700; --font-heading-h2-tracking: -0.64px;
+  --font-heading-h3-size: 32px; --font-heading-h3-line: 40px; --font-heading-h3-weight: 700; --font-heading-h3-tracking: -0.48px;
+  --font-heading-h4-size: 28px; --font-heading-h4-line: 36px; --font-heading-h4-weight: 700; --font-heading-h4-tracking: -0.28px;
+  --font-heading-h5-size: 24px; --font-heading-h5-line: 32px; --font-heading-h5-weight: 700; --font-heading-h5-tracking: -0.16px;
+  --font-heading-h6-size: 20px; --font-heading-h6-line: 28px; --font-heading-h6-weight: 700; --font-heading-h6-tracking: 0;
+  --font-body-lg-size: 20px; --font-body-lg-line: 32px; --font-body-lg-weight: 400; --font-body-lg-tracking: 0;
+  --font-body-lg-medium-size: 20px; --font-body-lg-medium-line: 32px; --font-body-lg-medium-weight: 500; --font-body-lg-medium-tracking: 0;
+  --font-body-size: 16px; --font-body-line: 26px; --font-body-weight: 400; --font-body-tracking: 0;
+  --font-body-medium-size: 16px; --font-body-medium-line: 26px; --font-body-medium-weight: 500; --font-body-medium-tracking: 0;
+  --font-body-sm-size: 14px; --font-body-sm-line: 22px; --font-body-sm-weight: 400; --font-body-sm-tracking: 0;
+  --font-body-sm-medium-size: 14px; --font-body-sm-medium-line: 22px; --font-body-sm-medium-weight: 500; --font-body-sm-medium-tracking: 0;
+  --font-label-lg-size: 14px; --font-label-lg-line: 20px; --font-label-lg-weight: 500; --font-label-lg-tracking: .28px;
+  --font-label-size: 12px; --font-label-line: 18px; --font-label-weight: 600; --font-label-tracking: .6px;
+  --font-caption-size: 12px; --font-caption-line: 18px; --font-caption-weight: 400; --font-caption-tracking: .12px;
+  --font-micro-size: 11px; --font-micro-line: 16px; --font-micro-weight: 500; --font-micro-tracking: .88px;
 
-  --font-heading-h5-size: 18px;
-  --font-heading-h5-weight: 600;
-  --font-heading-h5-line: 26px;
+  /* Hero uses the same library with extra fit breakpoints for its fixed two-line composition. */
+  --font-hero-size: 96px; --font-hero-line: 104px; --font-hero-weight: 700; --font-hero-tracking: -3.84px;
+  --font-hero-pill-size: 72px; --font-hero-pill-line: 80px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -2.16px;
 
-  --font-display-xl-size: 60px;
-  --font-display-xl-weight: 700;
-  --font-display-xl-line: 72px;
-  --font-display-xl-tracking: 0px;
-
-  --font-body-md-medium-size: 16px;
-  --font-body-md-medium-weight: 500;
-  --font-body-md-medium-line: 24px;
-
-  --font-body-xl-medium-size: 20px;
-  --font-body-xl-medium-weight: 500;
-  --font-body-xl-medium-line: 30px;
-
-  --font-body-sm-medium-size: 14px;
+  /* Legacy aliases kept only for third-party/older component compatibility. */
+  --font-body-md-medium-size: var(--font-body-medium-size);
+  --font-body-md-medium-weight: var(--font-body-medium-weight);
+  --font-body-md-medium-line: var(--font-body-medium-line);
+  --font-body-xl-medium-size: var(--font-body-lg-medium-size);
+  --font-body-xl-medium-weight: var(--font-body-lg-medium-weight);
+  --font-body-xl-medium-line: var(--font-body-lg-medium-line);
+  --font-body-sm-medium-size: var(--font-body-sm-size);
   --font-body-sm-medium-weight: 500;
-  --font-body-sm-medium-line: 20px;
+  --font-body-sm-medium-line: var(--font-body-sm-line);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1599px) {
   :root {
-    --font-display-xl-size: 48px;
-    --font-display-xl-line: 58px;
-    --font-display-xl-tracking: 0px;
+    --font-hero-size: 72px; --font-hero-line: 80px; --font-hero-tracking: -2.16px;
+    --font-hero-pill-size: 56px; --font-hero-pill-line: 64px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -1.12px;
   }
 }
 
+@media (max-width: 1199px) {
+  :root {
+    --font-hero-size: 56px; --font-hero-line: 64px; --font-hero-tracking: -1.12px;
+    --font-hero-pill-size: 48px; --font-hero-pill-line: 56px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.96px;
+  }
+}
+
+/* Tablet — every typography role has an explicit responsive value. */
+@media (min-width: 640px) and (max-width: 1023px) {
+  :root {
+    --font-display-xl-size: 72px; --font-display-xl-line: 80px; --font-display-xl-weight: 700; --font-display-xl-tracking: -2.16px;
+    --font-display-lg-size: 56px; --font-display-lg-line: 64px; --font-display-lg-weight: 700; --font-display-lg-tracking: -1.12px;
+    --font-display-md-size: 48px; --font-display-md-line: 56px; --font-display-md-weight: 700; --font-display-md-tracking: -0.96px;
+    --font-heading-h1-size: 40px; --font-heading-h1-line: 48px; --font-heading-h1-weight: 700; --font-heading-h1-tracking: -0.64px;
+    --font-heading-h2-size: 32px; --font-heading-h2-line: 40px; --font-heading-h2-weight: 700; --font-heading-h2-tracking: -0.48px;
+    --font-heading-h3-size: 28px; --font-heading-h3-line: 36px; --font-heading-h3-weight: 700; --font-heading-h3-tracking: -0.28px;
+    --font-heading-h4-size: 24px; --font-heading-h4-line: 32px; --font-heading-h4-weight: 700; --font-heading-h4-tracking: -0.16px;
+    --font-heading-h5-size: 20px; --font-heading-h5-line: 28px; --font-heading-h5-weight: 700; --font-heading-h5-tracking: 0;
+    --font-heading-h6-size: 18px; --font-heading-h6-line: 26px; --font-heading-h6-weight: 700; --font-heading-h6-tracking: 0;
+    --font-body-lg-size: 18px; --font-body-lg-line: 28px; --font-body-lg-weight: 400; --font-body-lg-tracking: 0;
+    --font-body-lg-medium-size: 18px; --font-body-lg-medium-line: 28px; --font-body-lg-medium-weight: 500; --font-body-lg-medium-tracking: 0;
+    --font-body-size: 16px; --font-body-line: 26px; --font-body-weight: 400; --font-body-tracking: 0;
+    --font-body-medium-size: 16px; --font-body-medium-line: 26px; --font-body-medium-weight: 500; --font-body-medium-tracking: 0;
+    --font-body-sm-size: 14px; --font-body-sm-line: 22px; --font-body-sm-weight: 400; --font-body-sm-tracking: 0;
+    --font-body-sm-medium-size: 14px; --font-body-sm-medium-line: 22px; --font-body-sm-medium-weight: 500; --font-body-sm-medium-tracking: 0;
+    --font-label-lg-size: 14px; --font-label-lg-line: 20px; --font-label-lg-weight: 500; --font-label-lg-tracking: .28px;
+    --font-label-size: 12px; --font-label-line: 18px; --font-label-weight: 600; --font-label-tracking: .6px;
+    --font-caption-size: 12px; --font-caption-line: 18px; --font-caption-weight: 400; --font-caption-tracking: .12px;
+    --font-micro-size: 11px; --font-micro-line: 16px; --font-micro-weight: 500; --font-micro-tracking: .88px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-hero-size: 40px; --font-hero-line: 48px; --font-hero-tracking: -0.64px;
+    --font-hero-pill-size: 32px; --font-hero-pill-line: 40px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.48px;
+  }
+}
+
+/* Mobile — every typography role has an explicit responsive value. */
 @media (max-width: 639px) {
   :root {
-    --font-display-xl-size: 38px;
-    --font-display-xl-line: 46px;
-    --font-display-xl-tracking: 0px;
+    --font-display-xl-size: 48px; --font-display-xl-line: 56px; --font-display-xl-weight: 700; --font-display-xl-tracking: -0.96px;
+    --font-display-lg-size: 40px; --font-display-lg-line: 48px; --font-display-lg-weight: 700; --font-display-lg-tracking: -0.64px;
+    --font-display-md-size: 36px; --font-display-md-line: 44px; --font-display-md-weight: 700; --font-display-md-tracking: -0.48px;
+    --font-heading-h1-size: 32px; --font-heading-h1-line: 40px; --font-heading-h1-weight: 700; --font-heading-h1-tracking: -0.48px;
+    --font-heading-h2-size: 28px; --font-heading-h2-line: 36px; --font-heading-h2-weight: 700; --font-heading-h2-tracking: -0.28px;
+    --font-heading-h3-size: 24px; --font-heading-h3-line: 32px; --font-heading-h3-weight: 700; --font-heading-h3-tracking: -0.16px;
+    --font-heading-h4-size: 22px; --font-heading-h4-line: 30px; --font-heading-h4-weight: 700; --font-heading-h4-tracking: -0.12px;
+    --font-heading-h5-size: 20px; --font-heading-h5-line: 28px; --font-heading-h5-weight: 700; --font-heading-h5-tracking: 0;
+    --font-heading-h6-size: 18px; --font-heading-h6-line: 26px; --font-heading-h6-weight: 700; --font-heading-h6-tracking: 0;
+    --font-body-lg-size: 18px; --font-body-lg-line: 28px; --font-body-lg-weight: 400; --font-body-lg-tracking: 0;
+    --font-body-lg-medium-size: 18px; --font-body-lg-medium-line: 28px; --font-body-lg-medium-weight: 500; --font-body-lg-medium-tracking: 0;
+    --font-body-size: 15px; --font-body-line: 24px; --font-body-weight: 400; --font-body-tracking: 0;
+    --font-body-medium-size: 15px; --font-body-medium-line: 24px; --font-body-medium-weight: 500; --font-body-medium-tracking: 0;
+    --font-body-sm-size: 14px; --font-body-sm-line: 22px; --font-body-sm-weight: 400; --font-body-sm-tracking: 0;
+    --font-body-sm-medium-size: 14px; --font-body-sm-medium-line: 22px; --font-body-sm-medium-weight: 500; --font-body-sm-medium-tracking: 0;
+    --font-label-lg-size: 13px; --font-label-lg-line: 18px; --font-label-lg-weight: 500; --font-label-lg-tracking: .26px;
+    --font-label-size: 12px; --font-label-line: 18px; --font-label-weight: 600; --font-label-tracking: .6px;
+    --font-caption-size: 12px; --font-caption-line: 18px; --font-caption-weight: 400; --font-caption-tracking: .12px;
+    --font-micro-size: 10px; --font-micro-line: 14px; --font-micro-weight: 500; --font-micro-tracking: .8px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --font-hero-size: clamp(22px, 6.4vw, 28px); --font-hero-line: 36px; --font-hero-tracking: -0.28px;
+    --font-hero-pill-size: clamp(20px, 5.8vw, 24px); --font-hero-pill-line: 32px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.16px;
   }
 }

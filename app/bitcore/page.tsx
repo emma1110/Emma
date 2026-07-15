@@ -115,7 +115,7 @@ export default function BitCorePage() {
                     id={`nav-link-${sec.id}`}
                     href={`#${sec.id}`}
                     onClick={(e) => handleNavClick(e, sec.id)}
-                    className={`text-[12px] font-medium block py-[3px] leading-[18px] tracking-[0.1px] transition-all duration-200 ${
+                    className={`type-caption block py-[3px] transition-all duration-200 ${
                       activeSection === sec.id
                         ? 'text-[var(--color-text-inverse)] font-bold'
                         : 'text-[var(--text-muted)] opacity-60 hover:opacity-100'
@@ -130,7 +130,7 @@ export default function BitCorePage() {
               <li className="mt-[12px]">
                 <a
                   href="/trustcore"
-                  className="text-[12px] font-medium flex items-center gap-[6px] py-[3px] leading-[18px] tracking-[0.1px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
+                  className="type-caption flex items-center gap-[6px] py-[3px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
                 >
                   <span>Next Project</span>
                   <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -150,17 +150,17 @@ export default function BitCorePage() {
             
             {/* Header / Titles */}
             <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
-              <div className="flex items-center gap-2 text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">
+              <div className="flex items-center gap-2 type-label-lg text-[var(--color-text-secondary)] uppercase">
                 <span>BITCORE</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
                 <span>2026</span>
               </div>
               
-              <h1 style={{ fontFamily: 'var(--font-libre-caslon)' }} className="text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.2] font-bold text-[var(--color-text-inverse)] tracking-normal w-full">
+              <h1 className="type-heading-h1 text-[var(--color-text-inverse)] w-full">
                 Bitcore - Landing Page Design
               </h1>
               
-              <p className="text-[16px] leading-[24px] text-[var(--color-text-secondary)]">
+              <p className="type-body-medium text-[var(--color-text-secondary)]">
                 Designing a landing page for a Layer 1 blockchain built around trust, clarity, and real user adoption.
               </p>
             </div>
@@ -180,17 +180,17 @@ export default function BitCorePage() {
             </div>
 
             {/* Metadata Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-[8px] font-medium text-[16px]" data-reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-[8px] type-body-medium" data-reveal>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">ROLE</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">ROLE</span>
                 <span className="text-[var(--color-text-inverse)]">Product Designer</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
                 <span className="text-[var(--color-text-inverse)]">1 month</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">TOOLS</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TOOLS</span>
                 <span className="text-[var(--color-text-inverse)]">Figma</span>
               </div>
             </div>
@@ -199,8 +199,8 @@ export default function BitCorePage() {
 
             {/* Overview Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
-              <ul className="list-disc pl-5 text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>Most blockchain landing pages fail to communicate value beyond technology.</li>
                 <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand what the product actually solves. This creates friction for both new users and investors, especially when trust and product clarity are missing.</li>
                 <li>Bitcore needed a landing page that could position its Layer 1 ecosystem as accessible, credible, and built for real-world usage, not just speculation.</li>
@@ -230,17 +230,17 @@ export default function BitCorePage() {
 
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
+              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 The experience was designed around one principle:<br />
                 <strong className="text-[var(--color-text-inverse)]">Users trust products they can clearly understand.</strong>
               </p>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+              <p className="type-body text-[var(--color-text-secondary)]">
                 Instead of leading with technical complexity, the landing page focused on product utility, onboarding simplicity, and visible trust signals.
               </p>
               <div className="flex flex-col gap-[8px]">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
-                <div className="flex flex-wrap items-center gap-2 text-[15px] font-medium text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
+                <div className="flex flex-wrap items-center gap-2 type-body-sm text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
                   <span>Value Proposition</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
                   <span>Product Utility</span>
@@ -252,10 +252,10 @@ export default function BitCorePage() {
                   <span>Conversion</span>
                 </div>
               </div>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)] mt-1">
+              <p className="type-body text-[var(--color-text-secondary)] mt-1">
                 Each section was designed to help users understand not only what Bitcore is, but why it matters and how they can participate.
               </p>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+              <p className="type-body text-[var(--color-text-secondary)]">
                 The landing page needed to support both crypto-native users and first-time Web3 users without overwhelming either group.
               </p>
             </div>
@@ -267,8 +267,8 @@ export default function BitCorePage() {
           {/* Final Outcome Section */}
           <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
-              <ul className="list-disc pl-5 text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
+              <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>The final landing page improved product clarity, ecosystem understanding, and onboarding readiness.</li>
                 <li>More importantly, it positioned Bitcore as a usable blockchain ecosystem rather than just another Layer 1 project.</li>
                 <li>Because users do not join Web3 products when they understand every technical detail.</li>

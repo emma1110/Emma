@@ -130,7 +130,7 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
   return (
     <div ref={containerRef} className="w-full h-full flex items-center justify-center">
       {hasError ? (
-        <div className="flex h-full w-full items-center justify-center rounded-[18px] bg-[var(--card-bg)] text-[14px] font-medium text-[var(--color-text-secondary)]">
+        <div className="type-label-lg flex h-full w-full items-center justify-center rounded-[18px] bg-[var(--card-bg)] text-[var(--color-text-secondary)]">
           Animation unavailable
         </div>
       ) : animationData ? (
@@ -282,7 +282,7 @@ export default function TrustCorePage() {
                      id={`nav-link-${sec.id}`}
                      href={`#${sec.id}`}
                      onClick={(e) => handleNavClick(e, sec.id)}
-                     className={`text-[12px] font-medium block py-[3px] leading-[18px] tracking-[0.1px] transition-all duration-200 ${
+                     className={`type-caption block py-[3px] transition-all duration-200 ${
                        activeSection === sec.id
                          ? 'text-[var(--color-text-inverse)] font-bold'
                          : 'text-[var(--text-muted)] opacity-60 hover:opacity-100'
@@ -297,7 +297,7 @@ export default function TrustCorePage() {
                <li className="mt-[12px]">
                  <a
                    href="/trustcore-web"
-                   className="text-[12px] font-medium flex items-center gap-[6px] py-[3px] leading-[18px] tracking-[0.1px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
+                   className="type-caption flex items-center gap-[6px] py-[3px] text-[var(--text-muted)] opacity-60 hover:opacity-100 transition-all duration-200"
                  >
                    <span>Next Project</span>
                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -315,16 +315,16 @@ export default function TrustCorePage() {
           {/* Hero: Label + Heading + Video + Metadata */}
           <section id="overview" className="flex flex-col gap-[24px] scroll-mt-28">
             <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
-              <div className="flex items-center gap-2 text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">
+              <div className="flex items-center gap-2 type-label-lg text-[var(--color-text-secondary)] uppercase">
                 <span>TRUSTCORE</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
                 <span>2026</span>
               </div>
-              <h1 style={{ fontFamily: 'var(--font-libre-caslon)' }} className="text-[34px] sm:text-[42px] lg:text-[48px] leading-[1.2] font-bold text-[var(--color-text-inverse)] tracking-normal w-full">
+              <h1 className="type-heading-h1 text-[var(--color-text-inverse)] w-full">
                 Helping people understand, protect, and pass on their digital assets.
               </h1>
-              <div className="text-[16px] leading-[24px] text-[var(--color-text-secondary)] flex flex-col gap-1">
-                <p className="font-semibold text-[var(--color-text-inverse)]">People think about ownership. Wallets think about blockchain.</p>
+              <div className="type-body-medium text-[var(--color-text-secondary)] flex flex-col gap-1">
+                <p className="type-body-medium text-[var(--color-text-inverse)]">People think about ownership. Wallets think about blockchain.</p>
                 <p>This project explores what happens when a wallet is designed around people instead.</p>
               </div>
             </div>
@@ -380,17 +380,17 @@ export default function TrustCorePage() {
             </div>
 
             {/* Metadata Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-4 sm:pt-[32px] font-medium text-[16px] text-black" data-reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-4 sm:pt-[32px] type-body-medium text-black" data-reveal>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">ROLE</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">ROLE</span>
                 <span className="text-[var(--color-text-inverse)]">Product Designer</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
                 <span className="text-[var(--color-text-inverse)]">6 months</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">TOOLS</span>
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TOOLS</span>
                 <span className="text-[var(--color-text-inverse)]">Figma, AE, Illustrator, Photoshop</span>
               </div>
             </div>
@@ -401,15 +401,15 @@ export default function TrustCorePage() {
           {/* Overview columns (The Challenge / What I Did) */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-[56px] w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
-              <div className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-[12px]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-[12px]">
                 <p>TrustCore is a self-custody wallet designed to make digital ownership easier to understand.</p>
                 <p>Rather than simplifying blockchain, the project rethinks how people are introduced to it.</p>
               </div>
             </div>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">WHAT I DID</span>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">WHAT I DID</span>
+              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 I led the product design from research through high-fidelity design, including product strategy, information architecture, interaction design, prototyping, and design system implementation.
               </p>
             </div>
@@ -419,13 +419,13 @@ export default function TrustCorePage() {
 
           {/* Problem Statement Section */}
           <section id="problem" className="flex flex-col gap-[8px] scroll-mt-28 w-full" data-reveal>
-            <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">THE CHALLENGE</span>
+            <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">THE CHALLENGE</span>
             <div className="flex flex-col gap-[8px] w-full">
-              <div className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] flex flex-col gap-1">
+              <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-1">
                 <p>Self-custody gives people complete control over their assets. Most wallets expose that complexity immediately asking users to understand accounts, addresses, and recovery phrases before they understand why any of it matters.</p>
                 <p>I wanted to question that approach.</p>
               </div>
-              <p className="font-semibold leading-[30px] sm:leading-[32px] text-[22px] sm:text-[24px] tracking-normal text-[var(--color-text-inverse)] mt-4">
+              <p className="type-heading-h5 text-[var(--color-text-inverse)] mt-4">
                 What if a wallet was designed around how people naturally think about ownership instead?
               </p>
             </div>
@@ -436,38 +436,38 @@ export default function TrustCorePage() {
           {/* Research & Discovery Section */}
           <section id="discovery" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">RESEARCH</span>
-              <h2 className="text-[22px] sm:text-[24px] font-semibold leading-[30px] sm:leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">RESEARCH</span>
+              <h2 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 One insight changed the project.
               </h2>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)] mt-1">
+              <p className="type-body text-[var(--Semantic-Text-Inverse)] mt-1">
                 I expected blockchain to be the biggest obstacle. Research suggested otherwise. The real problem wasn't technical complexity - it was a mismatch between how users think and how wallets are designed.
               </p>
             </div>
 
             <div className="flex flex-col gap-[14px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">RESEARCH RESOURCE</span>
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">RESEARCH RESOURCE</span>
               
               {/* Research Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] w-full">
                 <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[16px] p-[24px] flex flex-col gap-[12px] hover:shadow-md transition-shadow">
-                  <span className="font-semibold text-[15px] text-[var(--color-text-secondary)]" style={{ fontFamily: 'var(--font-libre-caslon)' }}>01</span>
-                  <h3 className="text-[20px] font-semibold text-[var(--color-text-inverse)] leading-[28px]">Competitor Review</h3>
-                  <p className="text-[14px] font-normal leading-[20px] text-[var(--Semantic-Text-Inverse)]">
+                  <span className="type-label text-[var(--color-text-secondary)]">01</span>
+                  <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Competitor Review</h3>
+                  <p className="type-body-sm text-[var(--Semantic-Text-Inverse)]">
                     I analysed leading self-custody wallets to understand how they introduced ownership, security, and recovery during onboarding.
                   </p>
                 </div>
                 <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[16px] p-[24px] flex flex-col gap-[12px] hover:shadow-md transition-shadow">
-                  <span className="font-semibold text-[15px] text-[var(--color-text-secondary)]" style={{ fontFamily: 'var(--font-libre-caslon)' }}>02</span>
-                  <h3 className="text-[20px] font-semibold text-[var(--color-text-inverse)] leading-[28px]">Existing Research</h3>
-                  <p className="text-[14px] font-normal leading-[20px] text-[var(--Semantic-Text-Inverse)]">
+                  <span className="type-label text-[var(--color-text-secondary)]">02</span>
+                  <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Existing Research</h3>
+                  <p className="type-body-sm text-[var(--Semantic-Text-Inverse)]">
                     I reviewed industry reports, published UX research, and educational resources to identify recurring usability patterns around self-custody.
                   </p>
                 </div>
                 <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[16px] p-[24px] flex flex-col gap-[12px] hover:shadow-md transition-shadow">
-                  <span className="font-semibold text-[15px] text-[var(--color-text-secondary)]" style={{ fontFamily: 'var(--font-libre-caslon)' }}>03</span>
-                  <h3 className="text-[20px] font-semibold text-[var(--color-text-inverse)] leading-[28px]">Community Discussions</h3>
-                  <p className="text-[14px] font-normal leading-[20px] text-[var(--Semantic-Text-Inverse)]">
+                  <span className="type-label text-[var(--color-text-secondary)]">03</span>
+                  <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Community Discussions</h3>
+                  <p className="type-body-sm text-[var(--Semantic-Text-Inverse)]">
                     I explored discussions across Reddit, X, and crypto communities to understand where users became confused and why.
                   </p>
                 </div>
@@ -476,27 +476,27 @@ export default function TrustCorePage() {
 
             {/* Direct Quotes Row */}
             <div className="flex flex-col gap-[24px] w-full">
-              <h4 className="text-[16px] font-semibold leading-[24px] text-[var(--color-text-inverse)]">Direct user quote from the study:</h4>
+              <h4 className="type-body-medium text-[var(--color-text-inverse)]">Direct user quote from the study:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] w-full">
                 {/* Quote 1 */}
                 <div className="flex flex-col gap-[8px] py-1">
                   <div className="pl-[24px] border-l-[3px] border-[var(--color-text-inverse)] py-0.5">
-                    <p className="text-[16px] font-semibold leading-[24px] text-[var(--color-text-inverse)]">
+                    <p className="type-body-medium text-[var(--color-text-inverse)]">
                       "This app has deleted all my funds and account. DO NOT DOWNLOAD THIS!!!"
                     </p>
                   </div>
-                  <p className="text-[16px] italic leading-[24px] text-[var(--color-text-secondary)] pl-[27px]">
+                  <p className="type-body italic text-[var(--color-text-secondary)] pl-[27px]">
                     App store reviewer who misunderstood that the wallet app is just an interface, not the location of their funds
                   </p>
                 </div>
                 {/* Quote 2 */}
                 <div className="flex flex-col gap-[8px] py-1">
                   <div className="pl-[24px] border-l-[3px] border-[var(--color-text-inverse)] py-0.5">
-                    <p className="text-[16px] font-semibold leading-[24px] text-[var(--color-text-inverse)]">
+                    <p className="type-body-medium text-[var(--color-text-inverse)]">
                       "I generate my private key and send it to the cloud. Then I get back [from the cloud] a public key."
                     </p>
                   </div>
-                  <p className="text-[16px] italic leading-[24px] text-[var(--color-text-secondary)] pl-[27px]">
+                  <p className="type-body italic text-[var(--color-text-secondary)] pl-[27px]">
                     Study participant 5[X], demonstrating a fundamental misunderstanding of public/private key cryptography
                   </p>
                 </div>
@@ -509,8 +509,8 @@ export default function TrustCorePage() {
           {/* New Strategy Section */}
           <section id="strategy" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">KEY INSIGHT</span>
-              <h2 className="text-[24px] font-semibold leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">KEY INSIGHT</span>
+              <h2 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 The interface wasn't introducing complexity. It was introducing the wrong concepts at the wrong time.
               </h2>
             </div>
@@ -518,9 +518,9 @@ export default function TrustCorePage() {
             {/* Strategy Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] w-full mt-2">
               <div className="flex flex-col gap-[12px]">
-                <h4 className="text-[18px] font-semibold leading-[26px] text-[var(--color-text-inverse)]">PEOPLE NATURALLY THINK ABOUT</h4>
+                <h4 className="type-heading-h6 text-[var(--color-text-inverse)]">PEOPLE NATURALLY THINK ABOUT</h4>
                 <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[16px] p-[24px] flex-1">
-                  <ul className="flex flex-col gap-4 pl-5 list-disc text-[16px] leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                  <ul className="flex flex-col gap-4 pl-5 list-disc type-body text-[var(--Semantic-Text-Inverse)]">
                     <li>What do I own?</li>
                     <li>How can I protect it?</li>
                     <li>Who can access it?</li>
@@ -529,9 +529,9 @@ export default function TrustCorePage() {
                 </div>
               </div>
               <div className="flex flex-col gap-[12px]">
-                <h4 className="text-[18px] font-semibold leading-[26px] text-[var(--color-text-inverse)]">WALLETS INTRODUCE</h4>
+                <h4 className="type-heading-h6 text-[var(--color-text-inverse)]">WALLETS INTRODUCE</h4>
                 <div className="bg-[var(--bg-color)] border border-[var(--footer-border)] shadow-[0px_1px_1px_rgba(0,0,0,0.06)] rounded-[16px] p-[24px] flex-1">
-                  <ul className="flex flex-col gap-4 pl-5 list-disc text-[16px] leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                  <ul className="flex flex-col gap-4 pl-5 list-disc type-body text-[var(--Semantic-Text-Inverse)]">
                     <li>Accounts</li>
                     <li>Addresses</li>
                     <li>Permissions</li>
@@ -547,7 +547,7 @@ export default function TrustCorePage() {
               <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
                 <CheckBadgeIcon className="size-4 text-white" />
               </div>
-              <span className="text-[16px] font-semibold text-[var(--color-text-inverse)]">
+              <span className="type-body-medium text-[var(--color-text-inverse)]">
                 It was the mental model - not the interface.
               </span>
             </div>
@@ -560,8 +560,8 @@ export default function TrustCorePage() {
             {/* Design Opportunity horizontal timeline */}
             <div className="flex flex-col gap-[32px] w-full">
               <div className="flex flex-col gap-[12px]">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">DESIGN OPPORTUNITY</span>
-                <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">DESIGN OPPORTUNITY</span>
+                <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                   Instead of organising the experience around blockchain architecture, TrustCore is organised around ownership. The progression mirrors how people naturally build trust with a product: understand first, then protect, then take control.
                 </p>
               </div>
@@ -583,9 +583,9 @@ export default function TrustCorePage() {
                         draggable={false}
                       />
                     </div>
-                    <span className="text-[12px] text-[var(--color-text-secondary)] tracking-[0.2px] font-medium mt-1">01</span>
-                    <h5 className="text-[16px] font-semibold text-[var(--color-text-inverse)]">Account Home</h5>
-                    <p className="text-[12px] text-[var(--color-text-secondary)] leading-[18px] tracking-[0.2px]">Start with what users care about most: their assets.</p>
+                    <span className="type-label text-[var(--color-text-secondary)] mt-1">01</span>
+                    <h5 className="type-body-medium text-[var(--color-text-inverse)]">Account Home</h5>
+                    <p className="type-caption text-[var(--color-text-secondary)]">Start with what users care about most: their assets.</p>
                   </div>
                   {/* Step 2 */}
                   <div className="flex flex-col gap-[4px] w-[180px]">
@@ -601,9 +601,9 @@ export default function TrustCorePage() {
                         draggable={false}
                       />
                     </div>
-                    <span className="text-[12px] text-[var(--color-text-secondary)] tracking-[0.2px] font-medium mt-1">02</span>
-                    <h5 className="text-[16px] font-semibold text-[var(--color-text-inverse)]">Manage Wallet</h5>
-                    <p className="text-[12px] text-[var(--color-text-secondary)] leading-[18px] tracking-[0.2px]">Organise wallets before configuring them.</p>
+                    <span className="type-label text-[var(--color-text-secondary)] mt-1">02</span>
+                    <h5 className="type-body-medium text-[var(--color-text-inverse)]">Manage Wallet</h5>
+                    <p className="type-caption text-[var(--color-text-secondary)]">Organise wallets before configuring them.</p>
                   </div>
                   {/* Step 3 */}
                   <div className="flex flex-col gap-[4px] w-[180px]">
@@ -619,9 +619,9 @@ export default function TrustCorePage() {
                         draggable={false}
                       />
                     </div>
-                    <span className="text-[12px] text-[var(--color-text-secondary)] tracking-[0.2px] font-medium mt-1">03</span>
-                    <h5 className="text-[16px] font-semibold text-[var(--color-text-inverse)]">Wallet &amp; Account</h5>
-                    <p className="text-[12px] text-[var(--color-text-secondary)] leading-[18px] tracking-[0.2px]">Build understanding before making decisions.</p>
+                    <span className="type-label text-[var(--color-text-secondary)] mt-1">03</span>
+                    <h5 className="type-body-medium text-[var(--color-text-inverse)]">Wallet &amp; Account</h5>
+                    <p className="type-caption text-[var(--color-text-secondary)]">Build understanding before making decisions.</p>
                   </div>
                   {/* Step 4 */}
                   <div className="flex flex-col gap-[4px] w-[180px]">
@@ -637,9 +637,9 @@ export default function TrustCorePage() {
                         draggable={false}
                       />
                     </div>
-                    <span className="text-[12px] text-[var(--color-text-secondary)] tracking-[0.2px] font-medium mt-1">04</span>
-                    <h5 className="text-[16px] font-semibold text-[var(--color-text-inverse)]">Wallet Type</h5>
-                    <p className="text-[12px] text-[var(--color-text-secondary)] leading-[18px] tracking-[0.2px]">Choose the right level of control.</p>
+                    <span className="type-label text-[var(--color-text-secondary)] mt-1">04</span>
+                    <h5 className="type-body-medium text-[var(--color-text-inverse)]">Wallet Type</h5>
+                    <p className="type-caption text-[var(--color-text-secondary)]">Choose the right level of control.</p>
                   </div>
                   {/* Step 5 */}
                   <div className="flex flex-col gap-[4px] w-[180px]">
@@ -655,9 +655,9 @@ export default function TrustCorePage() {
                         draggable={false}
                       />
                     </div>
-                    <span className="text-[12px] text-[var(--color-text-secondary)] tracking-[0.2px] font-medium mt-1">05</span>
-                    <h5 className="text-[16px] font-semibold text-[var(--color-text-inverse)]">Create or Import</h5>
-                    <p className="text-[12px] text-[var(--color-text-secondary)] leading-[18px] tracking-[0.2px]">Only show what's needed next.</p>
+                    <span className="type-label text-[var(--color-text-secondary)] mt-1">05</span>
+                    <h5 className="type-body-medium text-[var(--color-text-inverse)]">Create or Import</h5>
+                    <p className="type-caption text-[var(--color-text-secondary)]">Only show what's needed next.</p>
                   </div>
                 </div>
               </div>
@@ -667,7 +667,7 @@ export default function TrustCorePage() {
                 <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center shrink-0">
                   <CheckBadgeIcon className="size-4 text-white" />
                 </div>
-                <span className="text-[16px] font-semibold text-[var(--color-text-inverse)]">
+                <span className="type-body-medium text-[var(--color-text-inverse)]">
                   This structure became the foundation for every design decision that followed.
                 </span>
               </div>
@@ -679,7 +679,7 @@ export default function TrustCorePage() {
           {/* Design Execution / Principles Section */}
           <section id="design-principles" className="flex flex-col gap-[56px] w-full scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[16px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">DESIGN PRINCIPLES</span>
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">DESIGN PRINCIPLES</span>
               
               {/* Principles Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] w-full">
@@ -689,8 +689,8 @@ export default function TrustCorePage() {
                     <FaceSmileIcon />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h3 className="text-[20px] font-semibold text-[var(--color-text-inverse)] leading-[28px]">Start with what's familiar.</h3>
-                    <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+                    <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Start with what's familiar.</h3>
+                    <p className="type-body text-[var(--color-text-secondary)]">
                       Introduce blockchain concepts only after users understand ownership.
                     </p>
                   </div>
@@ -701,8 +701,8 @@ export default function TrustCorePage() {
                     <PhoneIcon />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h3 className="text-[18px] font-semibold text-[var(--color-text-inverse)] leading-[26px]">Explain before asking.</h3>
-                    <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+                    <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Explain before asking.</h3>
+                    <p className="type-body text-[var(--color-text-secondary)]">
                       Every important decision begins with context.
                     </p>
                   </div>
@@ -713,8 +713,8 @@ export default function TrustCorePage() {
                     <ShieldTickIcon />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <h3 className="text-[18px] font-semibold text-[var(--color-text-inverse)] leading-[26px]">Reveal complexity gradually.</h3>
-                    <p className="text-[16px] font-normal leading-[24px] text-[var(--color-text-secondary)]">
+                    <h3 className="type-heading-h6 text-[var(--color-text-inverse)]">Reveal complexity gradually.</h3>
+                    <p className="type-body text-[var(--color-text-secondary)]">
                       Advanced features stay available without becoming the default experience.
                     </p>
                   </div>
@@ -729,13 +729,13 @@ export default function TrustCorePage() {
           <section id="design-execution" className="flex flex-col gap-[40px] w-full scroll-mt-28" data-reveal>
             {/* Spacing rows of illustrations */}
             <div className="flex flex-col gap-[40px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase mb-[-16px]">DESIGN EXECUTION</span>
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase mb-[-16px]">DESIGN EXECUTION</span>
               
               {/* Feature 1 */}
               <div className="flex flex-col gap-[40px] w-full">
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-[24px] font-semibold text-[var(--color-text-inverse)] tracking-normal leading-[32px]">Ownership comes first.</h3>
-                  <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                  <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">Ownership comes first.</h3>
+                  <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                     Assets become the primary entry point instead of accounts. Rather than exposing technical structure immediately, the product helps users understand what they own before introducing how those assets are managed — reducing early drop-off caused by unfamiliar terminology.
                   </p>
                 </div>
@@ -747,8 +747,8 @@ export default function TrustCorePage() {
               {/* Feature 2 */}
               <div className="flex flex-col gap-[40px] w-full">
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-[24px] font-semibold text-[var(--color-text-inverse)] tracking-normal leading-[32px]">Security should be learned, not configured.</h3>
-                  <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                  <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">Security should be learned, not configured.</h3>
+                  <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                     Protection is introduced progressively instead of all at once. Each recommendation includes clear context so users understand its purpose before making a decision - shifting security from a setup task to a growing sense of confidence.
                   </p>
                 </div>
@@ -760,8 +760,8 @@ export default function TrustCorePage() {
               {/* Feature 3 */}
               <div className="flex flex-col gap-[40px] w-full">
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-[24px] font-semibold text-[var(--color-text-inverse)] tracking-normal leading-[32px]">Advanced doesn't mean complicated.</h3>
-                  <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+                  <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">Advanced doesn't mean complicated.</h3>
+                  <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                     Powerful features like multisig remain accessible without overwhelming new users. Users first learn why additional security might be valuable before configuring advanced settings - preserving flexibility without front-loading complexity.
                   </p>
                 </div>
@@ -777,16 +777,16 @@ export default function TrustCorePage() {
           {/* Takeaways Section */}
           <section id="final-outcome" className="flex flex-col gap-[48px] w-full scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
-              <p className="text-[16px] font-normal leading-[24px] text-[var(--Semantic-Text-Inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
+              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
               </p>
             </div>
 
             <div className="flex flex-col gap-[20px] w-full">
               <div className="flex flex-col gap-[8px]">
-                <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">REFLECTION</span>
-                <h3 className="text-[24px] md:text-[28px] font-semibold text-[var(--color-text-inverse)] tracking-normal leading-[32px] md:leading-[36px]">
+                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">REFLECTION</span>
+                <h3 className="type-heading-h4 text-[var(--color-text-inverse)]">
                   This project changed how I think about product design.
                 </h3>
               </div>
@@ -806,10 +806,10 @@ export default function TrustCorePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h4 className="text-[18px] font-bold text-[var(--color-text-inverse)] leading-[26px]">
+                    <h4 className="type-heading-h6 text-[var(--color-text-inverse)]">
                       Cognitive effort is.
                     </h4>
-                    <p className="text-[15px] font-normal leading-[22px] text-[var(--color-text-secondary)]">
+                    <p className="type-body-sm text-[var(--color-text-secondary)]">
                       Users struggle when they have to build a new mental model before they can act.
                     </p>
                   </div>
@@ -829,10 +829,10 @@ export default function TrustCorePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h4 className="text-[18px] font-bold text-[var(--color-text-inverse)] leading-[26px]">
+                    <h4 className="type-heading-h6 text-[var(--color-text-inverse)]">
                       Technology isn't what overwhelms users.
                     </h4>
-                    <p className="text-[15px] font-normal leading-[22px] text-[var(--color-text-secondary)]">
+                    <p className="type-body-sm text-[var(--color-text-secondary)]">
                       It's rarely the complexity of the product itself.
                     </p>
                   </div>
@@ -852,10 +852,10 @@ export default function TrustCorePage() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h4 className="text-[18px] font-bold text-[var(--color-text-inverse)] leading-[26px]">
+                    <h4 className="type-heading-h6 text-[var(--color-text-inverse)]">
                       Good UX teaches before it asks.
                     </h4>
-                    <p className="text-[15px] font-normal leading-[22px] text-[var(--color-text-secondary)]">
+                    <p className="type-body-sm text-[var(--color-text-secondary)]">
                       Designing the right mental model creates confidence, not just a cleaner interface.
                     </p>
                   </div>
@@ -869,8 +869,8 @@ export default function TrustCorePage() {
           {/* Learn More / Other Screens */}
           <section id="learn-more" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="text-[14px] font-medium tracking-[0.1px] text-[var(--color-text-secondary)] uppercase">LEARN MORE</span>
-              <h3 className="text-[24px] font-semibold leading-[32px] tracking-normal text-[var(--color-text-inverse)]">
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">LEARN MORE</span>
+              <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 There's so much more behind the scene!
               </h3>
             </div>

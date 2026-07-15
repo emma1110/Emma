@@ -27,7 +27,7 @@ function DockIcon({ mouseX, src, label, isActive, onClick }) {
         className="relative flex items-center justify-center shrink-0 origin-bottom transition-transform duration-200 active:scale-95 group"
       >
         {/* Tooltip Label */}
-        <div className="absolute top-[-44px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-3 py-1 bg-neutral-900/90 text-white text-xs font-medium rounded-md pointer-events-none whitespace-nowrap shadow-xl border border-neutral-800">
+        <div className="type-caption absolute top-[-44px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 px-3 py-1 bg-neutral-900/90 text-white rounded-md pointer-events-none whitespace-nowrap shadow-xl border border-neutral-800">
           {label}
         </div>
 

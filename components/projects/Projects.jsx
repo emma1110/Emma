@@ -12,22 +12,6 @@ export default function Projects() {
       id="project"
       className="relative flex w-full max-w-[1440px] mx-auto flex-col items-start gap-4 sm:gap-[20px] px-4 sm:px-8 lg:px-[80px] py-16 lg:py-[128px] bg-[var(--bg-color)] transition-colors duration-450"
     >
-      {/* Section Header */}
-      <h2
-        data-reveal
-        className="w-full text-left"
-        style={{
-          color: "var(--color-text-inverse, black)",
-          fontSize: "var(--font-display-xl-size)",
-          fontWeight: "var(--font-display-xl-weight)",
-          lineHeight: "var(--font-display-xl-line)",
-          letterSpacing: "var(--font-display-xl-tracking)",
-          marginBottom: "16px"
-        }}
-      >
-        Recent Work
-      </h2>
-
       {/* ══════════════════════════════════════════════════
           Card 1 — TrustCore Mobile
       ══════════════════════════════════════════════════ */}

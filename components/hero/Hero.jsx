@@ -80,10 +80,10 @@ export default function Hero() {
 
   return (
     <div
-      className="relative flex w-full max-w-[1440px] mx-auto flex-col items-center bg-[var(--bg-color)] gap-[40px] lg:gap-[48px] px-4 sm:px-8 lg:px-[80px] py-16 sm:py-24 lg:py-[74px] transition-colors duration-450 overflow-hidden"
+      className="relative flex w-full max-w-[1920px] mx-auto flex-col items-center bg-[var(--bg-color)] gap-[40px] lg:gap-[48px] px-4 sm:px-8 lg:px-[80px] py-16 sm:py-24 lg:py-[74px] transition-colors duration-450"
     >
       {/* ---------- Centered Hero Layout ---------- */}
-      <div className="flex w-full max-w-[850px] flex-col items-center text-center gap-[32px]">
+      <div className="flex w-full max-w-[1760px] flex-col items-center text-center gap-[32px]">
         {/* SVG Sticker Cluster */}
         <div 
           data-entrance
@@ -138,10 +138,10 @@ export default function Hero() {
             className="w-full text-center"
             style={{
               color: "var(--color-text-inverse)",
-              fontSize: "clamp(18px, 6.5vw, var(--font-display-xl-size))",
-              fontWeight: "var(--font-display-xl-weight)",
-              lineHeight: "var(--font-display-xl-line)",
-              letterSpacing: "var(--font-display-xl-tracking)",
+              fontSize: "var(--font-hero-size)",
+              fontWeight: "var(--font-hero-weight)",
+              lineHeight: "var(--font-hero-line)",
+              letterSpacing: "var(--font-hero-tracking)",
               "--entrance-delay": "150ms"
             }}
           >
@@ -156,10 +156,8 @@ export default function Hero() {
                   <span
                     className="type-text"
                     style={{
-                      fontFamily: "var(--font-libre-caslon)",
-                      fontStyle: "italic",
-                      fontWeight: 600,
-                      lineHeight: 1,
+                      fontFamily: "var(--font-sans)",
+                      fontStyle: "normal",
                     }}
                   >
                     {displayText}
@@ -174,7 +172,7 @@ export default function Hero() {
           {/* Description */}
           <p
             data-entrance
-            className="w-full font-medium text-lg lg:text-[20px] leading-relaxed lg:leading-[30px]"
+            className="type-body-lg-medium w-full"
             style={{
               color: "var(--color-text-secondary)",
               "--entrance-delay": "300ms"
@@ -192,7 +190,7 @@ export default function Hero() {
           className="copy-email-button mx-auto"
           data-entrance
           data-magnetic
-          style={{ fontSize: "16px", "--entrance-delay": "410ms" }}
+          style={{ "--entrance-delay": "410ms" }}
         >
           Copy My Email
         </button>
@@ -212,8 +210,8 @@ export default function Hero() {
           </svg>
         </div>
         <div className="flex flex-col">
-          <span className="font-semibold text-sm text-neutral-100">Copied!</span>
-          <span className="text-xs text-neutral-400">lananhnguyen.arena@gmail.com</span>
+          <span className="type-label-lg text-neutral-100">Copied!</span>
+          <span className="type-caption text-neutral-400">lananhnguyen.arena@gmail.com</span>
         </div>
       </div>
     </div>
