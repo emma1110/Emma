@@ -25,6 +25,7 @@
   --color-text-primary: #ffffff;
   --color-text-secondary: #525252;
   --color-surface-elevated: #f4f4f5;
+  --case-study-card-bg: #ffffff;
   --Semantic-Text-Inverse: #000000;
 
   --navbar-bg-scrolled: rgba(255, 255, 255, 0.8);
@@ -67,6 +68,7 @@ html[data-theme="dark"] {
   --color-text-primary: #000000;
   --color-text-secondary: #a3a3a3;
   --color-surface-elevated: #111111;
+  --case-study-card-bg: #141414;
   --Semantic-Text-Inverse: #ffffff;
 
   --navbar-bg-scrolled: rgba(17, 17, 17, 0.8);
@@ -617,4 +619,10 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* Keep the original fan-out motion; only de-emphasize unselected images. */
+.hyfi-learning-gallery:has(.hyfi-learning-card:hover)
+  .hyfi-learning-card:not(:hover) {
+  opacity: 0.18;
 }

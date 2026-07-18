@@ -5,7 +5,7 @@ export default function TrustCoreWebCard() {
   return (
     <Link href="/trustcore-web" className="project-card-link block w-full" data-reveal style={{ "--reveal-delay": "80ms" }}>
       <div 
-        className="motion-card relative w-full overflow-hidden rounded-[24px] cursor-pointer flex flex-col justify-between pt-[96px] sm:pt-[110px] min-h-[500px] sm:min-h-[540px] lg:h-[568px]"
+        className="motion-card relative flex h-[414px] w-full cursor-pointer flex-col overflow-hidden rounded-[24px] pt-[96px] sm:h-[550px] sm:pt-[110px] lg:h-[576px] lg:justify-between"
         style={{ background: "linear-gradient(180deg, #3FB0BC 0%, #43A5BC 57.32%, #60A4D0 100%)" }}
         data-tilt
       >
@@ -20,7 +20,7 @@ export default function TrustCoreWebCard() {
         </div>
 
         {/* Title + badges */}
-        <div className="flex flex-col gap-[12px] z-10 px-4 sm:px-[20px]">
+        <div className="flex flex-col gap-[12px] z-10 px-4 sm:gap-[16px] sm:px-[20px] lg:gap-[12px]">
           <p className="type-heading-h3 text-white">
             Explaining a complex Web3 ecosystem with clarity
           </p>
@@ -37,12 +37,12 @@ export default function TrustCoreWebCard() {
         </div>
 
         {/* Mockup */}
-        <div className="mt-8 sm:mt-[40px] flex justify-center w-full px-4 lg:px-0 flex-1 items-end">
-          <div className="w-full lg:w-[94%] max-w-[490px] flex items-end">
+        <div className="mt-[16px] flex min-h-0 w-full flex-1 items-end justify-center px-4 sm:mt-[24px] sm:px-[20px] lg:mt-[40px] lg:px-0">
+          <div className="flex h-full w-full max-w-[490px] items-end lg:w-[94%]">
             <img
               src="/images/tc page.avif"
               alt="TrustCore Landing"
-              className="w-full h-auto object-contain object-bottom"
+              className="h-full w-full object-contain object-bottom"
               width="490"
               height="300"
               loading="lazy"

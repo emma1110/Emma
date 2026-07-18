@@ -196,7 +196,7 @@ export default function BitCorePage() {
 
             {/* Overview Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>Most blockchain landing pages fail to communicate value beyond technology.</li>
                 <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand what the product actually solves. This creates friction for both new users and investors, especially when trust and product clarity are missing.</li>
@@ -227,7 +227,7 @@ export default function BitCorePage() {
 
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
+              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 The experience was designed around one principle:<br />
                 <strong className="text-[var(--color-text-inverse)]">Users trust products they can clearly understand.</strong>
@@ -236,7 +236,7 @@ export default function BitCorePage() {
                 Instead of leading with technical complexity, the landing page focused on product utility, onboarding simplicity, and visible trust signals.
               </p>
               <div className="flex flex-col gap-[8px]">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
+                <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
                 <div className="flex flex-wrap items-center gap-2 type-body-sm text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
                   <span>Value Proposition</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
@@ -264,7 +264,7 @@ export default function BitCorePage() {
           {/* Final Outcome Section */}
           <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>The final landing page improved product clarity, ecosystem understanding, and onboarding readiness.</li>
                 <li>More importantly, it positioned Bitcore as a usable blockchain ecosystem rather than just another Layer 1 project.</li>

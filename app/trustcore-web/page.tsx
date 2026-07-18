@@ -197,7 +197,7 @@ export default function TrustCoreWebPage() {
 
             {/* Overview Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>Most crypto wallet landing pages fail before onboarding begins.</li>
                 <li>They overwhelm users with technical language, weak trust signals, and unclear product value. Users leave before understanding what the product does or whether it feels safe enough to trust.</li>
@@ -228,7 +228,7 @@ export default function TrustCoreWebPage() {
 
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
+              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 The experience was designed around one principle:<br />
                 <strong className="text-[var(--color-text-inverse)]">Users convert when they feel safe.</strong>
@@ -237,7 +237,7 @@ export default function TrustCoreWebPage() {
                 Instead of leading with features, the landing page focused on progressive confidence-building through clear messaging, product understanding, security validation, and strong conversion flow.
               </p>
               <div className="flex flex-col gap-[8px]">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
+                <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
                 <div className="flex flex-wrap items-center gap-2 type-body-sm text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
                   <span>Value Proposition</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
@@ -292,7 +292,7 @@ export default function TrustCoreWebPage() {
           {/* Final Outcome Section */}
           <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
               </p>

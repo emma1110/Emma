@@ -29,13 +29,9 @@ export default function HowIUseAI() {
   return (
     <section 
       id="about"
-      className="defer-render w-full flex flex-col items-center bg-[var(--bg-color)] transition-colors duration-450"
-      style={{ 
-        paddingBlock: "clamp(64px, 10vw, 128px)", 
-        paddingInline: "clamp(16px, 4vw, 32px)" 
-      }}
+      className="defer-render flex w-full flex-col items-center bg-[var(--bg-color)] px-4 py-16 transition-colors duration-450 sm:px-8 lg:px-[80px] lg:py-[128px]"
     >
-      <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
+      <div className="flex w-full max-w-[1280px] flex-col items-center gap-10 sm:gap-[64px]">
         
         {/* Title and Subtitle */}
         <div className="flex flex-col items-center gap-[12px] max-w-[1200px] text-center" data-reveal>

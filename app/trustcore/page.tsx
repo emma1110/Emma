@@ -401,14 +401,14 @@ export default function TrustCorePage() {
           {/* Overview columns (The Challenge / What I Did) */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-[56px] w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
               <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-[12px]">
                 <p>TrustCore is a self-custody wallet designed to make digital ownership easier to understand.</p>
                 <p>Rather than simplifying blockchain, the project rethinks how people are introduced to it.</p>
               </div>
             </div>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">WHAT I DID</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">WHAT I DID</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 I led the product design from research through high-fidelity design, including product strategy, information architecture, interaction design, prototyping, and design system implementation.
               </p>
@@ -419,7 +419,7 @@ export default function TrustCorePage() {
 
           {/* Problem Statement Section */}
           <section id="problem" className="flex flex-col gap-[8px] scroll-mt-28 w-full" data-reveal>
-            <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">THE CHALLENGE</span>
+            <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE CHALLENGE</span>
             <div className="flex flex-col gap-[8px] w-full">
               <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-1">
                 <p>Self-custody gives people complete control over their assets. Most wallets expose that complexity immediately asking users to understand accounts, addresses, and recovery phrases before they understand why any of it matters.</p>
@@ -436,7 +436,7 @@ export default function TrustCorePage() {
           {/* Research & Discovery Section */}
           <section id="discovery" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">RESEARCH</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">RESEARCH</span>
               <h2 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 One insight changed the project.
               </h2>
@@ -446,7 +446,7 @@ export default function TrustCorePage() {
             </div>
 
             <div className="flex flex-col gap-[14px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">RESEARCH RESOURCE</span>
+              <span className="type-label-lg mb-[2px] text-[var(--color-text-secondary)] uppercase">RESEARCH RESOURCE</span>
               
               {/* Research Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] w-full">
@@ -509,7 +509,7 @@ export default function TrustCorePage() {
           {/* New Strategy Section */}
           <section id="strategy" className="flex flex-col gap-[32px] scroll-mt-28 w-full" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">KEY INSIGHT</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">KEY INSIGHT</span>
               <h2 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 The interface wasn't introducing complexity. It was introducing the wrong concepts at the wrong time.
               </h2>
@@ -560,7 +560,7 @@ export default function TrustCorePage() {
             {/* Design Opportunity horizontal timeline */}
             <div className="flex flex-col gap-[32px] w-full">
               <div className="flex flex-col gap-[12px]">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">DESIGN OPPORTUNITY</span>
+                <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">DESIGN OPPORTUNITY</span>
                 <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                   Instead of organising the experience around blockchain architecture, TrustCore is organised around ownership. The progression mirrors how people naturally build trust with a product: understand first, then protect, then take control.
                 </p>
@@ -729,7 +729,7 @@ export default function TrustCorePage() {
           <section id="design-execution" className="flex flex-col gap-[40px] w-full scroll-mt-28" data-reveal>
             {/* Spacing rows of illustrations */}
             <div className="flex flex-col gap-[40px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase mb-[-16px]">DESIGN EXECUTION</span>
+              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase mb-[-24px]">DESIGN EXECUTION</span>
               
               {/* Feature 1 */}
               <div className="flex flex-col gap-[40px] w-full">
@@ -777,7 +777,7 @@ export default function TrustCorePage() {
           {/* Takeaways Section */}
           <section id="final-outcome" className="flex flex-col gap-[48px] w-full scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
                 Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
               </p>
@@ -785,7 +785,7 @@ export default function TrustCorePage() {
 
             <div className="flex flex-col gap-[20px] w-full">
               <div className="flex flex-col gap-[8px]">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">REFLECTION</span>
+                <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">REFLECTION</span>
                 <h3 className="type-heading-h4 text-[var(--color-text-inverse)]">
                   This project changed how I think about product design.
                 </h3>
@@ -869,7 +869,7 @@ export default function TrustCorePage() {
           {/* Learn More / Other Screens */}
           <section id="learn-more" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">LEARN MORE</span>
+              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">LEARN MORE</span>
               <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">
                 There's so much more behind the scene!
               </h3>

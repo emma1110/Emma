@@ -172,7 +172,7 @@ export default function Hero() {
           {/* Description */}
           <p
             data-entrance
-            className="type-body-lg-medium w-full"
+            className="type-body-lg-medium w-full max-w-[760px] text-balance"
             style={{
               color: "var(--color-text-secondary)",
               "--entrance-delay": "300ms"
@@ -180,7 +180,7 @@ export default function Hero() {
           >
             Senior Product Designer with 8+ years of experience
             <br className="hidden sm:block" />
-            turning complex systems into intuitive products.
+            {" "}turning complex systems into intuitive products.
           </p>
         </div>
 

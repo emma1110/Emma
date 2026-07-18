@@ -51,13 +51,9 @@ export default function FavoriteBooks() {
 
   return (
     <section 
-      className="defer-render w-full flex flex-col items-center justify-center bg-[var(--bg-color)] transition-colors duration-450 overflow-hidden"
-      style={{ 
-        paddingBlock: "clamp(64px, 10vw, 128px)", 
-        paddingInline: "clamp(16px, 4vw, 32px)" 
-      }}
+      className="defer-render flex w-full flex-col items-center justify-center overflow-hidden bg-[var(--bg-color)] px-4 py-16 transition-colors duration-450 sm:px-8 lg:px-[80px] lg:py-[128px]"
     >
-      <div className="flex w-full max-w-[1440px] flex-col items-center gap-10 sm:gap-[64px] px-0 sm:px-8">
+      <div className="flex w-full max-w-[1280px] flex-col items-center gap-10 sm:gap-[64px]">
         
         {/* Title and Subtitle */}
         <div className="flex flex-col items-center gap-[12px] max-w-[800px] text-center">
@@ -74,8 +70,8 @@ export default function FavoriteBooks() {
         </div>
 
         {/* Books Accordion Container */}
-        <div className="w-full overflow-x-auto no-scrollbar py-4 px-0 sm:px-2 select-none flex justify-start lg:justify-center">
-          <div className="flex gap-4 sm:gap-[25px] items-center min-w-max mx-auto lg:mx-0 px-0 sm:px-4 lg:px-0">
+        <div className="no-scrollbar flex w-full snap-x snap-mandatory justify-start overflow-x-auto py-4 lg:justify-center">
+          <div className="flex min-w-max items-center gap-4 pr-4 sm:gap-[25px] sm:pr-8 lg:pr-0">
             {books.map((book, idx) => {
               const isExpanded = hoveredIndex === idx;
 
@@ -84,9 +80,9 @@ export default function FavoriteBooks() {
                   key={idx}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onClick={() => setHoveredIndex(idx)}
-                  className="h-[340px] sm:h-[390px] rounded-[16px] overflow-hidden relative shrink-0 cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  className="relative h-[340px] shrink-0 snap-start cursor-pointer overflow-hidden rounded-[16px] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] sm:h-[390px]"
                   style={{
-                    backgroundColor: book.spineBg,
+                    backgroundColor: isExpanded ? "transparent" : book.spineBg,
                     width: isExpanded ? "260px" : "90px"
                   }}
                 >
@@ -108,7 +104,7 @@ export default function FavoriteBooks() {
                         <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                           <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                             <span 
-                              className="type-heading-h6 uppercase"
+                              className="type-body-medium font-bold uppercase"
                               style={{ color: book.spineTextColor }}
                             >
                               {book.spineTitle}
@@ -121,7 +117,7 @@ export default function FavoriteBooks() {
                       <div className="absolute flex h-[300px] sm:h-[345px] items-center justify-center w-[24px]">
                         <div className="flex-none rotate-90 origin-center whitespace-nowrap">
                           <span 
-                            className="type-heading-h6 uppercase"
+                            className="type-body-medium font-bold uppercase"
                             style={{ color: book.spineTextColor }}
                           >
                             {book.spineTitle}
@@ -140,7 +136,7 @@ export default function FavoriteBooks() {
                     <img 
                       src={book.cover} 
                       alt={book.title} 
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-contain"
                       width="260"
                       height="390"
                       loading="lazy"

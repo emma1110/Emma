@@ -1,6 +1,6 @@
 import TrustCoreCard from "./TrustCoreCard";
 import TrustCoreWebCard from "./TrustCoreWebCard";
-import CryptoHeroCard from "./CryptoHeroCard";
+import HyfiCard from "./HyfiCard";
 import BitCoreCard from "./BitCoreCard";
 
 export default function Projects() {
@@ -19,7 +19,7 @@ export default function Projects() {
       ══════════════════════════════════════════════════ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px] w-full">
         <TrustCoreWebCard />
-        <CryptoHeroCard />
+        <HyfiCard />
       </div>
 
       {/* ══════════════════════════════════════════════════
