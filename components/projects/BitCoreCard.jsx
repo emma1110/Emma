@@ -37,7 +37,7 @@ export default function BitCoreCard() {
         <img
           src="/images/bitcore.avif"
           alt="BitCore"
-          className="absolute inset-0 h-full w-full max-w-none bg-white object-contain object-left-top lg:object-cover"
+          className="absolute inset-0 h-full w-full max-w-none object-cover object-left-top"
           width="942"
           height="522"
           loading="lazy"
