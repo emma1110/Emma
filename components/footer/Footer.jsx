@@ -1,7 +1,7 @@
 export default function Footer() {
   const links = [
-    { label: "Linkedin", href: "https://linkedin.com" },
-    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Linkedin", href: "https://www.linkedin.com/in/lan-anh-nguyen-a07961213/" },
+    { label: "Instagram", href: "https://www.instagram.com/emma.little.things/" },
     { label: "Resume", href: "#" },
   ];
 

@@ -25,10 +25,26 @@ export default function HomeCTA() {
           </div>
 
           <a
-            href="mailto:lananhnguyen.arena@gmail.com"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--color-text-inverse)] px-6 py-3 type-heading-h6 text-[var(--color-text-primary)] transition-[transform,opacity] duration-200 hover:opacity-80 active:scale-95"
+            href="https://www.linkedin.com/in/lan-anh-nguyen-a07961213/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-text-inverse)] px-6 py-3 type-heading-h6 text-[var(--color-text-primary)] transition-[transform,opacity] duration-200 hover:opacity-80 active:scale-95"
             data-magnetic
           >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              className="shrink-0"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="2.5" />
+              <path
+                fill="var(--color-text-inverse)"
+                d="M7.38 9.45H4.72V18h2.66V9.45Zm.18-2.64c0-.85-.69-1.54-1.54-1.54s-1.54.69-1.54 1.54.69 1.54 1.54 1.54 1.54-.69 1.54-1.54ZM18.02 13.1c0-2.58-1.38-3.78-3.22-3.78-1.48 0-2.15.82-2.52 1.39V9.45H9.62V18h2.66v-4.24c0-1.12.21-2.21 1.6-2.21 1.37 0 1.39 1.28 1.39 2.28V18h2.66l.09-4.9Z"
+              />
+            </svg>
             Connect with me
           </a>
         </div>
