@@ -48,6 +48,7 @@
   --footer-border: rgba(0, 0, 0, 0.08);
   --color-border-default: #e5e5e5;
   --headline-accent: #0020FF;
+  --footer-art-filter: none;
 }
 
 /* Dark Theme Overrides */
@@ -91,6 +92,7 @@ html[data-theme="dark"] {
   --footer-border: rgba(255, 255, 255, 0.08);
   --color-border-default: #262626;
   --headline-accent: #ffffff;
+  --footer-art-filter: invert(1);
 }
 
 * {

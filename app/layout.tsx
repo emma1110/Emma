@@ -7,6 +7,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Emma | Product Designer",
   description: "Emma crafts intuitive, human-centered products that move the needle.",
+  icons: {
+    icon: [{ url: "/images/emma-logo.svg", type: "image/svg+xml" }],
+    shortcut: "/images/emma-logo.svg",
+  },
 };
 
 export default function RootLayout({

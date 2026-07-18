@@ -5,6 +5,7 @@ import Projects from '../components/projects/Projects';
 import HowIUseAI from '../components/ai/HowIUseAI';
 import FavoriteBooks from '../components/books/FavoriteBooks';
 import Footer from '../components/footer/Footer';
+import HomeCTA from '../components/footer/HomeCTA';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Projects />
         <HowIUseAI />
         <FavoriteBooks />
+        <HomeCTA />
         <Footer />
       </div>
     </main>

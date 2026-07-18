@@ -1,11 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
-import logoData from "../hero/logo.json";
 import Link from "next/link";
-
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 function MoonIcon({ className = "w-5 h-5" }) {
   return (
@@ -52,7 +48,6 @@ function XIcon({ className = "w-5 h-5" }) {
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
-  const [logoReady, setLogoReady] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,9 +63,6 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsMounted(true);
-    const scheduleLogo = window.requestIdleCallback
-      ? window.requestIdleCallback(() => setLogoReady(true), { timeout: 800 })
-      : window.setTimeout(() => setLogoReady(true), 250);
     const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
     setTheme(activeTheme);
     
@@ -88,11 +80,6 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
-      if (window.cancelIdleCallback && typeof scheduleLogo === "number") {
-        window.cancelIdleCallback(scheduleLogo);
-      } else {
-        window.clearTimeout(scheduleLogo);
-      }
     };
   }, []);
 
@@ -203,21 +190,20 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[80px] py-3">
         <nav className="flex w-full shrink-0 items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <div 
-              className="flex items-center shrink-0 select-none relative w-[80px] h-[40px] cursor-pointer"
-              style={{ filter: "var(--logo-filter)", transition: "filter 0.16s ease" }}
-            >
-              <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 w-[120px] h-[120px] flex items-center justify-center pointer-events-none">
-                {logoReady && (
-                  <Lottie
-                    animationData={logoData}
-                    loop={true}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                )}
-              </div>
-            </div>
+          <Link
+            href="/"
+            aria-label="Emma — Home"
+            className="group flex shrink-0 items-center"
+          >
+            <img
+              src="/images/emma-logo.svg"
+              alt=""
+              width="67"
+              height="54"
+              className="h-[44px] w-auto origin-center select-none transition-[filter,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-[7deg] group-hover:scale-[1.05] group-active:rotate-[3deg] group-active:scale-[0.98] motion-reduce:transform-none sm:h-[54px]"
+              style={{ filter: "var(--logo-filter)" }}
+              draggable="false"
+            />
           </Link>
 
           {/* Links — center black pill */}
