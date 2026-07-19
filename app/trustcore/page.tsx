@@ -407,14 +407,14 @@ export default function TrustCorePage() {
             <div className="flex flex-col gap-[8px]">
               <span className="case-study-label type-label-lg mb-[8px] uppercase">OVERVIEW</span>
               <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-[12px]">
-                <p>TrustCore is a self-custody wallet designed to make digital ownership easier to understand.</p>
-                <p>Rather than simplifying blockchain, the project rethinks how people are introduced to it.</p>
+                <p>TrustCore is a self-custody wallet designed to make <strong>digital ownership easier to understand.</strong></p>
+                <p>Rather than simplifying blockchain, the project <strong>rethinks how people are introduced to it.</strong></p>
               </div>
             </div>
             <div className="flex flex-col gap-[8px]">
               <span className="case-study-label type-label-lg mb-[8px] uppercase">WHAT I DID</span>
               <p className="type-body text-[var(--Semantic-Text-Inverse)]">
-                I led the product design from research through high-fidelity design, including product strategy, information architecture, interaction design, prototyping, and design system implementation.
+                I led the product design <strong>from research through high-fidelity design</strong>, including product strategy, information architecture, interaction design, prototyping, and design system implementation.
               </p>
             </div>
           </section>
@@ -426,7 +426,7 @@ export default function TrustCorePage() {
             <span className="case-study-label type-label-lg mb-[8px] uppercase">THE CHALLENGE</span>
             <div className="flex flex-col gap-[8px] w-full">
               <div className="type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-1">
-                <p>Self-custody gives people complete control over their assets. Most wallets expose that complexity immediately asking users to understand accounts, addresses, and recovery phrases before they understand why any of it matters.</p>
+                <p>Self-custody gives people <strong>complete control over their assets.</strong> Most wallets expose complexity before users understand why any of it matters.</p>
                 <p>I wanted to question that approach.</p>
               </div>
               <div className="case-study-callout mt-4 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
@@ -446,7 +446,7 @@ export default function TrustCorePage() {
                 One insight changed the project.
               </h2>
               <p className="type-body text-[var(--Semantic-Text-Inverse)] mt-1">
-                I expected blockchain to be the biggest obstacle. Research suggested otherwise. The real problem wasn't technical complexity - it was a mismatch between how users think and how wallets are designed.
+                I expected blockchain to be the biggest obstacle. Research suggested otherwise. The real problem wasn&apos;t technical complexity — it was <strong>a mismatch between how users think and how wallets are designed.</strong>
               </p>
             </div>
 
@@ -567,7 +567,7 @@ export default function TrustCorePage() {
               <div className="flex flex-col gap-[12px]">
                 <span className="case-study-label type-label-lg mb-[4px] uppercase">DESIGN OPPORTUNITY</span>
                 <p className="type-body text-[var(--Semantic-Text-Inverse)]">
-                  Instead of organising the experience around blockchain architecture, TrustCore is organised around ownership. The progression mirrors how people naturally build trust with a product: understand first, then protect, then take control.
+                  Instead of organising the experience around blockchain architecture, TrustCore is <strong>organised around ownership.</strong> The progression mirrors how people naturally build trust: <strong>understand first, then protect, then take control.</strong>
                 </p>
               </div>
 

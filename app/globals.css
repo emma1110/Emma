@@ -351,29 +351,29 @@ html[data-theme="dark"] .motion-card:hover {
 .case-study-theme {
   --case-canvas: #ffffff;
   --case-card: #ffffff;
-  --case-accent: #3978c5;
-  --case-deep: #173f70;
-  --case-soft: #eef5fd;
+  --case-accent: #2563eb;
+  --case-deep: #1748b5;
+  --case-soft: #e3edff;
   --case-border: rgba(0, 0, 0, 0.08);
   background-color: var(--case-canvas) !important;
 }
 
 .case-trustcore {
-  --case-accent: #3978c5;
-  --case-deep: #173f70;
-  --case-soft: #eef5fd;
+  --case-accent: #2563eb;
+  --case-deep: #1748b5;
+  --case-soft: #e3edff;
 }
 
 .case-hyfi {
-  --case-accent: #17858a;
-  --case-deep: #174a4d;
-  --case-soft: #eaf7f6;
+  --case-accent: #00a99d;
+  --case-deep: #007d75;
+  --case-soft: #ddfbf7;
 }
 
 .case-bitcore {
-  --case-accent: #c75a2d;
-  --case-deep: #6b2f17;
-  --case-soft: #fff1ea;
+  --case-accent: #ff5a36;
+  --case-deep: #c83b1b;
+  --case-soft: #ffe2d9;
 }
 
 .case-study-label {
@@ -396,6 +396,12 @@ html[data-theme="dark"] .motion-card:hover {
 .case-study-summary dd,
 .case-study-summary .case-study-summary-value {
   color: #111111 !important;
+  font-weight: 700;
+}
+
+.case-study-theme strong {
+  color: var(--color-text-inverse);
+  font-weight: 700;
 }
 
 .case-study-callout {
@@ -410,7 +416,7 @@ html[data-theme="dark"] .motion-card:hover {
   border: 1px solid var(--case-border);
   border-radius: 12px !important;
   background: var(--case-soft);
-  color: #111111;
+  color: var(--case-deep);
   box-shadow: none !important;
 }
 
@@ -421,27 +427,27 @@ html[data-theme="dark"] .motion-card:hover {
 [data-theme="dark"] .case-trustcore {
   --case-canvas: #121212;
   --case-card: #191919;
-  --case-accent: #75b5ff;
-  --case-deep: #ddecff;
-  --case-soft: #10243d;
+  --case-accent: #7eb0ff;
+  --case-deep: #e3edff;
+  --case-soft: #102b63;
   --case-border: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="dark"] .case-hyfi {
   --case-canvas: #121212;
   --case-card: #191919;
-  --case-accent: #65d5d5;
-  --case-deep: #d9ffff;
-  --case-soft: #102a2b;
+  --case-accent: #54e0d6;
+  --case-deep: #ddfbf7;
+  --case-soft: #0b3734;
   --case-border: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="dark"] .case-bitcore {
   --case-canvas: #121212;
   --case-card: #191919;
-  --case-accent: #ff9870;
-  --case-deep: #ffe5da;
-  --case-soft: #321c14;
+  --case-accent: #ff8c73;
+  --case-deep: #ffe2d9;
+  --case-soft: #4a1d13;
   --case-border: rgba(255, 255, 255, 0.12);
 }
 

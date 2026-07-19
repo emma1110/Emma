@@ -182,9 +182,9 @@ export default function Hyfi2024Page() {
             <SectionLabel>Overview</SectionLabel>
             <h2 className="type-heading-h5">Great events aren&apos;t remembered by individual visuals.</h2>
             <div className="type-body flex flex-col gap-2">
-              <p>They&apos;re remembered as one cohesive experience.</p>
-              <p>Behind every keynote, social post, and stage animation is a visual system that quietly connects everything together.</p>
-              <p>The goal wasn&apos;t simply to make the conference look modern. It was to create a design language that could communicate innovation while remaining clear, premium, and recognizable across every touchpoint.</p>
+              <p>They&apos;re remembered as <strong>one cohesive experience.</strong></p>
+              <p>Behind every keynote, social post, and stage animation is <strong>a visual system that connects everything together.</strong></p>
+              <p>The goal was to create a design language that communicated innovation while remaining <strong>clear, premium, and recognizable across every touchpoint.</strong></p>
             </div>
             <div className="case-study-callout mt-4 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
               <span className="type-label-lg uppercase opacity-70">Core idea</span>
@@ -227,8 +227,8 @@ export default function Hyfi2024Page() {
               <SectionLabel>Design Strategy</SectionLabel>
               <h2 className="type-heading-h5">Design the system before designing the assets.</h2>
               <div className="type-body flex flex-col gap-2">
-                <p>Instead of treating every deliverable as a separate project, the focus shifted toward creating reusable design foundations.</p>
-                <p>By defining visual rules early, each new asset inherited the same structure, rhythm, and personality — making production faster while keeping the experience visually consistent.</p>
+                <p>Instead of treating every deliverable as a separate project, the focus shifted toward <strong>reusable design foundations.</strong></p>
+                <p>By defining visual rules early, each asset inherited the same structure, rhythm, and personality — <strong>making production faster while keeping the experience consistent.</strong></p>
               </div>
             </div>
 
@@ -253,7 +253,7 @@ export default function Hyfi2024Page() {
               <h2 className="type-heading-h5">Modern technology doesn&apos;t have to feel complicated.</h2>
               <div className="type-body flex flex-col gap-2">
                 <p>Many technology events rely on dense interfaces and futuristic effects to communicate innovation. HYFI took a different direction.</p>
-                <p>Bold gradients were balanced with generous whitespace, strong typography, and structured layouts to create a visual identity that felt contemporary without overwhelming the audience.</p>
+                <p><strong>Bold gradients, generous whitespace, strong typography, and structured layouts</strong> created a contemporary identity without overwhelming the audience.</p>
               </div>
             </div>
 
@@ -300,8 +300,8 @@ export default function Hyfi2024Page() {
               <SectionLabel>Final Outcome</SectionLabel>
               <h2 className="type-heading-h4">One conference. One recognizable brand.</h2>
               <div className="type-body flex flex-col gap-2">
-                <p>The final identity unified every stage of HYFI from early marketing campaigns to the live event experience.</p>
-                <p>Because the system emphasized reusable design foundations rather than individual graphics, new deliverables could be produced quickly while maintaining a consistent visual language across every audience touchpoint.</p>
+                <p>The final identity <strong>unified every stage of HYFI</strong>, from early marketing campaigns to the live event experience.</p>
+                <p>Because the system emphasized reusable foundations, <strong>new deliverables could be produced quickly</strong> while maintaining a consistent visual language.</p>
                 <p>The project demonstrated how design systems can extend beyond digital products to shape large-scale brand experiences.</p>
               </div>
             </div>

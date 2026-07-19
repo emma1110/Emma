@@ -203,9 +203,9 @@ export default function TrustCoreWebPage() {
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="case-study-label type-label-lg mb-[4px] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
-                <li>Most crypto wallet landing pages fail before onboarding begins.</li>
-                <li>They overwhelm users with technical language, weak trust signals, and unclear product value. Users leave before understanding what the product does or whether it feels safe enough to trust.</li>
-                <li>TrustCore Wallet needed a landing page that could simplify complex ownership models while positioning the product as secure, premium, and beginner-friendly.</li>
+                <li><strong>Most crypto wallet landing pages fail before onboarding begins.</strong></li>
+                <li>They overwhelm users with <strong>technical language, weak trust signals, and unclear product value.</strong> Users leave before understanding what the product does or whether it feels safe enough to trust.</li>
+                <li>TrustCore Wallet needed to <strong>simplify complex ownership models</strong> while positioning the product as <strong>secure, premium, and beginner-friendly.</strong></li>
               </ul>
               <div className="case-study-callout mt-3 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
                 <span className="type-label-lg uppercase opacity-70">Core problem</span>
@@ -240,7 +240,7 @@ export default function TrustCoreWebPage() {
                 <p className="type-heading-h4">Users convert when they feel safe.</p>
               </div>
               <p className="type-body text-[var(--color-text-secondary)]">
-                Instead of leading with features, the landing page focused on progressive confidence-building through clear messaging, product understanding, security validation, and strong conversion flow.
+                Instead of leading with features, the landing page focused on <strong>progressive confidence-building</strong> through clear messaging, product understanding, security validation, and a strong conversion flow.
               </p>
               <div className="flex flex-col gap-[8px]">
                 <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
@@ -255,7 +255,7 @@ export default function TrustCoreWebPage() {
                 </div>
               </div>
               <p className="type-body text-[var(--color-text-secondary)] mt-1">
-                Every section was designed to reduce hesitation before wallet creation.
+                Every section was designed to <strong>reduce hesitation before wallet creation.</strong>
               </p>
               
               {/* Strategy Mockups from Figma */}
@@ -301,7 +301,7 @@ export default function TrustCoreWebPage() {
               <span className="case-study-label type-label-lg mb-[8px] uppercase">FINAL OUTCOME</span>
               <h2 className="type-heading-h4">Confidence before complexity.</h2>
               <p className="type-body">
-                Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
+                Rather than asking users to learn blockchain before using a wallet, TrustCore introduces concepts only when they become meaningful. The experience shifts from <strong>technology-first to ownership-first</strong>, helping users build <strong>confidence before complexity.</strong>
               </p>
             </div>
           </section>

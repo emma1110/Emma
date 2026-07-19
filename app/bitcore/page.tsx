@@ -202,9 +202,9 @@ export default function BitCorePage() {
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
               <span className="case-study-label type-label-lg mb-[4px] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
-                <li>Most blockchain landing pages fail to communicate value beyond technology.</li>
-                <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand what the product actually solves. This creates friction for both new users and investors, especially when trust and product clarity are missing.</li>
-                <li>Bitcore needed a landing page that could position its Layer 1 ecosystem as accessible, credible, and built for real-world usage, not just speculation.</li>
+                <li><strong>Most blockchain landing pages fail to communicate value beyond technology.</strong></li>
+                <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand <strong>what the product actually solves.</strong> This creates friction when <strong>trust and product clarity</strong> are missing.</li>
+                <li>Bitcore needed to position its Layer 1 ecosystem as <strong>accessible, credible, and built for real-world usage</strong>, not just speculation.</li>
               </ul>
               <div className="case-study-callout mt-3 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
                 <span className="type-label-lg uppercase opacity-70">Core problem</span>
@@ -239,7 +239,7 @@ export default function BitCorePage() {
                 <p className="type-heading-h4">Users trust products they can clearly understand.</p>
               </div>
               <p className="type-body text-[var(--color-text-secondary)]">
-                Instead of leading with technical complexity, the landing page focused on product utility, onboarding simplicity, and visible trust signals.
+                Instead of leading with technical complexity, the landing page focused on <strong>product utility, onboarding simplicity, and visible trust signals.</strong>
               </p>
               <div className="flex flex-col gap-[8px]">
                 <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
@@ -256,7 +256,7 @@ export default function BitCorePage() {
                 </div>
               </div>
               <p className="type-body text-[var(--color-text-secondary)] mt-1">
-                Each section was designed to help users understand not only what Bitcore is, but why it matters and how they can participate.
+                Each section helped users understand <strong>what Bitcore is, why it matters, and how they can participate.</strong>
               </p>
               <p className="type-body text-[var(--color-text-secondary)]">
                 The landing page needed to support both crypto-native users and first-time Web3 users without overwhelming either group.
@@ -273,10 +273,10 @@ export default function BitCorePage() {
               <span className="case-study-label type-label-lg mb-[8px] uppercase">FINAL OUTCOME</span>
               <h2 className="type-heading-h4">A usable ecosystem, not another Layer 1 claim.</h2>
               <ul className="list-disc pl-5 type-body flex flex-col gap-2">
-                <li>The final landing page improved product clarity, ecosystem understanding, and onboarding readiness.</li>
-                <li>More importantly, it positioned Bitcore as a usable blockchain ecosystem rather than just another Layer 1 project.</li>
+                <li>The final landing page improved <strong>product clarity, ecosystem understanding, and onboarding readiness.</strong></li>
+                <li>It positioned Bitcore as a <strong>usable blockchain ecosystem</strong> rather than just another Layer 1 project.</li>
                 <li>Because users do not join Web3 products when they understand every technical detail.</li>
-                <li>They join when the product feels trustworthy enough to start.</li>
+                <li><strong>They join when the product feels trustworthy enough to start.</strong></li>
               </ul>
             </div>
           </section>

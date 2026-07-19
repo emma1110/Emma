@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 
 const HERO_WORDS = [
-  { text: "Humanize", background: "#fdece7", foreground: "#a64a37" },
-  { text: "Simplify", background: "#eef5fd", foreground: "#3978c5" },
-  { text: "Clarify", background: "#eaf7f6", foreground: "#17858a" },
-  { text: "Transform", background: "#f1eefa", foreground: "#6651a6" },
-  { text: "Elevate", background: "#fff4d8", foreground: "#8a6200" },
-  { text: "Shape", background: "#fcecf4", foreground: "#a34f75" },
-  { text: "Refine", background: "#f3f1ee", foreground: "#615d59" },
-  { text: "Reimagine", background: "#eef1fb", foreground: "#4d61a3" },
+  { text: "Humanize", background: "#ffe2d9", foreground: "#ff5a36" },
+  { text: "Simplify", background: "#e3edff", foreground: "#2563eb" },
+  { text: "Clarify", background: "#ddfbf7", foreground: "#00a99d" },
+  { text: "Transform", background: "#eee6ff", foreground: "#7c3aed" },
+  { text: "Elevate", background: "#fff1b8", foreground: "#b86b00" },
+  { text: "Shape", background: "#ffe2f0", foreground: "#e83e8c" },
+  { text: "Refine", background: "#e8f7e8", foreground: "#22a447" },
+  { text: "Reimagine", background: "#e4e8ff", foreground: "#4f46e5" },
 ];
 
 
