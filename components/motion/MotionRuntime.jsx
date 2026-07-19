@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export default function MotionRuntime() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -50,23 +53,14 @@ export default function MotionRuntime() {
       { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
     );
 
-    const observed = new WeakSet();
-    const scan = () => {
-      document.querySelectorAll("[data-reveal]").forEach((el) => {
-        if (observed.has(el)) return;
-        observed.add(el);
-        revealObserver.observe(el);
-      });
-    };
-
-    scan();
-    const timers = [120, 500, 1200].map((delay) => window.setTimeout(scan, delay));
+    document.querySelectorAll("[data-reveal]").forEach((el) => {
+      revealObserver.observe(el);
+    });
 
     return () => {
       revealObserver.disconnect();
-      timers.forEach((timer) => window.clearTimeout(timer));
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

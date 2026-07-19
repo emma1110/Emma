@@ -70,6 +70,7 @@ export default function AboutPage() {
                   className="h-[104px] w-[104px] rounded-[4px] object-cover sm:h-[132px] sm:w-[132px]"
                   width="155"
                   height="155"
+                  decoding="async"
                 />
               </div>
 
@@ -80,6 +81,7 @@ export default function AboutPage() {
                   className="h-[104px] w-[104px] rounded-[4px] object-cover sm:h-[132px] sm:w-[132px]"
                   width="155"
                   height="155"
+                  decoding="async"
                 />
               </div>
 
@@ -90,6 +92,7 @@ export default function AboutPage() {
                 width="403"
                 height="573"
                 loading="eager"
+                fetchPriority="high"
                 decoding="async"
               />
             </div>

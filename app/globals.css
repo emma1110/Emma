@@ -114,6 +114,21 @@ body {
   transition: background-color 0.16s ease, color 0.16s ease;
 }
 
+/* Keep every theme-aware surface on the same short transition clock. The class
+   only exists while toggling, so normal hover and motion effects are untouched. */
+html.theme-transitioning,
+html.theme-transitioning body,
+html.theme-transitioning body * {
+  transition-property: background-color, color, border-color, fill, stroke, box-shadow, filter !important;
+  transition-duration: 240ms !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+html.theme-transitioning .knob,
+html.theme-transitioning .icon {
+  transition-property: transform, background-color, color, opacity !important;
+}
+
 /* Semantic type roles from the Figma Foundations page. Component utilities may
    still choose a different role, while every unstyled element gets a safe default. */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); font-weight: 700 !important; text-wrap: balance; }

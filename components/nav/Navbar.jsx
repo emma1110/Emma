@@ -54,13 +54,37 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinksRef = useRef(null);
   const pillRef = useRef(null);
+  const themeTransitionTimerRef = useRef(null);
 
   const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", nextTheme);
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute("data-theme") || "light";
+    const nextTheme = currentTheme === "light" ? "dark" : "light";
+
+    if (themeTransitionTimerRef.current) {
+      clearTimeout(themeTransitionTimerRef.current);
+    }
+
+    root.classList.remove("theme-transitioning");
+    void root.offsetWidth;
+    root.classList.add("theme-transitioning");
+    void root.offsetWidth;
+    root.setAttribute("data-theme", nextTheme);
     localStorage.setItem("theme", nextTheme);
     setTheme(nextTheme);
+
+    themeTransitionTimerRef.current = setTimeout(() => {
+      root.classList.remove("theme-transitioning");
+      themeTransitionTimerRef.current = null;
+    }, 280);
   };
+
+  useEffect(() => () => {
+    if (themeTransitionTimerRef.current) {
+      clearTimeout(themeTransitionTimerRef.current);
+    }
+    document.documentElement.classList.remove("theme-transitioning");
+  }, []);
 
   useEffect(() => {
     const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
