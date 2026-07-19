@@ -429,11 +429,19 @@ html[data-theme="dark"] .motion-card:hover {
 }
 
 .case-study-outcome {
-  border: 1px solid var(--case-border);
-  border-radius: 12px !important;
-  background: var(--case-soft);
-  color: var(--case-deep);
+  border: 0;
+  border-left: 3px solid var(--case-accent);
+  border-radius: 0 !important;
+  background: transparent;
+  color: var(--color-text-inverse);
   box-shadow: none !important;
+  padding: 4px 0 4px 24px !important;
+}
+
+@media (max-width: 639px) {
+  .case-study-outcome {
+    padding-left: 16px !important;
+  }
 }
 
 .case-study-accent-border {
