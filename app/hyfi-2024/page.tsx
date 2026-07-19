@@ -109,7 +109,7 @@ const learningImages = [
 ];
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
-  <p className="type-label-lg mb-2 uppercase text-[var(--color-text-secondary)]">
+  <p className="case-study-label type-label-lg mb-2 uppercase">
     {children}
   </p>
 );
@@ -118,7 +118,7 @@ const Divider = () => <hr className="w-full border-[var(--color-border-default)]
 
 export default function Hyfi2024Page() {
   return (
-    <main className="min-h-screen w-full bg-[var(--bg-color)] text-[var(--color-text-inverse)] transition-colors duration-450">
+    <main className="case-study-theme case-hyfi min-h-screen w-full bg-[var(--bg-color)] text-[var(--color-text-inverse)] transition-colors duration-450">
       <Navbar />
 
       <div className="mx-auto flex w-full max-w-[1440px] items-start gap-12 px-4 py-16 sm:px-8 sm:py-20 lg:gap-16 lg:px-[80px] lg:py-[128px] xl:gap-24">
@@ -130,9 +130,9 @@ export default function Hyfi2024Page() {
         <article className="mx-auto flex min-w-0 w-full max-w-[968px] flex-col gap-12 sm:gap-14 lg:mx-0">
           <header id="overview" className="scroll-mt-28 flex flex-col gap-6" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
             <div className="flex items-center gap-2">
-              <span className="type-label-lg text-[var(--color-text-secondary)]">HYFI2024</span>
-              <span className="size-1 rounded-full bg-[var(--color-text-secondary)]" />
-              <span className="type-label-lg text-[var(--color-text-secondary)]">2024</span>
+              <span className="case-study-label type-label-lg">HYFI2024</span>
+              <span className="size-1 rounded-full bg-[var(--case-accent)]" />
+              <span className="case-study-label type-label-lg">2024</span>
             </div>
 
             <h1 className="type-heading-h1">
@@ -161,14 +161,15 @@ export default function Hyfi2024Page() {
               />
             </figure>
 
-            <dl className="grid grid-cols-1 gap-5 pt-2 sm:grid-cols-3 sm:gap-8" data-reveal>
+            <dl className="case-study-summary grid grid-cols-1 gap-5 rounded-[16px] p-5 sm:grid-cols-2 sm:gap-8 sm:p-6 lg:grid-cols-4" data-reveal>
               {[
                 ["Role", "Visual Designer"],
                 ["Timeline", "2 months"],
                 ["Tools", "Figma, Illustrator, Photoshop"],
+                ["Scope", "Identity system, event campaign"],
               ].map(([term, value]) => (
                 <div key={term} className="flex flex-col gap-1">
-                  <dt className="type-label-lg uppercase text-[var(--color-text-secondary)]">{term}</dt>
+                  <dt className="type-label-lg uppercase">{term}</dt>
                   <dd className="type-body-medium">{value}</dd>
                 </div>
               ))}
@@ -184,6 +185,10 @@ export default function Hyfi2024Page() {
               <p>They&apos;re remembered as one cohesive experience.</p>
               <p>Behind every keynote, social post, and stage animation is a visual system that quietly connects everything together.</p>
               <p>The goal wasn&apos;t simply to make the conference look modern. It was to create a design language that could communicate innovation while remaining clear, premium, and recognizable across every touchpoint.</p>
+            </div>
+            <div className="case-study-callout mt-4 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
+              <span className="type-label-lg uppercase opacity-70">Core idea</span>
+              <p className="type-heading-h4">One visual system. Hundreds of connected touchpoints.</p>
             </div>
           </section>
 
@@ -205,8 +210,8 @@ export default function Hyfi2024Page() {
               <SectionLabel>Constraints</SectionLabel>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {constraints.map((item) => (
-                  <article key={item.number} className="flex min-h-[176px] flex-col gap-3 rounded-[16px] border border-[var(--color-border-default)] bg-[var(--case-study-card-bg)] p-6 text-[var(--color-text-inverse)] shadow-sm transition-colors duration-300">
-                    <span className="type-body-sm-medium text-[var(--color-text-secondary)]">{item.number}</span>
+                  <article key={item.number} className="case-study-accent-border flex min-h-[176px] flex-col gap-3 rounded-[16px] border bg-[var(--case-study-card-bg)] p-6 text-[var(--color-text-inverse)] shadow-sm transition-colors duration-300">
+                    <span className="case-study-label type-body-sm-medium">{item.number}</span>
                     <h3 className="type-heading-h6">{item.title}</h3>
                     <p className="type-body-sm">{item.body}</p>
                   </article>
@@ -231,7 +236,7 @@ export default function Hyfi2024Page() {
               <SectionLabel>Design Principles</SectionLabel>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {principles.map((item) => (
-                  <article key={item.title} className="flex min-h-[176px] flex-col gap-3 rounded-[16px] border border-[var(--color-border-default)] bg-[var(--case-study-card-bg)] p-6 text-[var(--color-text-inverse)] shadow-sm transition-colors duration-300">
+                  <article key={item.title} className="case-study-summary flex min-h-[176px] flex-col gap-3 rounded-[16px] p-6 shadow-sm transition-colors duration-300">
                     <h3 className="type-heading-h6">{item.title}</h3>
                     <p className="type-body-sm">{item.body}</p>
                   </article>
@@ -291,11 +296,10 @@ export default function Hyfi2024Page() {
           <Divider />
 
           <section id="outcome" className="scroll-mt-28 flex flex-col gap-10" data-reveal>
-            <div className="flex flex-col gap-2">
+            <div className="case-study-outcome flex flex-col gap-2 rounded-[24px] p-6 sm:p-8">
               <SectionLabel>Final Outcome</SectionLabel>
-              <h2 className="type-heading-h5">One conference.</h2>
+              <h2 className="type-heading-h4">One conference. One recognizable brand.</h2>
               <div className="type-body flex flex-col gap-2">
-                <p>One recognizable brand.</p>
                 <p>The final identity unified every stage of HYFI from early marketing campaigns to the live event experience.</p>
                 <p>Because the system emphasized reusable design foundations rather than individual graphics, new deliverables could be produced quickly while maintaining a consistent visual language across every audience touchpoint.</p>
                 <p>The project demonstrated how design systems can extend beyond digital products to shape large-scale brand experiences.</p>

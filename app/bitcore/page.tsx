@@ -87,7 +87,7 @@ export default function BitCorePage() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
+    <main className="case-study-theme case-bitcore w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
       <Navbar />
       
       <div className="w-full max-w-[1440px] px-4 sm:px-8 lg:px-[80px] py-12 sm:py-16 lg:py-[128px] flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
@@ -98,7 +98,7 @@ export default function BitCorePage() {
             {/* Sidebar Track Line */}
             <div className="relative w-[1.5px] bg-[var(--footer-border)] rounded-full">
               <div 
-                className="absolute left-0 w-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"
+                className="absolute left-0 w-[1.5px] bg-[var(--case-accent)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"
                 style={{
                   height: `${indicatorHeight}px`,
                   transform: `translateY(${indicatorOffset}px)`
@@ -147,9 +147,9 @@ export default function BitCorePage() {
             
             {/* Header / Titles */}
             <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
-              <div className="flex items-center gap-2 type-label-lg text-[var(--color-text-secondary)] uppercase">
+              <div className="case-study-label flex items-center gap-2 type-label-lg uppercase">
                 <span>BITCORE</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--case-accent)] opacity-50"></span>
                 <span>2026</span>
               </div>
               
@@ -177,18 +177,22 @@ export default function BitCorePage() {
             </div>
 
             {/* Metadata Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-[8px] type-body-medium" data-reveal>
+            <div className="case-study-summary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full rounded-[16px] p-5 sm:p-6 type-body-medium" data-reveal>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">ROLE</span>
-                <span className="text-[var(--color-text-inverse)]">Product Designer</span>
+                <span className="case-study-summary-label type-label-lg uppercase">ROLE</span>
+                <span className="case-study-summary-value">Product Designer</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
-                <span className="text-[var(--color-text-inverse)]">1 month</span>
+                <span className="case-study-summary-label type-label-lg uppercase">TIMELINE</span>
+                <span className="case-study-summary-value">1 month</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TOOLS</span>
-                <span className="text-[var(--color-text-inverse)]">Figma</span>
+                <span className="case-study-summary-label type-label-lg uppercase">TOOLS</span>
+                <span className="case-study-summary-value">Figma</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="case-study-summary-label type-label-lg uppercase">SCOPE</span>
+                <span className="case-study-summary-value">Landing page, product positioning</span>
               </div>
             </div>
 
@@ -196,14 +200,16 @@ export default function BitCorePage() {
 
             {/* Overview Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <span className="case-study-label type-label-lg mb-[4px] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>Most blockchain landing pages fail to communicate value beyond technology.</li>
                 <li>They focus heavily on technical architecture, tokenomics, and ecosystem language while users still struggle to understand what the product actually solves. This creates friction for both new users and investors, especially when trust and product clarity are missing.</li>
                 <li>Bitcore needed a landing page that could position its Layer 1 ecosystem as accessible, credible, and built for real-world usage, not just speculation.</li>
-                <li>The goal was simple:</li>
-                <li>Make blockchain feel understandable before asking users to participate.</li>
               </ul>
+              <div className="case-study-callout mt-3 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
+                <span className="type-label-lg uppercase opacity-70">Core problem</span>
+                <p className="type-heading-h4">Make blockchain understandable before asking users to participate.</p>
+              </div>
             </div>
 
             {/* Overview Video Showcase */}
@@ -227,11 +233,11 @@ export default function BitCorePage() {
 
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
-              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
-                The experience was designed around one principle:<br />
-                <strong className="text-[var(--color-text-inverse)]">Users trust products they can clearly understand.</strong>
-              </p>
+              <span className="case-study-label type-label-lg mb-[4px] uppercase">STRATEGY</span>
+              <div className="case-study-callout flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
+                <span className="type-label-lg uppercase opacity-70">Design principle</span>
+                <p className="type-heading-h4">Users trust products they can clearly understand.</p>
+              </div>
               <p className="type-body text-[var(--color-text-secondary)]">
                 Instead of leading with technical complexity, the landing page focused on product utility, onboarding simplicity, and visible trust signals.
               </p>
@@ -262,10 +268,11 @@ export default function BitCorePage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Final Outcome Section */}
-          <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
+          <section id="final-outcome" className="case-study-outcome flex flex-col gap-[24px] w-full mb-12 scroll-mt-28 rounded-[24px] p-6 sm:p-8" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
-              <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
+              <span className="case-study-label type-label-lg mb-[8px] uppercase">FINAL OUTCOME</span>
+              <h2 className="type-heading-h4">A usable ecosystem, not another Layer 1 claim.</h2>
+              <ul className="list-disc pl-5 type-body flex flex-col gap-2">
                 <li>The final landing page improved product clarity, ecosystem understanding, and onboarding readiness.</li>
                 <li>More importantly, it positioned Bitcore as a usable blockchain ecosystem rather than just another Layer 1 project.</li>
                 <li>Because users do not join Web3 products when they understand every technical detail.</li>

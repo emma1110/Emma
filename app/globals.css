@@ -347,6 +347,110 @@ html[data-theme="dark"] .motion-card:hover {
   color: #000000;
 }
 
+/* Case-study color hierarchy: one accent, one tinted surface, one high-contrast callout. */
+.case-study-theme {
+  --case-canvas: #ffffff;
+  --case-card: #ffffff;
+  --case-accent: #3978c5;
+  --case-deep: #173f70;
+  --case-soft: #eef5fd;
+  --case-border: rgba(0, 0, 0, 0.08);
+  background-color: var(--case-canvas) !important;
+}
+
+.case-trustcore {
+  --case-accent: #3978c5;
+  --case-deep: #173f70;
+  --case-soft: #eef5fd;
+}
+
+.case-hyfi {
+  --case-accent: #17858a;
+  --case-deep: #174a4d;
+  --case-soft: #eaf7f6;
+}
+
+.case-bitcore {
+  --case-accent: #c75a2d;
+  --case-deep: #6b2f17;
+  --case-soft: #fff1ea;
+}
+
+.case-study-label {
+  color: var(--case-accent) !important;
+  font-weight: 700 !important;
+}
+
+.case-study-summary {
+  border: 1px solid var(--case-border);
+  border-radius: 12px !important;
+  background: var(--case-card);
+  box-shadow: none !important;
+}
+
+.case-study-summary dt,
+.case-study-summary .case-study-summary-label {
+  color: var(--case-accent) !important;
+}
+
+.case-study-summary dd,
+.case-study-summary .case-study-summary-value {
+  color: #111111 !important;
+}
+
+.case-study-callout {
+  border: 1px solid var(--case-border);
+  border-radius: 12px !important;
+  background: var(--case-soft);
+  color: var(--case-deep);
+  box-shadow: none !important;
+}
+
+.case-study-outcome {
+  border: 1px solid var(--case-border);
+  border-radius: 12px !important;
+  background: var(--case-soft);
+  color: #111111;
+  box-shadow: none !important;
+}
+
+.case-study-accent-border {
+  border-color: var(--case-border) !important;
+}
+
+[data-theme="dark"] .case-trustcore {
+  --case-canvas: #121212;
+  --case-card: #191919;
+  --case-accent: #75b5ff;
+  --case-deep: #ddecff;
+  --case-soft: #10243d;
+  --case-border: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .case-hyfi {
+  --case-canvas: #121212;
+  --case-card: #191919;
+  --case-accent: #65d5d5;
+  --case-deep: #d9ffff;
+  --case-soft: #102a2b;
+  --case-border: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .case-bitcore {
+  --case-canvas: #121212;
+  --case-card: #191919;
+  --case-accent: #ff9870;
+  --case-deep: #ffe5da;
+  --case-soft: #321c14;
+  --case-border: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .case-study-summary dd,
+[data-theme="dark"] .case-study-summary .case-study-summary-value,
+[data-theme="dark"] .case-study-outcome {
+  color: #f5f5f5 !important;
+}
+
 /* CTA/Resume Button styling */
 .cta-button {
   display: inline-flex;
@@ -563,7 +667,8 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   align-items: center;
   gap: 0.14em;
   vertical-align: middle;
-  background: #e9f1fe;
+  background: var(--hero-pill-bg, #eef5fd);
+  color: var(--hero-pill-fg, #3978c5);
   border-radius: 999px;
   padding: 0 0.5em 0 0.42em;
   margin: 0 0.05em;
@@ -571,7 +676,7 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
      (kể cả khi chữ bị xoá hết chỉ còn con trỏ) */
   height: 1.38em;
   /* pill vẫn giãn mượt theo chiều rộng nội dung khi gõ chữ */
-  transition: width 0.06s linear;
+  transition: width 0.06s linear, background-color 0.24s ease, color 0.24s ease;
   overflow: hidden;
   user-select: none;
   font-size: var(--font-hero-pill-size);
@@ -597,13 +702,13 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   width: 0.34em;
   height: 0.34em;
   border-radius: 50%;
-  background: #2f80ed;
+  background: currentColor;
   flex-shrink: 0;
 }
 
 .type-text {
   display: inline-block;
-  color: #2f80ed;
+  color: inherit;
   white-space: nowrap;
   line-height: 1;
 }
@@ -614,7 +719,7 @@ html[data-theme="light"] .icon.moon { opacity: 0; transform: rotate(90deg) scale
   width: 0.05em;
   height: 0.86em;
   margin-left: 0.03em;
-  background: #2f80ed;
+  background: currentColor;
   animation: blink 0.9s step-end infinite;
 }
 

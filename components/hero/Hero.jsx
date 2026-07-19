@@ -2,6 +2,17 @@
 
 import { useState, useEffect } from "react";
 
+const HERO_WORDS = [
+  { text: "Humanize", background: "#fdece7", foreground: "#a64a37" },
+  { text: "Simplify", background: "#eef5fd", foreground: "#3978c5" },
+  { text: "Clarify", background: "#eaf7f6", foreground: "#17858a" },
+  { text: "Transform", background: "#f1eefa", foreground: "#6651a6" },
+  { text: "Elevate", background: "#fff4d8", foreground: "#8a6200" },
+  { text: "Shape", background: "#fcecf4", foreground: "#a34f75" },
+  { text: "Refine", background: "#f3f1ee", foreground: "#615d59" },
+  { text: "Reimagine", background: "#eef1fb", foreground: "#4d61a3" },
+];
+
 
 /**
  * Hero
@@ -12,17 +23,9 @@ import { useState, useEffect } from "react";
 export default function Hero() {
   const [toast, setToast] = useState({ visible: false, message: "" });
 
-  const words = [
-    "Humanize",
-    "Simplify",
-    "Clarify",
-    "Transform",
-    "Elevate",
-    "Shape",
-    "Refine",
-    "Reimagine",
-  ];
   const [displayText, setDisplayText] = useState("");
+  const [activeWordIndex, setActiveWordIndex] = useState(0);
+  const activeWord = HERO_WORDS[activeWordIndex];
 
   useEffect(() => {
     let timerId;
@@ -31,7 +34,7 @@ export default function Hero() {
     let isDeleting = false;
 
     const loop = () => {
-      const word = words[currentWordIndex];
+      const word = HERO_WORDS[currentWordIndex].text;
 
       if (!isDeleting) {
         if (charIndex <= word.length) {
@@ -49,7 +52,8 @@ export default function Hero() {
           timerId = setTimeout(loop, 45); // DELETE_SPEED = 45
         } else {
           isDeleting = false;
-          currentWordIndex = (currentWordIndex + 1) % words.length;
+          currentWordIndex = (currentWordIndex + 1) % HERO_WORDS.length;
+          setActiveWordIndex(currentWordIndex);
           timerId = setTimeout(loop, 300); // GAP_TIME = 300
         }
       }
@@ -153,7 +157,13 @@ export default function Hero() {
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap">
                 <span className="sm:hidden">that </span>
-                <span className="pill">
+                <span
+                  className="pill"
+                  style={{
+                    "--hero-pill-bg": activeWord.background,
+                    "--hero-pill-fg": activeWord.foreground,
+                  }}
+                >
                   <span className="dot"></span>
                   <span
                     className="type-text"

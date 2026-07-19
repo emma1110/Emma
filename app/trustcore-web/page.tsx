@@ -88,7 +88,7 @@ export default function TrustCoreWebPage() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
+    <main className="case-study-theme case-trustcore w-full min-h-screen bg-[var(--bg-color)] transition-colors duration-450 flex flex-col items-center relative">
       <Navbar />
       
       <div className="w-full max-w-[1440px] px-4 sm:px-8 lg:px-[80px] py-12 sm:py-16 lg:py-[128px] flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
@@ -99,7 +99,7 @@ export default function TrustCoreWebPage() {
             {/* Sidebar Track Line */}
             <div className="relative w-[1.5px] bg-[var(--footer-border)] rounded-full">
               <div 
-                className="absolute left-0 w-[1.5px] bg-[var(--color-text-inverse)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"
+                className="absolute left-0 w-[1.5px] bg-[var(--case-accent)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"
                 style={{
                   height: `${indicatorHeight}px`,
                   transform: `translateY(${indicatorOffset}px)`
@@ -148,9 +148,9 @@ export default function TrustCoreWebPage() {
             
             {/* Header / Titles */}
             <div className="flex flex-col gap-[16px]" data-entrance style={{ "--entrance-delay": "80ms" } as React.CSSProperties}>
-              <div className="flex items-center gap-2 type-label-lg text-[var(--color-text-secondary)] uppercase">
+              <div className="case-study-label flex items-center gap-2 type-label-lg uppercase">
                 <span>TRUSTCORE</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-muted)] opacity-40"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--case-accent)] opacity-50"></span>
                 <span>2026</span>
               </div>
               
@@ -178,18 +178,22 @@ export default function TrustCoreWebPage() {
             </div>
 
             {/* Metadata Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full pt-[8px] type-body-medium" data-reveal>
+            <div className="case-study-summary grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full rounded-[16px] p-5 sm:p-6 type-body-medium" data-reveal>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">ROLE</span>
-                <span className="text-[var(--color-text-inverse)]">Product Designer</span>
+                <span className="case-study-summary-label type-label-lg uppercase">ROLE</span>
+                <span className="case-study-summary-value">Product Designer</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TIMELINE</span>
-                <span className="text-[var(--color-text-inverse)]">1 month</span>
+                <span className="case-study-summary-label type-label-lg uppercase">TIMELINE</span>
+                <span className="case-study-summary-value">1 month</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="type-label-lg text-[var(--color-text-secondary)] uppercase">TOOLS</span>
-                <span className="text-[var(--color-text-inverse)]">Figma, Jitter, Illustrator, Photoshop</span>
+                <span className="case-study-summary-label type-label-lg uppercase">TOOLS</span>
+                <span className="case-study-summary-value">Figma, Jitter, Illustrator, Photoshop</span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="case-study-summary-label type-label-lg uppercase">SCOPE</span>
+                <span className="case-study-summary-value">Landing page, conversion flow</span>
               </div>
             </div>
 
@@ -197,14 +201,16 @@ export default function TrustCoreWebPage() {
 
             {/* Overview Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">OVERVIEW</span>
+              <span className="case-study-label type-label-lg mb-[4px] uppercase">OVERVIEW</span>
               <ul className="list-disc pl-5 type-body text-[var(--Semantic-Text-Inverse)] flex flex-col gap-2">
                 <li>Most crypto wallet landing pages fail before onboarding begins.</li>
                 <li>They overwhelm users with technical language, weak trust signals, and unclear product value. Users leave before understanding what the product does or whether it feels safe enough to trust.</li>
                 <li>TrustCore Wallet needed a landing page that could simplify complex ownership models while positioning the product as secure, premium, and beginner-friendly.</li>
-                <li>The goal was simple:</li>
-                <li>Build trust before asking for conversion.</li>
               </ul>
+              <div className="case-study-callout mt-3 flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
+                <span className="type-label-lg uppercase opacity-70">Core problem</span>
+                <p className="type-heading-h4">Build trust before asking for conversion.</p>
+              </div>
             </div>
 
             {/* Secondary Video Block */}
@@ -228,11 +234,11 @@ export default function TrustCoreWebPage() {
 
             {/* Strategy Details */}
             <div className="flex flex-col gap-[12px] w-full" data-reveal>
-              <span className="type-label-lg mb-[4px] text-[var(--color-text-secondary)] uppercase">STRATEGY</span>
-              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
-                The experience was designed around one principle:<br />
-                <strong className="text-[var(--color-text-inverse)]">Users convert when they feel safe.</strong>
-              </p>
+              <span className="case-study-label type-label-lg mb-[4px] uppercase">STRATEGY</span>
+              <div className="case-study-callout flex flex-col gap-2 rounded-[20px] p-6 sm:p-8">
+                <span className="type-label-lg uppercase opacity-70">Design principle</span>
+                <p className="type-heading-h4">Users convert when they feel safe.</p>
+              </div>
               <p className="type-body text-[var(--color-text-secondary)]">
                 Instead of leading with features, the landing page focused on progressive confidence-building through clear messaging, product understanding, security validation, and strong conversion flow.
               </p>
@@ -290,10 +296,11 @@ export default function TrustCoreWebPage() {
           <hr className="border-[var(--footer-border)] w-full" />
 
           {/* Final Outcome Section */}
-          <section id="final-outcome" className="flex flex-col gap-[24px] w-full mb-12 scroll-mt-28" data-reveal>
+          <section id="final-outcome" className="case-study-outcome flex flex-col gap-[24px] w-full mb-12 scroll-mt-28 rounded-[24px] p-6 sm:p-8" data-reveal>
             <div className="flex flex-col gap-[8px]">
-              <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">FINAL OUTCOME</span>
-              <p className="type-body text-[var(--Semantic-Text-Inverse)]">
+              <span className="case-study-label type-label-lg mb-[8px] uppercase">FINAL OUTCOME</span>
+              <h2 className="type-heading-h4">Confidence before complexity.</h2>
+              <p className="type-body">
                 Rather than asking users to learn blockchain before using a wallet, TrustCore introduces blockchain concepts only when they become meaningful. The experience shifts from technology-first to ownership-first, helping users build confidence before complexity.
               </p>
             </div>
