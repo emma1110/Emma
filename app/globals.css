@@ -333,11 +333,12 @@ html[data-theme="dark"] .motion-card:hover {
   pointer-events: none;
   opacity: 0;
   z-index: 0;
-  /* spring-ish easing: quick out, gentle settle */
+  will-change: transform, width;
+  backface-visibility: hidden;
   transition:
-    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-    width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    opacity 0.2s ease;
+    transform 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.26s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.16s ease;
 }
 
 .nav-link-item {
@@ -354,7 +355,7 @@ html[data-theme="dark"] .motion-card:hover {
   text-decoration: none;
   border-radius: 999px;
   white-space: nowrap;
-  transition: color 0.16s ease;
+  transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -380,9 +381,9 @@ html[data-theme="dark"] .motion-card:hover {
 }
 
 .case-hyfi {
-  --case-accent: #00a99d;
-  --case-deep: #007d75;
-  --case-soft: #ddfbf7;
+  --case-accent: #7c3aed;
+  --case-deep: #5b21b6;
+  --case-soft: #eee6ff;
 }
 
 .case-bitcore {
@@ -451,9 +452,9 @@ html[data-theme="dark"] .motion-card:hover {
 [data-theme="dark"] .case-hyfi {
   --case-canvas: #121212;
   --case-card: #191919;
-  --case-accent: #54e0d6;
-  --case-deep: #ddfbf7;
-  --case-soft: #0b3734;
+  --case-accent: #a78bfa;
+  --case-deep: #eee6ff;
+  --case-soft: #2a174d;
   --case-border: rgba(255, 255, 255, 0.12);
 }
 

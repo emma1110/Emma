@@ -141,7 +141,7 @@ export default function Navbar() {
         pill.style.transition = "";
       }
       pill.style.width = `${width}px`;
-      pill.style.transform = `translateX(${x}px)`;
+      pill.style.transform = `translate3d(${x}px, 0, 0)`;
       pill.style.opacity = "1";
     };
 
