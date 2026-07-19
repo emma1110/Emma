@@ -214,7 +214,7 @@ export default function Navbar() {
             <span ref={pillRef} className="nav-pill" />
             <Link href="/" className="nav-link-item">Home</Link>
             <Link href="/#project" className="nav-link-item">Project</Link>
-            <Link href="/#about" className="nav-link-item">About</Link>
+            <Link href="/about" className="nav-link-item">About</Link>
             <Link href="/#contact" className="nav-link-item">Contact</Link>
           </div>
 
@@ -274,7 +274,7 @@ export default function Navbar() {
         <div className="type-heading-h6 flex flex-col gap-6 pt-8">
           <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Home</Link>
           <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Project</Link>
-          <Link href="/#about" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">About</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">About</Link>
           <Link href="/#contact" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Contact</Link>
         </div>
       </div>

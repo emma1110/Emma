@@ -129,14 +129,14 @@ export default function FavoriteBooks() {
 
                   {/* Cover Image Layout (Visible when expanded) */}
                   <div
-                    className={`absolute inset-0 w-[260px] h-full pointer-events-none transition-opacity duration-300 ${
+                    className={`absolute inset-0 flex h-full w-[260px] items-center justify-center overflow-hidden rounded-[16px] pointer-events-none transition-opacity duration-300 ${
                       isExpanded ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <img 
                       src={book.cover} 
                       alt={book.title} 
-                      className="h-full w-full object-contain"
+                      className="h-full w-auto max-w-full rounded-[12px] object-contain"
                       width="260"
                       height="390"
                       loading="lazy"
