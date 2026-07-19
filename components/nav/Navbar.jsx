@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function MoonIcon({ className = "w-5 h-5" }) {
   return (
@@ -47,7 +48,7 @@ function XIcon({ className = "w-5 h-5" }) {
 }
 
 export default function Navbar() {
-  const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,7 +63,6 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    setIsMounted(true);
     const activeTheme = document.documentElement.getAttribute("data-theme") || "light";
     setTheme(activeTheme);
     
@@ -95,14 +95,14 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const navLinks = navLinksRef.current;
     const pill = pillRef.current;
     if (!navLinks || !pill) return;
 
     const links = Array.from(navLinks.querySelectorAll(".nav-link-item"));
     if (links.length === 0) return;
-    let activeLink = links[0]; // "Home" is active by default
+    let activeLink = links[0];
 
     const movePillTo = (link, instant = false) => {
       const containerRect = navLinks.getBoundingClientRect();
@@ -121,15 +121,23 @@ export default function Navbar() {
       pill.style.opacity = "1";
     };
 
-    // Set Home as active on mount
-    activeLink.classList.add("is-active");
-    // Use rAF to ensure layout is ready before reading rect
-    requestAnimationFrame(() => {
-      movePillTo(activeLink, true);
-      // Restore transitions after instant snap
-      requestAnimationFrame(() => {
-        pill.style.transition = "";
-      });
+    const syncActiveLink = (instant = true) => {
+      const hash = window.location.hash;
+      const activeHref = pathname === "/about"
+        ? "/about"
+        : pathname === "/" && (hash === "#project" || hash === "#contact")
+          ? `/${hash}`
+          : "/";
+
+      activeLink = links.find((link) => link.getAttribute("href") === activeHref) || links[0];
+      links.forEach((link) => link.classList.toggle("is-active", link === activeLink));
+      movePillTo(activeLink, instant);
+    };
+
+    // useLayoutEffect positions the indicator before the browser paints the route.
+    syncActiveLink(true);
+    const transitionFrame = requestAnimationFrame(() => {
+      pill.style.transition = "";
     });
 
     const handleMouseEnter = (e) => {
@@ -146,14 +154,19 @@ export default function Navbar() {
       movePillTo(activeLink);
     };
 
+    const handleClick = (event) => {
+      activeLink = event.currentTarget;
+      links.forEach((link) => link.classList.toggle("is-active", link === activeLink));
+      movePillTo(activeLink);
+    };
+
     links.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        activeLink = link;
-      });
+      link.addEventListener("click", handleClick);
       link.addEventListener("mouseenter", handleMouseEnter);
     });
 
     navLinks.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("hashchange", syncActiveLink);
 
     let resizeTimeout = null;
     const handleResize = () => {
@@ -168,13 +181,16 @@ export default function Navbar() {
 
     return () => {
       links.forEach((link) => {
+        link.removeEventListener("click", handleClick);
         link.removeEventListener("mouseenter", handleMouseEnter);
       });
       navLinks.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("hashchange", syncActiveLink);
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(transitionFrame);
       if (resizeTimeout) clearTimeout(resizeTimeout);
     };
-  }, [isMounted]);
+  }, [pathname]);
 
   return (
     <div

@@ -40,13 +40,13 @@ export default function AboutPage() {
     <main className="min-h-screen w-full bg-[var(--bg-color)] transition-colors duration-300">
       <Navbar />
 
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-16 px-4 py-10 sm:gap-20 sm:px-8 sm:py-16 lg:px-[80px] lg:py-[80px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col px-4 py-10 sm:px-8 sm:py-16 lg:px-[80px] lg:py-[80px]">
         <h1 className="type-display-xl text-center text-[var(--color-text-inverse)]" data-entrance>
           About me
         </h1>
 
         <div className="flex flex-col">
-          <section className="grid items-center gap-10 py-[var(--spacing-20)] lg:grid-cols-[minmax(0,744px)_minmax(360px,1fr)] lg:gap-[98px]" data-reveal>
+          <section className="grid items-center gap-10 py-10 sm:py-16 lg:grid-cols-[minmax(0,744px)_minmax(360px,1fr)] lg:gap-[98px] lg:py-[var(--spacing-20)]" data-reveal>
             <div className="flex flex-col gap-6 sm:gap-8">
               <h2 className="type-heading-h2 text-[var(--color-text-inverse)]">
                 I believe every great product begins with understanding people.
@@ -95,7 +95,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section className="flex flex-col gap-4 py-[var(--spacing-20)] sm:gap-8" data-reveal>
+          <section className="flex flex-col gap-4 py-10 sm:gap-8 sm:py-16 lg:py-[var(--spacing-20)]" data-reveal>
             <h2 className="type-heading-h2 text-[var(--color-text-inverse)]">Experience</h2>
             <div className="flex flex-col">
               {experience.map((item) => (
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section className="grid items-center gap-10 py-[var(--spacing-20)] lg:grid-cols-[minmax(0,619px)_minmax(360px,1fr)] lg:gap-[143px]" data-reveal>
+          <section className="grid items-center gap-10 py-10 sm:py-16 lg:grid-cols-[minmax(0,619px)_minmax(360px,1fr)] lg:gap-[143px] lg:py-[var(--spacing-20)]" data-reveal>
             <div className="flex flex-col gap-6 sm:gap-8">
               <h2 className="type-heading-h2 text-[var(--color-text-inverse)]">Life at home</h2>
               <div className="flex flex-col gap-5">
