@@ -35,7 +35,7 @@
   --font-caption-size: 12px; --font-caption-line: 18px; --font-caption-weight: 400; --font-caption-tracking: .12px;
   --font-micro-size: 11px; --font-micro-line: 16px; --font-micro-weight: 500; --font-micro-tracking: .88px;
 
-  /* Hero uses the same library with extra fit breakpoints for its fixed two-line composition. */
+  /* Hero intentionally sits one scale above section headings. */
   --font-hero-size: 96px; --font-hero-line: 104px; --font-hero-weight: 700; --font-hero-tracking: -3.84px;
   --font-hero-pill-size: 72px; --font-hero-pill-line: 80px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -2.16px;
 
@@ -90,13 +90,6 @@
   }
 }
 
-@media (max-width: 767px) {
-  :root {
-    --font-hero-size: 40px; --font-hero-line: 48px; --font-hero-tracking: -0.64px;
-    --font-hero-pill-size: 32px; --font-hero-pill-line: 40px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.48px;
-  }
-}
-
 /* Mobile — every typography role has an explicit responsive value. */
 @media (max-width: 639px) {
   :root {
@@ -119,12 +112,14 @@
     --font-label-size: 12px; --font-label-line: 18px; --font-label-weight: 600; --font-label-tracking: .6px;
     --font-caption-size: 12px; --font-caption-line: 18px; --font-caption-weight: 400; --font-caption-tracking: .12px;
     --font-micro-size: 10px; --font-micro-line: 14px; --font-micro-weight: 500; --font-micro-tracking: .8px;
+    --font-hero-size: 48px; --font-hero-line: 56px; --font-hero-tracking: -0.96px;
+    --font-hero-pill-size: 40px; --font-hero-pill-line: 48px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.64px;
   }
 }
 
 @media (max-width: 479px) {
   :root {
-    --font-hero-size: clamp(22px, 6.4vw, 28px); --font-hero-line: 36px; --font-hero-tracking: -0.28px;
-    --font-hero-pill-size: clamp(20px, 5.8vw, 24px); --font-hero-pill-line: 32px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.16px;
+    --font-hero-size: 40px; --font-hero-line: 48px; --font-hero-tracking: -0.64px;
+    --font-hero-pill-size: 36px; --font-hero-pill-line: 44px; --font-hero-pill-weight: 700; --font-hero-pill-tracking: -0.48px;
   }
 }

@@ -146,11 +146,13 @@ export default function Hero() {
             }}
           >
             <span className="line-reveal" style={{ "--entrance-delay": "150ms" }}>
-              <span className="whitespace-nowrap">I design products</span>
+              <span className="whitespace-nowrap">
+                I design products<span className="hidden sm:inline"> that</span>
+              </span>
             </span>
             <span className="line-reveal" style={{ "--entrance-delay": "230ms" }}>
               <span className="whitespace-nowrap">
-                that{" "}
+                <span className="sm:hidden">that </span>
                 <span className="pill">
                   <span className="dot"></span>
                   <span
@@ -163,9 +165,12 @@ export default function Hero() {
                     {displayText}
                   </span>
                   <span className="cursor">&nbsp;</span>
-                </span>{" "}
-                technology.
+                </span>
+                <span className="hidden sm:inline"> technology.</span>
               </span>
+            </span>
+            <span className="line-reveal sm:hidden" style={{ "--entrance-delay": "270ms" }}>
+              <span className="whitespace-nowrap">technology.</span>
             </span>
           </h1>
 

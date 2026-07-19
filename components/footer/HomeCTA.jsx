@@ -6,11 +6,11 @@ export default function HomeCTA() {
       className="w-full bg-[var(--bg-color)] transition-colors duration-300"
     >
       <div
-        className="mx-auto flex w-full max-w-[1440px] flex-col items-start justify-between gap-10 px-4 py-10 sm:px-8 sm:py-16 lg:min-h-[527px] lg:flex-row lg:items-center lg:gap-16 lg:px-[80px] lg:py-[80px]"
+        className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-between gap-10 px-4 py-10 text-center sm:items-start sm:px-8 sm:py-16 sm:text-left lg:min-h-[527px] lg:flex-row lg:items-center lg:gap-16 lg:px-[80px] lg:py-[80px]"
         data-reveal
       >
-        <div className="flex max-w-[607px] flex-col items-start gap-6">
-          <div className="flex flex-col gap-3">
+        <div className="flex max-w-[720px] flex-col items-center gap-6 sm:items-start">
+          <div className="flex flex-col items-center gap-3 sm:items-start">
             <h2
               id="home-cta-title"
               className="text-[clamp(27px,8vw,60px)] font-bold leading-[1.2] tracking-[-0.02em] text-[var(--color-text-inverse)]"
@@ -18,7 +18,7 @@ export default function HomeCTA() {
               <span className="block">Let&apos;s build</span>
               <span className="block whitespace-nowrap">something people love.</span>
             </h2>
-            <p className="type-body-lg-medium max-w-[607px] text-[var(--color-text-secondary)]">
+            <p className="type-body-lg-medium max-w-[607px] text-center text-[var(--color-text-secondary)] sm:text-left">
               I&apos;m always interested in thoughtful products, ambitious teams,
               and meaningful conversations.
             </p>

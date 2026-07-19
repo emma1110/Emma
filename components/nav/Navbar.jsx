@@ -240,23 +240,23 @@ export default function Navbar() {
 
             {/* Theme Toggle Icon for Phone and Tablet */}
             <button 
-              className="flex lg:hidden items-center justify-center w-10 h-10 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
+              className="flex lg:hidden items-center justify-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
               onClick={toggleTheme}
               aria-label="Toggle theme"
               data-magnetic
             >
-              {theme === "light" ? <MoonIcon /> : <SunIcon />}
+              {theme === "light" ? <MoonIcon className="h-7 w-7" /> : <SunIcon className="h-7 w-7" />}
             </button>
 
             {/* Burger Menu Button on Phone and Tablet */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex lg:hidden justify-center items-center w-10 h-10 rounded-full border border-[var(--footer-border)] text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
+              className="flex lg:hidden justify-center items-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
               data-magnetic
             >
-              {menuOpen ? <XIcon /> : <MenuIcon />}
+              {menuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
             </button>
           </div>
         </nav>
@@ -272,10 +272,10 @@ export default function Navbar() {
         }}
       >
         <div className="type-heading-h6 flex flex-col gap-6 pt-8">
-          <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Home</Link>
-          <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Project</Link>
-          <Link href="/#about" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">About</Link>
-          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="soft-link text-[var(--color-text-inverse)] py-2 border-b border-[var(--footer-border)]">Contact</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Home</Link>
+          <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Project</Link>
+          <Link href="/#about" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">About</Link>
+          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Contact</Link>
         </div>
       </div>
     </div>
