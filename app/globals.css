@@ -508,6 +508,21 @@ html[data-theme="dark"] .motion-card:hover {
   transform: scale(0.96);
 }
 
+/* Shared button feedback, based on the Home CTA interaction. */
+.button-interaction {
+  transition-property: transform, opacity, background-color, color, border-color, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.button-interaction:hover {
+  opacity: 0.8;
+}
+
+.button-interaction:active {
+  transform: scale(0.95);
+}
+
 /* Copy Email Button styling */
 .copy-email-button {
   display: inline-flex;
@@ -523,16 +538,6 @@ html[data-theme="dark"] .motion-card:hover {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease, background-color 0.16s ease, box-shadow 0.18s ease;
-}
-
-.copy-email-button:hover {
-  opacity: 0.9;
-  background-color: #222222;
-}
-
-.copy-email-button:active {
-  transform: scale(0.96);
 }
 
 @media (prefers-reduced-motion: reduce) {

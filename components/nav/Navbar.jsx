@@ -3,6 +3,7 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Button from "../ui/Button";
 
 function MoonIcon({ className = "w-5 h-5" }) {
   return (
@@ -261,12 +262,12 @@ export default function Navbar() {
           {/* Right: Theme Toggle & Mobile Menu Toggle */}
           <div className="flex items-center gap-4 flex-shrink-0 z-50">
             {/* Sliding Toggle Capsule for Desktop */}
-            <button 
-              className="toggle hidden lg:flex" 
+            <Button
+              className="toggle hidden lg:flex"
               onClick={toggleTheme}
               aria-label="Toggle theme" 
               aria-pressed={theme === "light"}
-              data-magnetic
+              magnetic
             >
               <span className="knob">
                 <span className="icon moon">
@@ -276,28 +277,28 @@ export default function Navbar() {
                   <SunIcon className="w-full h-full" />
                 </span>
               </span>
-            </button>
+            </Button>
 
             {/* Theme Toggle Icon for Phone and Tablet */}
-            <button 
-              className="flex lg:hidden items-center justify-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-colors cursor-pointer"
+            <Button
+              className="flex lg:hidden items-center justify-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] cursor-pointer"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              data-magnetic
+              magnetic
             >
               {theme === "light" ? <MoonIcon className="h-7 w-7" /> : <SunIcon className="h-7 w-7" />}
-            </button>
+            </Button>
 
             {/* Burger Menu Button on Phone and Tablet */}
-            <button
+            <Button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex lg:hidden justify-center items-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] transition-all cursor-pointer"
+              className="flex lg:hidden justify-center items-center w-12 h-12 rounded-full text-[var(--color-text-inverse)] hover:bg-[var(--card-bg)] cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={menuOpen}
-              data-magnetic
+              magnetic
             >
               {menuOpen ? <XIcon className="h-7 w-7" /> : <MenuIcon className="h-7 w-7" />}
-            </button>
+            </Button>
           </div>
         </nav>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/nav/Navbar";
+import Button from "../../components/ui/Button";
 
 export const metadata: Metadata = {
   title: "About me | Emma — Product Designer",
@@ -51,7 +52,7 @@ export default function AboutPage() {
               <h2 className="type-heading-h2 text-[var(--color-text-inverse)]">
                 I believe every great product begins with understanding people.
               </h2>
-              <div className="type-heading-h6 flex flex-col gap-2 text-[var(--color-text-inverse)]">
+              <div className="flex flex-col gap-3 text-[18px] font-medium leading-7 tracking-normal text-[var(--color-text-inverse)]">
                 <p>That belief shapes both my work and my life.</p>
                 <p>
                   As a Product Designer, I enjoy simplifying complex systems into
@@ -136,11 +137,12 @@ export default function AboutPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <a
+                  <Button
+                    as="a"
                     href="https://www.royalroad.com/fiction/115653/the-link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="type-heading-h6 group inline-flex items-center gap-2 text-[var(--color-text-inverse)] transition-opacity hover:opacity-60"
+                    className="type-heading-h6 group inline-flex items-center gap-2 text-[var(--color-text-inverse)]"
                   >
                     Read my novel
                     <span
@@ -149,7 +151,7 @@ export default function AboutPage() {
                     >
                       →
                     </span>
-                  </a>
+                  </Button>
                 </div>
               </div>
             </div>

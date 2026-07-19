@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Button from "../ui/Button";
 
 const HERO_WORDS = [
   { text: "Humanize", background: "#ffe2d9", foreground: "#ff5a36" },
@@ -200,15 +201,19 @@ export default function Hero() {
         </div>
 
         {/* Copy My Email Button */}
-        <button
-          onClick={handleCopyEmail}
-          className="copy-email-button mx-auto"
+        <div
+          className="flex justify-center"
           data-entrance
-          data-magnetic
           style={{ "--entrance-delay": "410ms" }}
         >
-          Copy My Email
-        </button>
+          <Button
+            onClick={handleCopyEmail}
+            className="copy-email-button"
+            magnetic
+          >
+            Copy My Email
+          </Button>
+        </div>
       </div>
 
       {/* Toast Notification */}

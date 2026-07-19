@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Footer from '../../components/footer/Footer';
 import Navbar from '../../components/nav/Navbar';
+import Button from '../../components/ui/Button';
 
 const Lottie = dynamic(() => import('lottie-react'), {
   ssr: false,
@@ -344,11 +345,11 @@ export default function TrustCorePage() {
               
               {/* Custom controls overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 sm:p-6">
-                <button 
+                <Button
                   onClick={togglePlay}
-                  className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all"
+                  className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white"
                   aria-label={isPlaying ? "Pause video" : "Play video"}
-                  data-magnetic
+                  magnetic
                 >
                   {isPlaying ? (
                     <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -359,12 +360,12 @@ export default function TrustCorePage() {
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   )}
-                </button>
-                <button 
+                </Button>
+                <Button
                   onClick={() => setIsMuted(!isMuted)}
-                  className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white transition-all"
+                  className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white"
                   aria-label={isMuted ? "Unmute video" : "Mute video"}
-                  data-magnetic
+                  magnetic
                 >
                   {isMuted ? (
                     <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
@@ -375,7 +376,7 @@ export default function TrustCorePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
                     </svg>
                   )}
-                </button>
+                </Button>
               </div>
             </div>
 

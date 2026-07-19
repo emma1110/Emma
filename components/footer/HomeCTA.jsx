@@ -1,3 +1,5 @@
+import Button from "../ui/Button";
+
 export default function HomeCTA() {
   return (
     <section
@@ -24,12 +26,13 @@ export default function HomeCTA() {
             </p>
           </div>
 
-          <a
+          <Button
+            as="a"
             href="https://www.linkedin.com/in/lan-anh-nguyen-a07961213/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-text-inverse)] px-6 py-3 type-heading-h6 text-[var(--color-text-primary)] transition-[transform,opacity] duration-200 hover:opacity-80 active:scale-95"
-            data-magnetic
+            magnetic
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--color-text-inverse)] px-6 py-3 type-heading-h6 text-[var(--color-text-primary)]"
           >
             <svg
               width="22"
@@ -46,7 +49,7 @@ export default function HomeCTA() {
               />
             </svg>
             Connect with me
-          </a>
+          </Button>
         </div>
 
         <img
