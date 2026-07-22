@@ -14,6 +14,8 @@ const HERO_WORDS = [
   { text: "Reimagine", background: "#e4e8ff", foreground: "#4f46e5" },
 ];
 
+const CONTACT_EMAIL = "emmadesign.art@gmail.com";
+
 
 /**
  * Hero
@@ -66,8 +68,8 @@ export default function Hero() {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("emmadesign.art@gmail.com").then(() => {
-      setToast({ visible: true, message: "emmadesign.art@gmail.com" });
+    navigator.clipboard.writeText(CONTACT_EMAIL).then(() => {
+      setToast({ visible: true, message: CONTACT_EMAIL });
     }).catch((err) => {
       console.error("Failed to copy email: ", err);
     });
@@ -231,7 +233,7 @@ export default function Hero() {
         </div>
         <div className="flex flex-col">
           <span className="type-label-lg text-neutral-100">Copied!</span>
-          <span className="type-caption text-neutral-400">emmadesign.art@gmail.com</span>
+          <span className="type-caption text-neutral-400">{CONTACT_EMAIL}</span>
         </div>
       </div>
     </div>
