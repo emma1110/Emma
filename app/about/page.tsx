@@ -4,7 +4,7 @@ import Navbar from "../../components/nav/Navbar";
 import Button from "../../components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "About me | Emma — Product Designer",
+  title: "About me | Emma | Product Designer",
   description:
     "Learn more about Emma's design experience, creative practice, and life outside product design.",
 };
@@ -55,10 +55,10 @@ export default function AboutPage() {
               <div className="flex flex-col gap-3 text-[18px] font-medium leading-7 tracking-normal text-[var(--color-text-inverse)]">
                 <p>But you can call me Emma.</p>
                 <p>
-                  I&apos;m a Product Designer with over five years of experience
+                  I&apos;m a Product Designer with 8 years of experience
                   designing digital products across fintech, blockchain, and AI.
                   My background in graphic design, branding, and product design has
-                  shaped how I approach problems—from understanding people to
+                  shaped how I approach problems, from understanding people to
                   building thoughtful, scalable experiences.
                 </p>
                 <p>

@@ -462,7 +462,7 @@ export default function TrustCorePage() {
                 One insight changed the project.
               </h2>
               <p className="type-body text-[var(--Semantic-Text-Inverse)] mt-1">
-                I expected blockchain to be the biggest obstacle. Research suggested otherwise. The real problem wasn&apos;t technical complexity — it was <strong>a mismatch between how users think and how wallets are designed.</strong>
+                I expected blockchain to be the biggest obstacle. Research suggested otherwise. The real problem wasn&apos;t technical complexity. It was <strong>a mismatch between how users think and how wallets are designed.</strong>
               </p>
             </div>
 
@@ -757,7 +757,7 @@ export default function TrustCorePage() {
                 <div className="flex flex-col gap-2">
                   <h3 className="type-heading-h5 text-[var(--color-text-inverse)]">Ownership comes first.</h3>
                   <p className="type-body text-[var(--Semantic-Text-Inverse)]">
-                    Assets become the primary entry point instead of accounts. Rather than exposing technical structure immediately, the product helps users understand what they own before introducing how those assets are managed — reducing early drop-off caused by unfamiliar terminology.
+                    Assets become the primary entry point instead of accounts. Rather than exposing technical structure immediately, the product helps users understand what they own before introducing how those assets are managed. This reduces early drop-off caused by unfamiliar terminology.
                   </p>
                 </div>
                 <div className="w-full h-[360px] sm:h-[520px] lg:h-[620px] rounded-[20px] sm:rounded-[24px] overflow-hidden bg-[var(--card-bg)] flex items-center justify-center p-2">

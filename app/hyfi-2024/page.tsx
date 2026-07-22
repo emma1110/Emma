@@ -4,7 +4,7 @@ import Navbar from "../../components/nav/Navbar";
 import CaseStudySidebar from "../../components/case-study/CaseStudySidebar";
 
 export const metadata: Metadata = {
-  title: "HYFI 2024 | Emma — Visual Design Case Study",
+  title: "HYFI 2024 | Emma | Visual Design Case Study",
   description:
     "A scalable visual identity for HYFI 2024 across digital, stage, social, and print touchpoints.",
 };
@@ -228,7 +228,7 @@ export default function Hyfi2024Page() {
               <h2 className="type-heading-h5">Design the system before designing the assets.</h2>
               <div className="type-body flex flex-col gap-2">
                 <p>Instead of treating every deliverable as a separate project, the focus shifted toward <strong>reusable design foundations.</strong></p>
-                <p>By defining visual rules early, each asset inherited the same structure, rhythm, and personality — <strong>making production faster while keeping the experience consistent.</strong></p>
+                <p>By defining visual rules early, each asset inherited the same structure, rhythm, and personality. <strong>This made production faster while keeping the experience consistent.</strong></p>
               </div>
             </div>
 

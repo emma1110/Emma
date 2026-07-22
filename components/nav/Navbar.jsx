@@ -233,7 +233,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="Emma — Home"
+            aria-label="Emma Home"
             className="group flex shrink-0 items-center"
           >
             <img
@@ -247,7 +247,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Links — center black pill */}
+          {/* Links: center black pill */}
           <div
             ref={navLinksRef}
             className="navbar-links-container hidden lg:flex shrink-0"

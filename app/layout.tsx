@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "/images/og-thumbnail.png",
         width: 2400,
         height: 1260,
-        alt: "Emma — Turning complexity into clarity",
+        alt: "Emma: Turning complexity into clarity",
       },
     ],
   },
