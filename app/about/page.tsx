@@ -157,11 +157,11 @@ export default function AboutPage() {
             </div>
 
             <img
-              src="/images/about-home.jpg"
-              alt="Rice terraces and village homes in rural Vietnam"
+              src="/images/about-life.jpg"
+              alt="Purple illustrated portrait representing Emma's creative life"
               className="aspect-[508/384] h-auto w-full rounded-[24px] object-cover lg:aspect-auto lg:h-full lg:min-h-[440px]"
-              width="508"
-              height="384"
+              width="1254"
+              height="1254"
               loading="lazy"
               decoding="async"
             />
