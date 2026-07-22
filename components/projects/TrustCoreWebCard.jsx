@@ -43,7 +43,7 @@ export default function TrustCoreWebCard() {
         <div className="mt-[16px] flex min-h-0 w-full flex-1 items-end justify-center px-4 sm:mt-[24px] sm:px-[20px] lg:mt-[40px] lg:px-0">
           <div className="flex h-full min-h-0 w-full items-end overflow-hidden lg:w-[94%]">
             <img
-              src="/images/tc-page.webp"
+              src="/images/tc-page-square.webp"
               alt="TrustCore Landing"
               className="block h-full min-h-0 w-full object-contain object-bottom"
               width="1400"

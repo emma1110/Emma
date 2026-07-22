@@ -36,7 +36,7 @@ export default function BitCoreCard() {
       </div>
 
       {/* Desktop Safari mockup — right */}
-      <div className="relative z-0 ml-4 mt-[16px] min-h-0 flex-1 overflow-hidden sm:ml-[20px] sm:mt-[24px] lg:absolute lg:bottom-0 lg:left-[419px] lg:right-0 lg:top-[98px] lg:ml-0 lg:mt-0">
+      <div className="relative z-0 mb-4 ml-4 mr-4 mt-[16px] min-h-0 flex-1 overflow-hidden sm:mb-[20px] sm:ml-[20px] sm:mr-[20px] sm:mt-[24px] lg:absolute lg:bottom-[20px] lg:left-[419px] lg:right-[20px] lg:top-[98px] lg:mb-0 lg:ml-0 lg:mr-0 lg:mt-0">
         <img
           src="/images/bitcore.avif"
           alt="BitCore"
