@@ -170,7 +170,7 @@ export default function TrustCoreWebPage() {
                 src="/images/tchero.avif"
                 alt="TrustCore Web Case Study Cover"
                 width="1600"
-                height="920"
+                height="922"
                 fetchPriority="high"
                 loading="eager"
                 decoding="async"
@@ -221,7 +221,7 @@ export default function TrustCoreWebPage() {
             >
               <video
                 ref={videoRef}
-                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
+                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden]"
                 src="/images/tclanding.webm"
                 poster="/images/cover.avif"
                 muted
@@ -268,8 +268,8 @@ export default function TrustCoreWebPage() {
                     src="/images/Mini Apps.avif"
                     alt="Mini Apps Mockup"
                     className="w-full h-auto block flex-1 object-cover object-top"
-                    width="2880"
-                    height="8946"
+                    width="1200"
+                    height="3728"
                     loading="lazy"
                     decoding="async"
                   />
@@ -282,8 +282,8 @@ export default function TrustCoreWebPage() {
                     src="/images/Buy Crypto.avif"
                     alt="Buy Crypto Mockup"
                     className="w-full h-auto block flex-1 object-cover object-top"
-                    width="2880"
-                    height="8406"
+                    width="1200"
+                    height="3502"
                     loading="lazy"
                     decoding="async"
                   />

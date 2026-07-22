@@ -169,7 +169,7 @@ export default function BitCorePage() {
                 src="/images/bannerbc.avif"
                 alt="BitCore Case Study Hero Banner"
                 width="1600"
-                height="920"
+                height="922"
                 fetchPriority="high"
                 loading="eager"
                 decoding="async"
@@ -220,7 +220,7 @@ export default function BitCorePage() {
             >
               <video
                 ref={videoRef}
-                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden] will-change-transform"
+                className="w-full h-auto block [transform:translate3d(0,0,0)] [backface-visibility:hidden]"
                 src="/images/bitcore2.webm"
                 poster="/images/bitcore.avif"
                 muted

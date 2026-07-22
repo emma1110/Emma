@@ -55,6 +55,7 @@ interface ScrollPlayLottieProps {
 function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const lottieRef = React.useRef<any>(null);
+  const unloadTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const [animationData, setAnimationData] = useState<any>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -65,12 +66,22 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (unloadTimerRef.current) {
+            clearTimeout(unloadTimerRef.current);
+            unloadTimerRef.current = null;
+          }
           setShouldLoad(true);
-          observer.disconnect();
+        } else {
+          if (unloadTimerRef.current) clearTimeout(unloadTimerRef.current);
+          unloadTimerRef.current = setTimeout(() => {
+            setShouldLoad(false);
+            setAnimationData(null);
+            unloadTimerRef.current = null;
+          }, 5000);
         }
       },
       {
-        rootMargin: "160px 0px",
+        rootMargin: "240px 0px",
         threshold: 0.01,
       }
     );
@@ -79,6 +90,10 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
 
     return () => {
       observer.disconnect();
+      if (unloadTimerRef.current) {
+        clearTimeout(unloadTimerRef.current);
+        unloadTimerRef.current = null;
+      }
     };
   }, []);
 
@@ -147,7 +162,7 @@ function ScrollPlayLottie({ src }: ScrollPlayLottieProps) {
           style={{ width: "100%", height: "100%" }}
         />
       ) : (
-        <div className="h-full w-full animate-pulse rounded-[18px] bg-[linear-gradient(110deg,var(--card-bg)_0%,rgba(255,255,255,0.18)_45%,var(--card-bg)_90%)] bg-[length:200%_100%]" />
+        <div className={`h-full w-full rounded-[18px] bg-[linear-gradient(110deg,var(--card-bg)_0%,rgba(255,255,255,0.18)_45%,var(--card-bg)_90%)] bg-[length:200%_100%] ${shouldLoad ? "animate-pulse" : ""}`} />
       )}
     </div>
   );

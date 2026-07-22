@@ -219,7 +219,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="sticky top-0 z-50 w-full transition-all duration-300 will-change-transform"
+      className="sticky top-0 z-50 w-full transition-all duration-300"
       style={{
         backgroundColor: scrolled ? "var(--navbar-glass-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",

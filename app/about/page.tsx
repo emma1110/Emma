@@ -66,7 +66,7 @@ export default function AboutPage() {
 
               <div className="absolute left-2 top-8 z-20 rounded-[6px] bg-[var(--case-study-card-bg)] p-[6px] shadow-[0_4px_12px_rgba(0,0,0,0.12)] sm:left-[26px] sm:top-10 sm:p-[7px]">
                 <img
-                  src="/images/about-sticker-4.png"
+                  src="/images/about-sticker-4.avif"
                   alt="Be yourself poster"
                   className="h-[104px] w-[104px] rounded-[4px] object-cover sm:h-[132px] sm:w-[132px]"
                   width="155"
@@ -77,7 +77,7 @@ export default function AboutPage() {
 
               <div className="absolute right-2 top-0 z-20 rounded-[6px] bg-[var(--case-study-card-bg)] p-[6px] shadow-[0_4px_12px_rgba(0,0,0,0.12)] sm:right-[25px] sm:-top-2 sm:p-[7px]">
                 <img
-                  src="/images/about-sticker-1.png"
+                  src="/images/about-sticker-1.avif"
                   alt="You are the artist of your own life poster"
                   className="h-[104px] w-[104px] rounded-[4px] object-cover sm:h-[132px] sm:w-[132px]"
                   width="155"
@@ -87,7 +87,7 @@ export default function AboutPage() {
               </div>
 
               <img
-                src="/images/about-portrait.png"
+                src="/images/about-portrait.webp"
                 alt="Emma working on a laptop"
                 className="absolute bottom-0 left-1/2 z-30 h-[390px] w-auto max-w-none -translate-x-1/2 object-contain sm:h-[480px] lg:h-[573px]"
                 width="403"
