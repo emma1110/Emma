@@ -15,6 +15,7 @@ export default function HowIUseAI() {
     },
     {
       title: "Google AI Studio for Internal Tools",
+      titleLines: ["Google AI Studio for", "Internal Tools"],
       desc: "Building Figma plugins and workflow automations.",
       src: "/images/googleAi.svg",
       invert: true
