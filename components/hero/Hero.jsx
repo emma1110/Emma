@@ -66,8 +66,8 @@ export default function Hero() {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText("lananhnguyen.arena@gmail.com").then(() => {
-      setToast({ visible: true, message: "lananhnguyen.arena@gmail.com" });
+    navigator.clipboard.writeText("emmadesign.art@gmail.com").then(() => {
+      setToast({ visible: true, message: "emmadesign.art@gmail.com" });
     }).catch((err) => {
       console.error("Failed to copy email: ", err);
     });
@@ -231,7 +231,7 @@ export default function Hero() {
         </div>
         <div className="flex flex-col">
           <span className="type-label-lg text-neutral-100">Copied!</span>
-          <span className="type-caption text-neutral-400">lananhnguyen.arena@gmail.com</span>
+          <span className="type-caption text-neutral-400">emmadesign.art@gmail.com</span>
         </div>
       </div>
     </div>

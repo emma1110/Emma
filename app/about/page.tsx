@@ -50,13 +50,23 @@ export default function AboutPage() {
           <section className="grid items-center gap-10 py-10 sm:py-16 lg:grid-cols-[minmax(0,744px)_minmax(360px,1fr)] lg:gap-[98px] lg:py-[var(--spacing-20)]" data-reveal>
             <div className="flex flex-col gap-6 sm:gap-8">
               <h2 className="type-heading-h2 text-[var(--color-text-inverse)]">
-                I believe every great product begins with understanding people.
+                Hi, I&apos;m Lan Anh.
               </h2>
               <div className="flex flex-col gap-3 text-[18px] font-medium leading-7 tracking-normal text-[var(--color-text-inverse)]">
-                <p>That belief shapes both my work and my life.</p>
+                <p>But you can call me Emma.</p>
                 <p>
-                  As a Product Designer, I enjoy simplifying complex systems into
-                  experiences that feel clear and intuitive.
+                  I&apos;m a Product Designer with over five years of experience
+                  designing digital products across fintech, blockchain, and AI.
+                  My background in graphic design, branding, and product design has
+                  shaped how I approach problems—from understanding people to
+                  building thoughtful, scalable experiences.
+                </p>
+                <p>
+                  I&apos;ve worked with startups and international teams, designing
+                  mobile apps, web applications, and design systems where clarity,
+                  trust, and simplicity matter. More recently, I&apos;ve been exploring
+                  how AI can become a creative partner in product design, helping me
+                  prototype, iterate, and validate ideas faster.
                 </p>
               </div>
             </div>
