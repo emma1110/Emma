@@ -37,11 +37,11 @@ export default function TrustCoreCard() {
       {/* Mockup follows the text block with the 24px gap from the design. */}
       <div className="pointer-events-none relative mt-[24px] flex w-[640px] shrink-0 self-center justify-center sm:mt-[32px] sm:w-[720px] lg:mt-[40px] lg:w-[800px]">
         <img
-          src="/images/trustcore.avif"
+          src="/images/trustcore.webp"
           alt="TrustCore App"
           className="w-full h-auto object-contain object-top"
-          width="820"
-          height="644"
+          width="1600"
+          height="1257"
           loading="lazy"
           decoding="async"
         />
