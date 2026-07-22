@@ -8,7 +8,8 @@ export default function HowIUseAI() {
     },
     {
       title: "Claude for Deep Research",
-      desc: "Research synthesis and competitive analysis.",
+      titleLines: ["Claude for", "Deep Research"],
+      desc: "Research synthesis and in-depth competitive analysis.",
       src: "/images/claude.svg",
       invert: false
     },
@@ -89,7 +90,13 @@ export default function HowIUseAI() {
                 <h3 
                   className="text-[var(--color-text-inverse)] type-heading-h6"
                 >
-                  {card.title}
+                  {card.titleLines ? (
+                    <>
+                      {card.titleLines[0]}
+                      <br />
+                      {card.titleLines[1]}
+                    </>
+                  ) : card.title}
                 </h3>
                 <p 
                   className="type-body-sm-medium"
