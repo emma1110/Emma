@@ -256,7 +256,7 @@ export default function Navbar() {
             <Link href="/" className="nav-link-item">Home</Link>
             <Link href="/#project" className="nav-link-item">Project</Link>
             <Link href="/about" className="nav-link-item">About</Link>
-            <Link href="/#contact" className="nav-link-item">Contact</Link>
+            <a href="/Emma-Nguyen-CV.pdf" target="_blank" rel="noopener noreferrer" className="nav-link-item">Resume</a>
           </div>
 
           {/* Right: Theme Toggle & Mobile Menu Toggle */}
@@ -316,7 +316,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Home</Link>
           <Link href="/#project" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Project</Link>
           <Link href="/about" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">About</Link>
-          <Link href="/#contact" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Contact</Link>
+          <a href="/Emma-Nguyen-CV.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="soft-link py-2 text-[var(--color-text-inverse)]">Resume</a>
         </div>
       </div>
     </div>

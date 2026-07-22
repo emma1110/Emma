@@ -2,7 +2,7 @@ export default function Footer() {
   const links = [
     { label: "Linkedin", href: "https://www.linkedin.com/in/lan-anh-nguyen-a07961213/" },
     { label: "Instagram", href: "https://www.instagram.com/emma.little.things/" },
-    { label: "Resume", href: "#" },
+    { label: "Resume", href: "/Emma-Nguyen-CV.pdf" },
   ];
 
   return (
@@ -25,8 +25,8 @@ export default function Footer() {
             <a
               key={label}
               href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="type-heading-h6 text-[var(--color-text-inverse)] transition-opacity hover:opacity-60"
             >
               {label}

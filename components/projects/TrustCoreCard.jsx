@@ -8,8 +8,11 @@ export default function TrustCoreCard() {
       
       {/* Top Row: Logo & CASE STUDY */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-[20px] py-5 sm:py-[24px] z-20">
-        <div className="bg-white flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-sm w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
-          <img src="/images/tc.svg" alt="TrustCore" className="w-full h-full object-contain" width="64" height="64" />
+        <div className="flex min-w-0 items-center gap-3">
+          <div className="bg-white flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-sm w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
+            <img src="/images/tc.svg" alt="TrustCore" className="w-full h-full object-contain" width="64" height="64" />
+          </div>
+          <p className="type-label-lg whitespace-nowrap uppercase text-white opacity-90">Trustcore App</p>
         </div>
         <p className="type-label-lg text-white uppercase opacity-90">
           CASE STUDY

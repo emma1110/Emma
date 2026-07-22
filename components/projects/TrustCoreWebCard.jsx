@@ -11,10 +11,13 @@ export default function TrustCoreWebCard() {
       >
         {/* Logo · CASE STUDY */}
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-[20px] py-5 sm:py-[24px] z-10">
-          <div className="bg-[rgba(255,255,255,0.9)] flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.25)] w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
-            <img src="/images/tc.svg" alt="TrustCore" className="w-full h-full object-contain" width="62" height="62" />
+          <div className="flex min-w-0 items-center gap-3">
+            <div className="bg-[rgba(255,255,255,0.9)] flex items-center justify-center p-[10px] sm:p-[12px] rounded-[14px] sm:rounded-[16px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.25)] w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] shrink-0">
+              <img src="/images/tc.svg" alt="TrustCore" className="w-full h-full object-contain" width="62" height="62" />
+            </div>
+            <p className="type-label-lg whitespace-nowrap uppercase text-[#c3e9fb]">Trustcore Web</p>
           </div>
-          <p className="type-label-lg text-[#c3e9fb]">
+          <p className="type-label-lg uppercase text-[#c3e9fb]">
             CASE STUDY
           </p>
         </div>
@@ -38,13 +41,13 @@ export default function TrustCoreWebCard() {
 
         {/* Mockup */}
         <div className="mt-[16px] flex min-h-0 w-full flex-1 items-end justify-center px-4 sm:mt-[24px] sm:px-[20px] lg:mt-[40px] lg:px-0">
-          <div className="flex h-full w-full max-w-[490px] items-end lg:w-[94%]">
+          <div className="flex w-full items-end lg:w-[94%]">
             <img
               src="/images/tc page.avif"
               alt="TrustCore Landing"
-              className="h-full w-full object-contain object-bottom"
-              width="490"
-              height="300"
+              className="block h-auto w-full object-contain object-bottom"
+              width="1400"
+              height="858"
               loading="lazy"
               decoding="async"
             />
