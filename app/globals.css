@@ -391,7 +391,15 @@ html[data-theme="dark"] .motion-card:hover {
 
 .case-study-label {
   color: var(--case-accent) !important;
+}
+
+/* One shared typography role for every uppercase case-study eyebrow/label. */
+.case-study-theme .uppercase {
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-label-lg-size) !important;
+  line-height: var(--font-label-lg-line) !important;
   font-weight: 700 !important;
+  letter-spacing: var(--font-label-lg-tracking) !important;
 }
 
 .case-study-summary {
