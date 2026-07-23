@@ -813,11 +813,16 @@
     min-height: auto;
     padding: 32px 24px;
     gap: 44px;
-    border-width: 1px 1px 0;
+    border-width: 0 1px;
+  }
+
+  .bitcoreDemoRoot .featureColumnLeft {
+    border-top-width: 1px;
   }
 
   .bitcoreDemoRoot .featureColumnRight {
     order: 3;
+    border-top-width: 0;
   }
 
   .bitcoreDemoRoot .ingestingVisual {
@@ -827,24 +832,27 @@
   }
 
   .bitcoreDemoRoot .socialFeature {
-    height: 470px;
+    height: auto;
+    min-height: 0;
+    padding: 32px 24px 0;
     order: 4;
     border-top-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 
   .bitcoreDemoRoot .socialCopy {
     width: auto;
-    top: 32px;
-    right: 24px;
-    left: 24px;
+    position: static;
     transform: none;
   }
 
   .bitcoreDemoRoot .socialPhone {
-    width: 690px;
+    width: min(620px, calc(100% + 32px));
     height: auto;
-    top: 116px;
-    left: -40px;
+    position: static;
+    align-self: center;
   }
 
   .bitcoreDemoRoot .appFeature h3,
@@ -1468,7 +1476,8 @@
 
   .bitcoreDemoRoot .transactionsPreview {
     width: 100%;
-    height: 390px;
+    height: auto;
+    min-height: 0;
     padding: 16px;
     order: -1;
   }
@@ -1480,8 +1489,17 @@
   }
 
   .bitcoreDemoRoot .transactionsList {
-    width: 520px;
-    margin-top: 36px;
+    width: 100%;
+    margin-top: 32px;
+    padding-bottom: 8px;
+    gap: 7px;
+    font-size: clamp(8px, 2.35vw, 10px);
+    line-height: 16px;
+  }
+
+  .bitcoreDemoRoot .transactionRow {
+    grid-template-columns: 1fr 0.72fr 1.08fr 0.42fr;
+    column-gap: 4px;
   }
 
   .bitcoreDemoRoot .explorerFeatureColumn {
@@ -1953,45 +1971,51 @@
   }
 
   .bitcoreDemoRoot .roadmapPhases {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 40px 16px;
   }
 
   .bitcoreDemoRoot .roadmapPhase {
-    gap: 32px;
+    justify-content: flex-end;
+    gap: 20px;
   }
 
   .bitcoreDemoRoot .roadmapPhaseCopy {
     width: 100%;
-    padding: 40px 0 0;
+    padding: 0;
+    gap: 12px;
   }
 
   .bitcoreDemoRoot .roadmapPhaseCopy > span,
   .bitcoreDemoRoot .roadmapPhase h3 {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   .bitcoreDemoRoot .roadmapPhase ul {
-    font-size: 15px;
-    line-height: 22px;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 19px;
+    list-style: disc;
+    list-style-position: outside;
   }
 
   .bitcoreDemoRoot .roadmapPhaseOne .roadmapBar {
-    height: 80px;
+    height: 48px;
   }
 
   .bitcoreDemoRoot .roadmapPhaseTwo .roadmapBar {
-    height: 110px;
+    height: 60px;
   }
 
   .bitcoreDemoRoot .roadmapPhaseThree .roadmapBar {
-    height: 140px;
+    height: 72px;
   }
 
   .bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
-    height: 170px;
+    height: 84px;
   }
 
   .bitcoreDemoRoot .roadmapBar {
