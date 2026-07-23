@@ -160,6 +160,30 @@ export default function BitCorePage() {
               <p className="type-body-medium text-[var(--color-text-secondary)]">
                 Designing a landing page for a Layer 1 blockchain built around trust, clarity, and real user adoption.
               </p>
+
+              <a
+                href="/bitcore-demo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-interaction mt-2 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-[var(--nav-btn-bg)] px-5 type-body-sm-medium text-[var(--nav-btn-text)] hover:opacity-80"
+                aria-label="Open the interactive Bitcore landing page demo"
+              >
+                <span>Demo Site</span>
+                <svg
+                  aria-hidden="true"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7 17 17 7M8 7h9v9"
+                  />
+                </svg>
+              </a>
             </div>
 
             {/* Primary Cover Image Banner */}

@@ -1,0 +1,28 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#F5F5F5"/>
+<g id="Home">
+<rect width="1440" height="8722" transform="translate(-132 -2090)" fill="white"/>
+<g id="Frame 155">
+<rect width="1440" height="1176" transform="translate(-132 -605)" fill="white"/>
+<g id="Frame 154">
+<g id="Frame 153">
+<g id="Frame 26">
+<mask id="path-1-inside-1_304_11872" fill="white">
+<path d="M-32 -245H381.333V208H-32V-245Z"/>
+</mask>
+<path d="M-32 -245V-246H-33V-245H-32ZM-32 208H-33V209H-32V208ZM-32 -245V-244H381.333V-245V-246H-32V-245ZM381.333 208V207H-32V208V209H381.333V208ZM-32 208H-31V-245H-32H-33V208H-32Z" fill="#E9EAEB" mask="url(#path-1-inside-1_304_11872)"/>
+<g id="Frame 17">
+<g id="UI icon/notes/light">
+<path id="Rectangle 199 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M19 11H9C8.44772 11 8 11.4477 8 12V16C8 16.5523 8.44772 17 9 17H19C19.5523 17 20 16.5523 20 16V12C20 11.4477 19.5523 11 19 11ZM9 9C7.34315 9 6 10.3431 6 12V16C6 17.6569 7.34315 19 9 19H19C20.6569 19 22 17.6569 22 16V12C22 10.3431 20.6569 9 19 9H9Z" fill="#0A0D12"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M5 7H15C15.5523 7 16 7.44772 16 8V9H18V8C18 6.34315 16.6569 5 15 5H5C3.34315 5 2 6.34315 2 8V12C2 13.6569 3.34315 15 5 15H6V13H5C4.44772 13 4 12.5523 4 12V8C4 7.44772 4.44772 7 5 7Z" fill="#0A0D12"/>
+<path id="Ellipse 150 (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M14 16C15.1046 16 16 15.1046 16 14C16 12.8954 15.1046 12 14 12C12.8954 12 12 12.8954 12 14C12 15.1046 12.8954 16 14 16Z" fill="#0A0D12"/>
+<path id="Ellipse 151" d="M11 14C11 14.5523 10.5523 15 10 15C9.44772 15 9 14.5523 9 14C9 13.4477 9.44772 13 10 13C10.5523 13 11 13.4477 11 14Z" fill="#0A0D12"/>
+<path id="Ellipse 152" d="M19 14C19 14.5523 18.5523 15 18 15C17.4477 15 17 14.5523 17 14C17 13.4477 17.4477 13 18 13C18.5523 13 19 13.4477 19 14Z" fill="#0A0D12"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

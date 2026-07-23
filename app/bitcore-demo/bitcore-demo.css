@@ -1,0 +1,2234 @@
+.bitcoreDemoRoot {
+  /* Figma library variables */
+  --text-primary-primary: #0a0d12;
+  --text-primary-secondary: #535862;
+  --text-primary-link: #ff7817;
+  --text-on-color-heading: #fff;
+  --surface-secondary: #f3f4f6;
+  --border-primary: #e9eaeb;
+  --button-primary: #181d27;
+  --gray-modern-950: #0d121c;
+  --base-white: #fff;
+
+  --font-family-geist: var(--font-geist), "Geist", sans-serif;
+  --title-3-size: clamp(46px, 3.8889vw, 56px);
+  --title-3-line-height: clamp(56px, 4.7222vw, 68px);
+  --title-3-letter-spacing: -0.6px;
+  --heading-5-size: 24px;
+  --heading-5-line-height: 30px;
+  --heading-5-letter-spacing: -0.15px;
+  --heading-6-size: clamp(18px, 1.3889vw, 20px);
+  --heading-6-line-height: clamp(22px, 1.6667vw, 24px);
+  --body-5-size: clamp(16px, 1.25vw, 18px);
+  --body-5-line-height: clamp(24px, 1.875vw, 27px);
+  --label-1-size: 16px;
+  --label-1-line-height: 22px;
+  --label-1-letter-spacing: -0.18px;
+  --label-2-size: 14px;
+  --label-2-line-height: 20px;
+  --label-2-letter-spacing: -0.16px;
+
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-base: 16px;
+  --space-xl2: 32px;
+  --space-xl3: 40px;
+  --space-xl4: 48px;
+  --space-xl6: 72px;
+  --space-xl8: 100px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 999px;
+  --margin-page: 48px;
+  --margin-large: 100px;
+  --content-max: 1240px;
+}
+
+.bitcoreDemoRoot, .bitcoreDemoRoot * {
+  box-sizing: border-box;
+}
+
+.bitcoreDemoRoot {
+  scroll-behavior: smooth;
+}
+
+.bitcoreDemoRoot {
+  margin: 0;
+  color: var(--text-primary-primary);
+  background: var(--base-white);
+  font-family: var(--font-family-geist);
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bitcoreDemoRoot a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bitcoreDemoRoot button {
+  font: inherit;
+}
+
+.bitcoreDemoRoot main {
+  min-width: 320px;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot :is(
+  .appFeatures,
+  .tradePrecision,
+  .socialNetwork,
+  .stakingRewards,
+  .onChainTransparency,
+  .nativeCoin,
+  .roadmap,
+  .earningCta,
+  .footer
+) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+.bitcoreDemoRoot .header {
+  width: calc(100% - 48px);
+  max-width: var(--content-max);
+  height: 84px;
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 20.34px;
+  font-weight: 700;
+}
+
+.bitcoreDemoRoot .brandMark {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  background: var(--text-primary-link);
+}
+
+.bitcoreDemoRoot .nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--label-2-size);
+  line-height: var(--label-2-line-height);
+  letter-spacing: var(--label-2-letter-spacing);
+}
+
+.bitcoreDemoRoot .nav a,
+.bitcoreDemoRoot .button {
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.bitcoreDemoRoot .nav a:hover {
+  opacity: 0.55;
+}
+
+.bitcoreDemoRoot .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 12px 20px;
+  border: 1px solid var(--button-primary);
+  border-radius: 8px;
+  color: #fff;
+  background: var(--button-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: var(--label-1-size);
+  font-weight: 600;
+  line-height: var(--label-1-line-height);
+  letter-spacing: var(--label-1-letter-spacing);
+}
+
+.bitcoreDemoRoot .button:hover {
+  background: #303642;
+  transform: translateY(-1px);
+}
+
+.bitcoreDemoRoot .buttonSmall {
+  padding: 8px 12px;
+  font-size: var(--label-2-size);
+  line-height: var(--label-2-line-height);
+  letter-spacing: var(--label-2-letter-spacing);
+}
+
+.bitcoreDemoRoot .menuButton {
+  display: none;
+}
+
+.bitcoreDemoRoot .hero {
+  width: calc(100% - 48px);
+  max-width: var(--content-max);
+  height: 461px;
+  margin: 0 auto;
+  padding: var(--margin-large) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bitcoreDemoRoot .heroTitle {
+  width: 555px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.bitcoreDemoRoot .networkBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 16px;
+  background: var(--surface-secondary);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.bitcoreDemoRoot .networkBadge span {
+  padding: 2px 8px;
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  background: white;
+  font-weight: 500;
+}
+
+.bitcoreDemoRoot .networkBadge strong {
+  font-weight: 500;
+}
+
+.bitcoreDemoRoot h1,
+.bitcoreDemoRoot h2 {
+  margin: 0;
+  font-size: var(--title-3-size);
+  line-height: var(--title-3-line-height);
+  letter-spacing: var(--title-3-letter-spacing);
+}
+
+.bitcoreDemoRoot .heroCopy {
+  width: 467px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.bitcoreDemoRoot .heroCopy p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: var(--heading-6-size);
+  line-height: var(--heading-6-line-height);
+}
+
+.bitcoreDemoRoot .mining {
+  min-height: 940px;
+  padding: 353px 24px var(--space-xl3);
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #89dfff 0%,
+    #84afff 20.043%,
+    #f6a6f3 37.255%,
+    #fba64a 56.298%,
+    #aea4fa 76.806%,
+    #89e5ff 100%
+  );
+}
+
+.bitcoreDemoRoot .coinWrap {
+  width: 602px;
+  height: auto;
+  aspect-ratio: 2213 / 1733;
+  position: absolute;
+  z-index: 2;
+  top: -129px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bitcoreDemoRoot .coin {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bitcoreDemoRoot .stepsCard {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-xl6);
+  display: grid;
+  grid-template-columns: 461px minmax(0, 1fr);
+  gap: var(--space-xl6);
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .stepsIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bitcoreDemoRoot .stepsIntro p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: var(--heading-6-size);
+  line-height: var(--heading-6-line-height);
+}
+
+.bitcoreDemoRoot .stepsList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+}
+
+.bitcoreDemoRoot .stepsList li {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.bitcoreDemoRoot .stepNumber {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--gray-modern-950);
+  font-size: var(--heading-5-size);
+  font-weight: 600;
+  line-height: var(--heading-5-line-height);
+  letter-spacing: var(--heading-5-letter-spacing);
+}
+
+.bitcoreDemoRoot .stepsList h3 {
+  margin: 0 0 8px;
+  font-size: var(--heading-6-size);
+  font-weight: 600;
+  line-height: var(--heading-6-line-height);
+}
+
+.bitcoreDemoRoot .stepsList p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: var(--body-5-size);
+  line-height: var(--body-5-line-height);
+  text-wrap: pretty;
+}
+
+.bitcoreDemoRoot .appFeatures {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .appFeaturesHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-base);
+  text-align: center;
+}
+
+.bitcoreDemoRoot .appFeaturesHeading p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: var(--heading-6-size);
+  line-height: var(--heading-6-line-height);
+}
+
+.bitcoreDemoRoot .featuresGrid {
+  width: 100%;
+  max-width: var(--content-max);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 453px 283px;
+}
+
+.bitcoreDemoRoot .featureColumn {
+  padding: var(--space-xl3) var(--space-xl2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-color: var(--border-primary);
+  border-style: solid;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .featureColumnLeft {
+  border-width: 1px 0 1px 1px;
+}
+
+.bitcoreDemoRoot .featureColumnRight {
+  border-width: 1px 1px 1px 0;
+}
+
+.bitcoreDemoRoot .appFeature {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bitcoreDemoRoot .appFeature > img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.bitcoreDemoRoot .appFeature h3,
+.bitcoreDemoRoot .socialCopy h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--heading-6-size);
+  font-weight: 600;
+  line-height: var(--heading-6-line-height);
+}
+
+.bitcoreDemoRoot .appFeature p,
+.bitcoreDemoRoot .socialCopy p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: var(--body-5-size);
+  line-height: var(--body-5-line-height);
+}
+
+.bitcoreDemoRoot .ingestingVisual {
+  height: 453px;
+  border: 1px solid var(--border-primary);
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .ingestingLottie {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .ingestingLottie svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .socialFeature {
+  min-width: 0;
+  grid-column: 1 / -1;
+  position: relative;
+  border: solid var(--border-primary);
+  border-width: 0 1px 1px;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .socialCopy {
+  width: 514px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+}
+
+.bitcoreDemoRoot .socialPhone {
+  width: 877px;
+  height: auto;
+  position: absolute;
+  top: -14px;
+  left: 420px;
+  object-fit: contain;
+}
+
+.bitcoreDemoRoot .tradePrecision {
+  min-height: 843px;
+  padding: var(--space-xl6) 24px;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  color: var(--text-on-color-heading);
+  background: linear-gradient(
+    180deg,
+    #ff5731 0%,
+    #ff5731 39.6%,
+    #fdb10c 100%
+  );
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .tradeBackdrop {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bitcoreDemoRoot .tradeMesh {
+  width: min(1276px, calc(100vw - 128px));
+  max-width: none;
+  height: auto;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 18px);
+  opacity: 0.2;
+  transform: translateX(-50%);
+  animation: trade-mesh-spin 36s linear infinite;
+}
+
+.bitcoreDemoRoot .tradeContent {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 713px;
+  align-items: center;
+  gap: var(--space-xl6);
+}
+
+.bitcoreDemoRoot .tradeIntro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-base);
+}
+
+.bitcoreDemoRoot .tradeIntro h2 {
+  max-width: 455px;
+  font-size: 56px;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .tradeIntro p {
+  max-width: 411px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.bitcoreDemoRoot .tradeFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+}
+
+.bitcoreDemoRoot .tradeFeatures h3 {
+  margin: 0 0 9px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.bitcoreDemoRoot .tradeFeatures p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0;
+}
+
+@keyframes trade-mesh-spin {
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .bitcoreDemoRoot .header,
+  .bitcoreDemoRoot .hero {
+    width: 100%;
+  }
+
+  .bitcoreDemoRoot .header {
+    padding-inline: 48px;
+  }
+
+  .bitcoreDemoRoot .nav {
+    gap: 20px;
+  }
+
+  .bitcoreDemoRoot .hero {
+    padding: 72px 48px;
+    gap: 64px;
+  }
+
+  .bitcoreDemoRoot .heroTitle,
+  .bitcoreDemoRoot .heroCopy {
+    width: 50%;
+  }
+
+  .bitcoreDemoRoot h1,
+  .bitcoreDemoRoot h2 {
+    font-size: 46px;
+    line-height: 56px;
+  }
+
+  .bitcoreDemoRoot .stepsCard {
+    grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+    gap: 48px;
+    padding: 56px;
+  }
+
+  .bitcoreDemoRoot .appFeatures {
+    padding-inline: 24px;
+  }
+
+  .bitcoreDemoRoot .featuresGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 300px;
+  }
+
+  .bitcoreDemoRoot .featureColumn {
+    min-height: 453px;
+  }
+
+  .bitcoreDemoRoot .featureColumnLeft {
+    border-width: 1px;
+  }
+
+  .bitcoreDemoRoot .featureColumnRight {
+    border-width: 0 1px 1px;
+  }
+
+  .bitcoreDemoRoot .ingestingVisual {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .bitcoreDemoRoot .featureColumnRight {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .bitcoreDemoRoot .socialFeature {
+    grid-row: 3;
+  }
+
+  .bitcoreDemoRoot .socialPhone {
+    left: 40%;
+  }
+
+  .bitcoreDemoRoot .tradePrecision {
+    padding-inline: 24px;
+  }
+
+  .bitcoreDemoRoot .tradeContent {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .bitcoreDemoRoot .header {
+    width: 100%;
+    height: 72px;
+    padding: 20px 24px;
+  }
+
+  .bitcoreDemoRoot .launchButton {
+    display: none;
+  }
+
+  .bitcoreDemoRoot .menuButton {
+    width: 40px;
+    height: 40px;
+    padding: 10px 8px;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .bitcoreDemoRoot .menuButton span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary-primary);
+  }
+
+  .bitcoreDemoRoot .nav {
+    padding: 20px 24px 28px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    transform: none;
+    background: white;
+    border-top: 1px solid var(--border-primary);
+    font-size: 16px;
+  }
+
+  .bitcoreDemoRoot .navOpen {
+    display: flex;
+  }
+
+  .bitcoreDemoRoot .hero {
+    height: auto;
+    min-height: 540px;
+    padding: 72px 24px 170px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 36px;
+  }
+
+  .bitcoreDemoRoot .heroTitle,
+  .bitcoreDemoRoot .heroCopy {
+    width: 100%;
+  }
+
+  .bitcoreDemoRoot h1,
+  .bitcoreDemoRoot h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .heroCopy p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .bitcoreDemoRoot .mining {
+    min-height: 0;
+    padding: 178px 20px 48px;
+  }
+
+  .bitcoreDemoRoot .coinWrap {
+    width: min(430px, 112vw);
+    height: auto;
+    aspect-ratio: 2213 / 1733;
+    top: -140px;
+  }
+
+  .bitcoreDemoRoot .stepsCard {
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .bitcoreDemoRoot .stepsIntro p {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .stepsList {
+    gap: 28px;
+  }
+
+  .bitcoreDemoRoot .stepsList li {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .bitcoreDemoRoot .stepNumber {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .bitcoreDemoRoot .stepsList h3 {
+    font-size: 18px;
+  }
+
+  .bitcoreDemoRoot .stepsList p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .appFeatures {
+    padding: 72px 20px;
+    gap: 48px;
+  }
+
+  .bitcoreDemoRoot .appFeaturesHeading p {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .appFeaturesHeading br:last-of-type {
+    display: none;
+  }
+
+  .bitcoreDemoRoot .featuresGrid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bitcoreDemoRoot .featureColumn {
+    min-height: auto;
+    padding: 32px 24px;
+    gap: 44px;
+    border-width: 1px 1px 0;
+  }
+
+  .bitcoreDemoRoot .featureColumnRight {
+    order: 3;
+  }
+
+  .bitcoreDemoRoot .ingestingVisual {
+    height: auto;
+    order: 2;
+    aspect-ratio: 414 / 453;
+  }
+
+  .bitcoreDemoRoot .socialFeature {
+    height: 470px;
+    order: 4;
+    border-top-width: 0;
+  }
+
+  .bitcoreDemoRoot .socialCopy {
+    width: auto;
+    top: 32px;
+    right: 24px;
+    left: 24px;
+    transform: none;
+  }
+
+  .bitcoreDemoRoot .socialPhone {
+    width: 690px;
+    height: auto;
+    top: 116px;
+    left: -40px;
+  }
+
+  .bitcoreDemoRoot .appFeature h3,
+  .bitcoreDemoRoot .socialCopy h3 {
+    font-size: 18px;
+  }
+
+  .bitcoreDemoRoot .appFeature p,
+  .bitcoreDemoRoot .socialCopy p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .tradePrecision {
+    min-height: 0;
+    padding: 72px 24px;
+  }
+
+  .bitcoreDemoRoot .tradeMesh {
+    width: 160vw;
+    top: 30px;
+    left: 50%;
+  }
+
+  .bitcoreDemoRoot .tradeContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 52px;
+  }
+
+  .bitcoreDemoRoot .tradeIntro h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .tradeIntro p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .tradeFeatures {
+    gap: 28px;
+  }
+
+  .bitcoreDemoRoot .tradeFeatures h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .tradeFeatures p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 390px) {
+  .bitcoreDemoRoot .networkBadge {
+    gap: 5px;
+    padding-right: 8px;
+    font-size: 10px;
+  }
+
+  .bitcoreDemoRoot .networkBadge span {
+    padding-inline: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bitcoreDemoRoot .tradeMesh {
+    animation: none;
+  }
+}
+
+.bitcoreDemoRoot .socialNetwork {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .socialNetworkHeading {
+  width: min(880px, calc(100% - 48px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bitcoreDemoRoot .socialNetworkHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .socialNetworkHeading p {
+  margin: 12px 0 0;
+  color: var(--text-primary-secondary);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .socialNetworkGrid {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: max(24px, calc((100vw - var(--content-max)) / 2));
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.bitcoreDemoRoot .socialNetworkGrid::before,
+.bitcoreDemoRoot .socialNetworkGrid::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  background: var(--border-primary);
+}
+
+.bitcoreDemoRoot .socialNetworkGrid::before {
+  top: 0;
+}
+
+.bitcoreDemoRoot .socialNetworkGrid::after {
+  top: 108px;
+}
+
+.bitcoreDemoRoot .socialNetworkFeature {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bitcoreDemoRoot .socialNetworkFeature > img {
+  width: 109px;
+  height: 109px;
+  display: block;
+}
+
+.bitcoreDemoRoot .socialNetworkFeature > div {
+  padding-top: 40px;
+}
+
+.bitcoreDemoRoot .socialNetworkFeature h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .socialNetworkFeature p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: 18px;
+  line-height: 27px;
+}
+
+@media (max-width: 900px) {
+  .bitcoreDemoRoot .socialNetworkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 64px;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature > img {
+    margin-top: 0;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature > div {
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bitcoreDemoRoot .socialNetwork {
+    padding: 72px 0;
+    gap: 56px;
+  }
+
+  .bitcoreDemoRoot .socialNetworkHeading {
+    width: calc(100% - 40px);
+    text-align: left;
+  }
+
+  .bitcoreDemoRoot .socialNetworkHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .socialNetworkHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .socialNetworkGrid {
+    width: 100%;
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .bitcoreDemoRoot .socialNetworkGrid::before,
+  .bitcoreDemoRoot .socialNetworkGrid::after {
+    display: none;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature {
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 20px;
+    border-top: 1px solid var(--border-primary);
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature > img {
+    width: 84px;
+    height: 84px;
+    margin: 0;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature > div {
+    padding-top: 0;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .socialNetworkFeature p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.bitcoreDemoRoot .stakingRewards {
+  min-height: 785px;
+  color: var(--base-white);
+  background: #000;
+}
+
+.bitcoreDemoRoot .stakingRewardsInner {
+  width: calc(100% - 48px);
+  max-width: var(--content-max);
+  min-height: 785px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 501px minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.bitcoreDemoRoot .stakingRewardsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.bitcoreDemoRoot .stakingRewardsHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bitcoreDemoRoot .stakingRewardsHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .stakingRewardsHeading p {
+  width: 438px;
+  max-width: 100%;
+  margin: 0;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .stakingFeatureTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-left: 1px solid #252b37;
+}
+
+.bitcoreDemoRoot .stakingFeatureTab {
+  width: 100%;
+  min-height: 24px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bitcoreDemoRoot .stakingFeatureTab.isActive {
+  padding-block: 8px;
+}
+
+.bitcoreDemoRoot .stakingTabProgress {
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  overflow: hidden;
+}
+
+.bitcoreDemoRoot .stakingTabProgress::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform-origin: top;
+  animation: stakingTabProgress 4.8s linear forwards;
+  animation-play-state: paused;
+}
+
+.bitcoreDemoRoot .stakingRewards.isRunning .stakingTabProgress::after {
+  animation-play-state: running;
+}
+
+.bitcoreDemoRoot .stakingFeatureTitle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .stakingFeatureDescription {
+  width: 485px;
+  max-width: 100%;
+  color: #a4a7ae;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+}
+
+.bitcoreDemoRoot .stakingCube {
+  width: min(785px, 64vw);
+  aspect-ratio: 1;
+  justify-self: end;
+}
+
+.bitcoreDemoRoot .stakingCubeLottie,
+.bitcoreDemoRoot .stakingCubeLottie svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@keyframes stakingTabProgress {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 980px) {
+  .bitcoreDemoRoot .stakingRewardsInner {
+    padding: 80px 0;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+    gap: 28px;
+  }
+
+  .bitcoreDemoRoot .stakingCube {
+    width: min(620px, 54vw);
+  }
+}
+
+@media (max-width: 720px) {
+  .bitcoreDemoRoot .stakingRewards {
+    min-height: 0;
+  }
+
+  .bitcoreDemoRoot .stakingRewardsInner {
+    min-height: 0;
+    padding: 72px 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 36px;
+  }
+
+  .bitcoreDemoRoot .stakingRewardsContent {
+    gap: 48px;
+  }
+
+  .bitcoreDemoRoot .stakingRewardsHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .stakingRewardsHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .stakingFeatureTitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .stakingCube {
+    width: min(620px, 112vw);
+    margin: -20px auto 0;
+    align-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bitcoreDemoRoot .stakingTabProgress::after {
+    animation: none;
+  }
+}
+
+.bitcoreDemoRoot .onChainTransparency {
+  padding: 100px max(24px, calc((100vw - var(--content-max)) / 2));
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .onChainHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.bitcoreDemoRoot .onChainHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .onChainHeading p {
+  width: 472px;
+  max-width: 100%;
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .explorerPanel {
+  height: 441px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 397px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+}
+
+.bitcoreDemoRoot .explorerFeatureColumn {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.bitcoreDemoRoot .explorerFeature {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bitcoreDemoRoot .explorerFeature > img {
+  width: 24px;
+  height: 24px;
+}
+
+.bitcoreDemoRoot .explorerFeature h3,
+.bitcoreDemoRoot .transactionsHeader h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .explorerFeature p {
+  margin: 8px 0 0;
+  color: var(--text-primary-secondary);
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.bitcoreDemoRoot .transactionsPreview {
+  min-width: 0;
+  height: 536px;
+  padding: 16px 24px;
+  border-right: 1px solid var(--border-primary);
+  border-left: 1px solid var(--border-primary);
+}
+
+.bitcoreDemoRoot .transactionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bitcoreDemoRoot .transactionsBrand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bitcoreDemoRoot .transactionsBrand > span {
+  width: 48px;
+  height: 48px;
+  border-radius: 6.4px;
+  display: grid;
+  place-items: center;
+  background: var(--text-primary-link);
+}
+
+.bitcoreDemoRoot .transactionsBrand > span img {
+  width: 24px;
+  height: 30px;
+}
+
+.bitcoreDemoRoot .transactionsHeader p {
+  margin: 8px 0 0;
+  color: var(--text-primary-secondary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .transactionsArrow {
+  width: 22px;
+  height: 22px;
+}
+
+.bitcoreDemoRoot .transactionsList {
+  margin-top: 78px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.bitcoreDemoRoot .transactionRow {
+  display: grid;
+  grid-template-columns: 1.05fr 0.8fr 1.25fr 0.65fr;
+  align-items: center;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+
+.bitcoreDemoRoot .transactionRow time {
+  color: var(--text-primary-secondary);
+}
+
+@media (max-width: 980px) {
+  .bitcoreDemoRoot .explorerPanel {
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bitcoreDemoRoot .transactionsPreview {
+    height: 441px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-primary);
+    border-left: 0;
+  }
+
+  .bitcoreDemoRoot .transactionsList {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bitcoreDemoRoot .onChainTransparency {
+    padding: 72px 20px;
+    gap: 56px;
+  }
+
+  .bitcoreDemoRoot .onChainHeading {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .bitcoreDemoRoot .onChainHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .onChainHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .explorerPanel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bitcoreDemoRoot .transactionsPreview {
+    width: 100%;
+    height: 390px;
+    padding: 16px;
+    order: -1;
+  }
+
+  .bitcoreDemoRoot .transactionsHeader h3,
+  .bitcoreDemoRoot .transactionsHeader p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .transactionsList {
+    width: 520px;
+    margin-top: 36px;
+  }
+
+  .bitcoreDemoRoot .explorerFeatureColumn {
+    padding: 32px 24px;
+  }
+
+  .bitcoreDemoRoot .explorerFeature h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .explorerFeature p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.bitcoreDemoRoot .nativeCoin {
+  padding: 100px max(24px, calc((100vw - var(--content-max)) / 2));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .nativeCoinHeading {
+  width: min(880px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.bitcoreDemoRoot .nativeCoinHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .nativeCoinHeading p {
+  width: min(760px, 100%);
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .nativeCoinPanel {
+  width: 100%;
+  height: 541px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+}
+
+.bitcoreDemoRoot .nativeCoinMarket {
+  width: min(530px, calc(100% - 64px));
+  margin: 32px auto 0;
+}
+
+.bitcoreDemoRoot .nativeCoinMarketHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bitcoreDemoRoot .nativeCoinIdentity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bitcoreDemoRoot .nativeCoinLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 6.4px;
+  display: grid;
+  place-items: center;
+  background: var(--text-primary-link);
+}
+
+.bitcoreDemoRoot .nativeCoinLogo img {
+  width: 24px;
+  height: 30px;
+}
+
+.bitcoreDemoRoot .nativeCoinIdentity > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bitcoreDemoRoot .nativeCoinName,
+.bitcoreDemoRoot .nativeCoinPrice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .nativeCoinName strong,
+.bitcoreDemoRoot .nativeCoinPrice strong {
+  font-weight: 600;
+}
+
+.bitcoreDemoRoot .nativeCoinName span {
+  color: var(--text-primary-secondary);
+  font-weight: 600;
+}
+
+.bitcoreDemoRoot .nativeCoinPrice span {
+  color: #f04438;
+  font-weight: 600;
+}
+
+.bitcoreDemoRoot .nativeCoinArrow {
+  width: 22px;
+  height: 22px;
+}
+
+.bitcoreDemoRoot .nativeCoinPriceChart {
+  width: 100%;
+  height: 216px;
+  margin-top: 48px;
+  display: block;
+}
+
+.bitcoreDemoRoot .nativeCoinStats {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  gap: 32px 48px;
+}
+
+.bitcoreDemoRoot .nativeCoinStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bitcoreDemoRoot .nativeCoinStat > strong {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .nativeCoinStat > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary-secondary);
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+  white-space: nowrap;
+}
+
+.bitcoreDemoRoot .nativeCoinStat img {
+  width: 4px;
+  height: 4px;
+}
+
+.bitcoreDemoRoot .nativeCoinDistribution {
+  padding: 77px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-left: 1px solid var(--border-primary);
+}
+
+.bitcoreDemoRoot .nativeCoinPie {
+  width: 306px;
+  height: 306px;
+}
+
+.bitcoreDemoRoot .nativeCoinLegend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 43px;
+}
+
+.bitcoreDemoRoot .nativeCoinLegend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+  white-space: nowrap;
+}
+
+.bitcoreDemoRoot .nativeCoinLegend img {
+  width: 8px;
+  height: 8px;
+}
+
+@media (max-width: 980px) {
+  .bitcoreDemoRoot .nativeCoinPanel {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .bitcoreDemoRoot .nativeCoinMarket {
+    padding-bottom: 40px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinDistribution {
+    border-top: 1px solid var(--border-primary);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .bitcoreDemoRoot .nativeCoin {
+    padding: 72px 20px;
+    align-items: stretch;
+    gap: 56px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinHeading {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .bitcoreDemoRoot .nativeCoinHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinMarket {
+    width: calc(100% - 32px);
+    margin-top: 24px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinName,
+  .bitcoreDemoRoot .nativeCoinPrice {
+    gap: 5px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinArrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinPriceChart {
+    height: auto;
+    margin-top: 36px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinStat > strong {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinStat > div {
+    gap: 5px;
+    font-size: 13px;
+    line-height: 18px;
+    white-space: normal;
+  }
+
+  .bitcoreDemoRoot .nativeCoinDistribution {
+    padding: 48px 16px 40px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinPie {
+    width: min(306px, 82vw);
+    height: auto;
+  }
+
+  .bitcoreDemoRoot .nativeCoinLegend {
+    gap: 24px;
+  }
+
+  .bitcoreDemoRoot .nativeCoinLegend span {
+    font-size: 12px;
+  }
+}
+
+.bitcoreDemoRoot .roadmap {
+  padding: 80px max(24px, calc((100vw - var(--content-max)) / 2)) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 82px;
+  background: var(--base-white);
+}
+
+.bitcoreDemoRoot .roadmapHeading {
+  width: min(880px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.bitcoreDemoRoot .roadmapHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .roadmapHeading p {
+  margin: 0;
+  color: var(--text-primary-secondary);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .roadmapPhases {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+}
+
+.bitcoreDemoRoot .roadmapPhase {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.bitcoreDemoRoot .roadmapPhaseCopy {
+  width: min(269px, calc(100% - 40px));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bitcoreDemoRoot .roadmapPhaseCopy > span {
+  color: var(--text-primary-link);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .roadmapPhaseCopy > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bitcoreDemoRoot .roadmapPhase h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .roadmapPhase ul {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--text-primary-secondary);
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+}
+
+.bitcoreDemoRoot .roadmapBar {
+  width: 100%;
+  border-radius: var(--2xl, 16px) 0 0 0;
+}
+
+.bitcoreDemoRoot .roadmapPhaseOne .roadmapBar {
+  height: 224px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #37cbe0 0deg,
+    #7cfdff 360deg
+  );
+}
+
+.bitcoreDemoRoot .roadmapPhaseTwo .roadmapBar {
+  height: 290px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #6499fd 0deg,
+    #bdebff 360deg
+  );
+}
+
+.bitcoreDemoRoot .roadmapPhaseThree .roadmapBar {
+  height: 402px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #f48900 0deg,
+    #fcd200 360deg
+  );
+}
+
+.bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
+  height: 493px;
+  border-radius: var(--2xl, 16px) var(--2xl, 16px) 0 0;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #f1abe6 0deg,
+    #fdd3ff 360deg
+  );
+}
+
+@media (max-width: 980px) {
+  .bitcoreDemoRoot .roadmap {
+    padding-bottom: 80px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhases {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 56px 0;
+  }
+
+  .bitcoreDemoRoot .roadmapPhase {
+    justify-content: flex-end;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseOne .roadmapBar,
+  .bitcoreDemoRoot .roadmapPhaseTwo .roadmapBar,
+  .bitcoreDemoRoot .roadmapPhaseThree .roadmapBar,
+  .bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bitcoreDemoRoot .roadmap {
+    padding: 72px 20px 0;
+    align-items: stretch;
+    gap: 56px;
+  }
+
+  .bitcoreDemoRoot .roadmapHeading {
+    text-align: left;
+  }
+
+  .bitcoreDemoRoot .roadmapHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .roadmapHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhases {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .bitcoreDemoRoot .roadmapPhase {
+    gap: 32px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseCopy {
+    width: 100%;
+    padding: 40px 0 0;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseCopy > span,
+  .bitcoreDemoRoot .roadmapPhase h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhase ul {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseOne .roadmapBar {
+    height: 80px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseTwo .roadmapBar {
+    height: 110px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseThree .roadmapBar {
+    height: 140px;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
+    height: 170px;
+  }
+
+  .bitcoreDemoRoot .roadmapBar {
+    border-radius: 12px 0 0 0;
+  }
+
+  .bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+.bitcoreDemoRoot .earningCta {
+  min-height: 466px;
+  padding: 80px max(24px, calc((100vw - var(--content-max)) / 2));
+  display: grid;
+  place-items: center;
+  color: var(--text-on-color-heading);
+  background: #000;
+}
+
+.bitcoreDemoRoot .earningCtaInner {
+  width: min(840px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+.bitcoreDemoRoot .earningCtaHeading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.bitcoreDemoRoot .earningCtaHeading h2 {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -0.6px;
+}
+
+.bitcoreDemoRoot .earningCtaHeading p {
+  margin: 0;
+  color: #a4a7ae;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bitcoreDemoRoot .earningCtaActions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.bitcoreDemoRoot .earningCtaActions a {
+  height: 46px;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--base-white);
+  border-radius: 8px;
+  color: var(--text-primary-primary);
+  background: var(--base-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.bitcoreDemoRoot .earningCtaActions a:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .bitcoreDemoRoot .earningCta {
+    min-height: 480px;
+    padding: 72px 20px;
+  }
+
+  .bitcoreDemoRoot .earningCtaInner {
+    align-items: stretch;
+    gap: 36px;
+  }
+
+  .bitcoreDemoRoot .earningCtaHeading {
+    text-align: left;
+  }
+
+  .bitcoreDemoRoot .earningCtaHeading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .bitcoreDemoRoot .earningCtaHeading p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .bitcoreDemoRoot .earningCtaActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .bitcoreDemoRoot .earningCtaActions a {
+    width: 100%;
+  }
+}
+
+.bitcoreDemoRoot .footer {
+  padding: 40px max(24px, calc((100vw - var(--content-max)) / 2));
+  color: var(--base-white);
+  background: #000;
+  border-top: 1px solid #535862;
+}
+
+.bitcoreDemoRoot .footerInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.bitcoreDemoRoot .footerBrand {
+  width: 403px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.bitcoreDemoRoot .footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bitcoreDemoRoot .footerLogo > span {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  background: var(--text-primary-link);
+}
+
+.bitcoreDemoRoot .footerLogo img {
+  width: 15px;
+  height: 19px;
+}
+
+.bitcoreDemoRoot .footerLogo strong {
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 20.339px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bitcoreDemoRoot .footerBrand p,
+.bitcoreDemoRoot .footerLinks a {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+}
+
+.bitcoreDemoRoot .footerNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px 40px;
+}
+
+.bitcoreDemoRoot .footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px 40px;
+}
+
+.bitcoreDemoRoot .footerLinks a,
+.bitcoreDemoRoot .footerSocials a {
+  transition: opacity 160ms ease;
+}
+
+.bitcoreDemoRoot .footerLinks a:hover,
+.bitcoreDemoRoot .footerSocials a:hover {
+  opacity: 0.6;
+}
+
+.bitcoreDemoRoot .footerSocials {
+  display: flex;
+  align-items: center;
+  gap: 25.712px;
+}
+
+.bitcoreDemoRoot .footerSocials a,
+.bitcoreDemoRoot .footerSocials img {
+  width: 21.605px;
+  height: 21.605px;
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .bitcoreDemoRoot .footerInner {
+    align-items: flex-start;
+  }
+
+  .bitcoreDemoRoot .footerBrand {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .bitcoreDemoRoot .footerNavigation {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 700px) {
+  .bitcoreDemoRoot .footer {
+    padding: 40px 20px;
+  }
+
+  .bitcoreDemoRoot .footerInner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .bitcoreDemoRoot .footerNavigation,
+  .bitcoreDemoRoot .footerLinks {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .bitcoreDemoRoot .footerLinks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 32px;
+  }
+}
