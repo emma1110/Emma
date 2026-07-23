@@ -82,6 +82,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bitcoreDemoRoot :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  button,
+  li,
+  time,
+  strong
+) {
+  font-family: var(--font-family-geist);
+}
+
+.bitcoreDemoRoot .brand,
+.bitcoreDemoRoot .brand *,
+.bitcoreDemoRoot .footerLogo strong {
+  font-family: var(--font-archivo), sans-serif;
+}
+
 .bitcoreDemoRoot h1,
 .bitcoreDemoRoot h2,
 .bitcoreDemoRoot h3 {
@@ -1884,7 +1908,7 @@
 
 .bitcoreDemoRoot .roadmapPhaseCopy > span {
   color: var(--text-primary-link);
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-family-geist);
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -1910,6 +1934,8 @@
   font-size: 16px;
   line-height: 22px;
   letter-spacing: -0.18px;
+  list-style: disc;
+  list-style-position: outside;
 }
 
 .bitcoreDemoRoot .roadmapBar {
@@ -2027,7 +2053,8 @@
     padding-left: 18px;
     font-size: 13px;
     line-height: 19px;
-    list-style: none;
+    list-style: disc;
+    list-style-position: outside;
   }
 
   .bitcoreDemoRoot .roadmapPhaseOne .roadmapBar {
