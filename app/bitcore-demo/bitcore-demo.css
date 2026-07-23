@@ -667,8 +667,10 @@
 
 @media (max-width: 760px) {
   .bitcoreDemoRoot .header {
-    width: 100%;
+    width: 100vw;
+    max-width: none;
     height: 72px;
+    margin-left: calc(50% - 50vw);
     padding: 20px 24px;
   }
 
@@ -696,6 +698,8 @@
   }
 
   .bitcoreDemoRoot .nav {
+    width: 100vw;
+    min-height: calc(100dvh - 72px);
     padding: 20px 24px 28px;
     display: none;
     flex-direction: column;
@@ -703,9 +707,9 @@
     gap: 18px;
     position: absolute;
     top: 72px;
-    right: 0;
-    left: 0;
-    transform: none;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
     background: white;
     border-top: 1px solid var(--border-primary);
     font-size: 16px;
@@ -828,7 +832,14 @@
   .bitcoreDemoRoot .ingestingVisual {
     height: auto;
     order: 2;
-    aspect-ratio: 414 / 453;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .bitcoreDemoRoot .ingestingLottie {
+    width: 100%;
+    aspect-ratio: 1;
   }
 
   .bitcoreDemoRoot .socialFeature {
@@ -1273,8 +1284,8 @@
   }
 
   .bitcoreDemoRoot .stakingCube {
-    width: min(620px, 112vw);
-    margin: -20px auto 0;
+    width: min(440px, 100%);
+    margin: 0 auto;
     align-self: center;
   }
 }
@@ -2019,7 +2030,7 @@
   }
 
   .bitcoreDemoRoot .roadmapBar {
-    border-radius: 12px 0 0 0;
+    border-radius: 12px 12px 0 0;
   }
 
   .bitcoreDemoRoot .roadmapPhaseFour .roadmapBar {
