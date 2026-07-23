@@ -64,6 +64,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bitcoreDemoRoot h1,
+.bitcoreDemoRoot h2,
+.bitcoreDemoRoot h3 {
+  text-wrap: balance;
+}
+
+.bitcoreDemoRoot p,
+.bitcoreDemoRoot li {
+  text-wrap: pretty;
+}
+
 .bitcoreDemoRoot a {
   color: inherit;
   text-decoration: none;
@@ -721,8 +732,8 @@
 
   .bitcoreDemoRoot h1,
   .bitcoreDemoRoot h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -737,10 +748,10 @@
   }
 
   .bitcoreDemoRoot .coinWrap {
-    width: min(430px, 112vw);
+    width: min(400px, 94vw);
     height: auto;
     aspect-ratio: 2213 / 1733;
-    top: -140px;
+    top: -112px;
   }
 
   .bitcoreDemoRoot .stepsCard {
@@ -866,8 +877,8 @@
   }
 
   .bitcoreDemoRoot .tradeIntro h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -1024,8 +1035,8 @@
   }
 
   .bitcoreDemoRoot .socialNetworkHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -1238,8 +1249,8 @@
   }
 
   .bitcoreDemoRoot .stakingRewardsHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -1440,8 +1451,8 @@
   }
 
   .bitcoreDemoRoot .onChainHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -1704,8 +1715,8 @@
   }
 
   .bitcoreDemoRoot .nativeCoinHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -1931,8 +1942,8 @@
   }
 
   .bitcoreDemoRoot .roadmapHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 
@@ -2077,8 +2088,8 @@
   }
 
   .bitcoreDemoRoot .earningCtaHeading h2 {
-    font-size: clamp(38px, 11vw, 48px);
-    line-height: 1.1;
+    font-size: clamp(32px, 8.8vw, 40px);
+    line-height: 1.12;
     letter-spacing: -0.5px;
   }
 

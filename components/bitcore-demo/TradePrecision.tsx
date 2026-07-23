@@ -2,7 +2,7 @@ const tradingFeatures = [
   {
     title: "Limit-only order book",
     description:
-      "Set your exact price for BCR/USDT. Your order fills at that price or not at all.",
+      "Set your exact price for BCR/USDT. Your order fills at that price or not at\u00a0all.",
   },
   {
     title: "BCR/USDT pair",
