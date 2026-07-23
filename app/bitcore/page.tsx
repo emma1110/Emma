@@ -167,8 +167,9 @@ export default function BitCorePage() {
                 href="/bitcore-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-[var(--nav-btn-bg)] px-5 type-body-sm-medium text-[var(--nav-btn-text)] hover:opacity-80"
+                className="copy-email-button mt-2 w-fit gap-2"
                 aria-label="Open the interactive Bitcore landing page demo"
+                magnetic
               >
                 <span>Demo Site</span>
                 <svg
