@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Bitcore Geist";
+  src: url("/bitcore-assets/geist-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitcore Archivo";
+  src: url("/bitcore-assets/archivo-latin-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 .bitcoreDemoRoot {
   /* Figma library variables */
   --text-primary-primary: #0a0d12;
@@ -10,6 +26,8 @@
   --gray-modern-950: #0d121c;
   --base-white: #fff;
 
+  --font-geist: "Bitcore Geist";
+  --font-archivo: "Bitcore Archivo";
   --font-family-geist: var(--font-geist), "Geist", sans-serif;
   --title-3-size: clamp(46px, 3.8889vw, 56px);
   --title-3-line-height: clamp(56px, 4.7222vw, 68px);
@@ -2009,8 +2027,7 @@
     padding-left: 18px;
     font-size: 13px;
     line-height: 19px;
-    list-style: disc;
-    list-style-position: outside;
+    list-style: none;
   }
 
   .bitcoreDemoRoot .roadmapPhaseOne .roadmapBar {
