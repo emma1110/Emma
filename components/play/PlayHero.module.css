@@ -1,0 +1,286 @@
+.hero {
+  --play-bg: #f7f2ea;
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--play-bg);
+  color: #111111;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+}
+
+.character {
+  position: absolute;
+  z-index: 1;
+  top: 3%;
+  left: 50%;
+  width: min(25vw, 340px);
+  transform: translateX(-50%);
+}
+
+.character svg,
+.ipad,
+.pencil svg,
+.stageObject svg,
+.finalShapes,
+.transitionShapes {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.device {
+  position: absolute;
+  z-index: 2;
+  top: 22%;
+  left: 50%;
+  width: min(72vw, 980px);
+  aspect-ratio: 920 / 580;
+  transform: translateX(-50%);
+  transform-origin: 50% 55%;
+}
+
+.screen {
+  position: absolute;
+  inset: 5% 4.1%;
+  overflow: hidden;
+  border-radius: clamp(20px, 2.6vw, 38px);
+}
+
+.continuousLine {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.52;
+}
+
+.continuousLine path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.firstDot {
+  position: absolute;
+  z-index: 7;
+  top: 19.5%;
+  left: 17.4%;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background: #111111;
+  transform: scale(0);
+}
+
+.stageObject {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.fish { width: 38%; }
+.book { width: 45%; }
+.plane { width: 28%; }
+.camera { width: 39%; }
+.notes { width: 55%; }
+.wireframe,
+.product { width: 70%; }
+
+.introduction {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.finalShapes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.introCopy {
+  position: relative;
+  z-index: 2;
+  width: min(76%, 690px);
+  text-align: center;
+}
+
+.introCopy h1 {
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.introCopy p {
+  max-width: 620px;
+  margin: 24px auto 0;
+  font-size: clamp(16px, 1.7vw, 22px);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.pencil {
+  position: absolute;
+  z-index: 8;
+  top: 12%;
+  left: 8%;
+  width: 22%;
+  transform-origin: 4% 50%;
+  pointer-events: none;
+}
+
+.instruction {
+  position: absolute;
+  z-index: 9;
+  bottom: 5%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.instruction span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 2px solid #111111;
+  border-radius: 999px;
+}
+
+.stageRail {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transform: translateY(-50%);
+  list-style: none;
+}
+
+.stageRail li {
+  display: grid;
+  grid-template-columns: 22px 8px 52px;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stageRail i {
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid #111111;
+  border-radius: 999px;
+  background: #ffc515;
+}
+
+.stageRail em {
+  font-style: normal;
+}
+
+.flash {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  background: #ffffff;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.finalTransition {
+  position: absolute;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background: #c9c5ff;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.finalTransition p {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 24px;
+  font-size: clamp(56px, 9vw, 136px);
+  line-height: 0.92;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  text-align: center;
+}
+
+.transitionShapes {
+  position: absolute;
+  inset: 5%;
+  width: 90%;
+  height: 90%;
+}
+
+@media (max-width: 1023px) {
+  .hero { min-height: 620px; }
+  .device { top: 25%; width: min(88vw, 880px); }
+  .character { top: 7%; width: min(34vw, 310px); }
+  .stageRail { right: 12px; }
+  .stageRail em,
+  .stageRail span { display: none; }
+  .stageRail li { display: block; }
+}
+
+@media (max-width: 639px) {
+  .hero { min-height: 620px; }
+  .character { top: 10%; width: 50vw; }
+  .device { top: 31%; width: 118vw; }
+  .screen { inset: 5% 4.2%; }
+  .pencil { width: 25%; }
+  .stageRail { top: auto; right: 50%; bottom: 18px; flex-direction: row; transform: translateX(50%); }
+  .stageRail li { grid-template-columns: 1fr; }
+  .instruction { bottom: 8%; }
+  .fish { width: 44%; }
+  .book { width: 51%; }
+  .plane { width: 33%; }
+  .camera { width: 45%; }
+  .notes { width: 62%; }
+  .wireframe,
+  .product { width: 76%; }
+  .introCopy { width: 65%; }
+  .introCopy h1 { font-size: 34px; }
+  .introCopy p { margin-top: 12px; font-size: 12px; line-height: 1.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stageRail,
+  .instruction { display: none; }
+}

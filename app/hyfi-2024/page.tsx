@@ -236,7 +236,7 @@ export default function Hyfi2024Page() {
               <SectionLabel>Design Principles</SectionLabel>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {principles.map((item) => (
-                  <article key={item.title} className="case-study-summary flex min-h-[176px] flex-col gap-3 rounded-[16px] p-6 shadow-sm transition-colors duration-300">
+                  <article key={item.title} className="case-study-accent-border flex min-h-[176px] flex-col gap-3 rounded-[16px] border bg-[var(--case-study-card-bg)] p-6 text-[var(--color-text-inverse)] shadow-sm transition-colors duration-300">
                     <h3 className="type-heading-h6">{item.title}</h3>
                     <p className="type-body-sm">{item.body}</p>
                   </article>

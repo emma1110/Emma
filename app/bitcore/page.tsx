@@ -167,14 +167,14 @@ export default function BitCorePage() {
                 href="/bitcore-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="copy-email-button mt-2 w-fit gap-2"
+                className="copy-email-button mt-2 w-fit gap-3"
                 aria-label="Open the interactive Bitcore landing page demo"
                 magnetic
               >
                 <span>Demo Site</span>
                 <svg
                   aria-hidden="true"
-                  className="h-4 w-4"
+                  className="h-6 w-6 shrink-0 sm:h-7 sm:w-7"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"

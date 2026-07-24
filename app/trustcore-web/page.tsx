@@ -239,11 +239,11 @@ export default function TrustCoreWebPage() {
                 <span className="type-label-lg uppercase opacity-70">Design principle</span>
                 <p className="type-heading-h4">Users convert when they feel safe.</p>
               </div>
-              <p className="type-body text-[var(--color-text-secondary)]">
+              <p className="type-body text-[var(--color-text-inverse)]">
                 Instead of leading with features, the landing page focused on <strong>progressive confidence-building</strong> through clear messaging, product understanding, security validation, and a strong conversion flow.
               </p>
               <div className="flex flex-col gap-[8px]">
-                <span className="type-label-lg mb-[8px] text-[var(--color-text-secondary)] uppercase">THE STRUCTURE FOLLOWED:</span>
+                <span className="type-label-lg mb-[8px] text-[var(--color-text-inverse)] uppercase">THE STRUCTURE FOLLOWED:</span>
                 <div className="flex flex-wrap items-center gap-2 type-body-sm text-[var(--color-text-inverse)] bg-[var(--card-bg)] px-4 py-3 rounded-[12px] w-fit border border-[var(--footer-border)]">
                   <span>Value Proposition</span>
                   <span className="text-[var(--color-text-secondary)]">→</span>
@@ -254,7 +254,7 @@ export default function TrustCoreWebPage() {
                   <span>Action</span>
                 </div>
               </div>
-              <p className="type-body text-[var(--color-text-secondary)] mt-1">
+              <p className="type-body text-[var(--color-text-inverse)] mt-1">
                 Every section was designed to <strong>reduce hesitation before wallet creation.</strong>
               </p>
               
